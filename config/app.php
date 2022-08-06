@@ -82,8 +82,7 @@ return [
     |
     */
 
-    'locale' => 'vi',
-    'locales' => ['vi', 'en'],
+    'locale' => 'vi', 
 
 
     /*
