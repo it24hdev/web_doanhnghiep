@@ -20,8 +20,6 @@
 <body>
 	@yield('header')
 	@yield('menu-mobile')
-	@yield('login')
-	@yield('login-mobile')
 	@yield('content')
 	@yield('footer')
 
