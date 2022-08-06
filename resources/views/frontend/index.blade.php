@@ -1,22 +1,22 @@
-{{-- @extends('frontend.layouts.base')
+@extends('frontend.layouts.base')
 
-@section('css')
+{{-- @section('css')
     <link rel="stylesheet" href="{{asset('asset/css/content-home.css')}}">
-@endsection
+@endsection --}}
 
 @section('header')
 @include('frontend.layouts.header-home')
 @endsection
 
-@section('login')
+{{-- @section('login')
 @include('frontend.layouts.login')
-@endsection
+@endsection --}}
 
 
-@section('menu-mobile')
+{{-- @section('menu-mobile')
 @include('frontend.layouts.menu-mobile')
 @endsection
-
-@section('login-mobile')
+ --}}
+{{-- @section('login-mobile')
 @include('frontend.layouts.login-mobile')
 @endsection --}}
