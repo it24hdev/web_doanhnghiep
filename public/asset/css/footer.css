@@ -1,0 +1,47 @@
+#footer{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+    color: #898a9c;
+}
+.wp-footer{
+    background-image: url('../images/first-footer-bg.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    position: relative;
+    background-color: #1f2437;
+}
+.container-footer{
+    max-width: 1170px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.site-footer-bg-layer {
+    background-color: #1f2437;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.96;
+
+}
+.first-footer-inner-1{
+    background-color: transparent;
+}
+.wp-footer .first-footer-inner{
+    padding: 20px 0 20px;
+    color: rgba(255, 255, 255, .8);
+}
+.first-footer-inner h3.title{
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 25px;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+
