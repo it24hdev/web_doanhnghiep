@@ -1,9 +1,9 @@
 
 <header class="col-12">
-    <section class="background_header" style="background-image: url('{{asset('asset/images/background.jpg')}}');">
+   {{--  <section class="background_header" style="background-image: url('{{asset('asset/images/background.jpg')}}');">
         <div class="background_header_shadow">
         </div>
-    </section>
+    </section> --}}
     <div class="header_bar">
 
         {{-- top menu --}}
@@ -249,3 +249,4 @@
         <span class="buy_link">Giá:<span>10.000.000</span></span>
     </a>
 </div>
+<a id="scroll_up" href="#top" class="top-visible"><i class="fal fa-angle-up"></i></a>

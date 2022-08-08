@@ -101,12 +101,12 @@ a:hover {
     position: relative;
     --widgets-spacing: 20px;
     width: 100%;
-    min-height: 700px;
+    height: 700px;
 }
 .background_header_shadow{
     background-color: transparent;
-    background-image: linear-gradient(180deg, #053A63 0%, #01111B 100%);
-    opacity: 0.32;
+       background: linear-gradient(to right, #000000 30%, #fff 70%);
+    opacity: 0.2;
     transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
     height: 100%;
     width: 100%;
@@ -1449,6 +1449,165 @@ h3 {
     color: #0067ed;
 }
 
+#scroll_up {
+    font-weight: 900;
+    color: #fff;
+    position: fixed;
+    display: none;
+    right: 34px;
+    bottom: 34px;
+    z-index: 999;
+    height: 0;
+    width: 0;
+    font-size: 0;
+    line-height: 25px;
+    text-align: center;
+    padding-top: 6px;
+    border-radius: 3px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    background: #0067ed;
+}
+.pheader{
+    position: absolute;
+    top: 1px;
+    transform: translate(120px, 250px);
+    z-index: 10;
+    font-family: Roboto;
+    height: auto;
+    width: auto;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    white-space: nowrap;
+    min-height: 0px;
+    min-width: 0px;
+    max-height: none;
+    max-width: none;
+    text-align: left;
+    line-height: 70px;
+    letter-spacing: 0px;
+    font-weight: 300;
+    font-size: 60px;
+    font-family: serif;
+    opacity: 1;
+    visibility: visible;
+}
+
+.pheader2{
+    position: absolute;
+    top: 1px;
+    transform: translate(120px, 330px);
+    z-index: 10;
+    font-family: Roboto;
+    height: auto;
+    width: auto;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    white-space: nowrap;
+    min-height: 0px;
+    min-width: 0px;
+    max-height: none;
+    max-width: none;
+    text-align: left;
+    line-height: 70px;
+    letter-spacing: 0px;
+    font-weight: 600;
+    font-size: 60px;
+    font-family: serif;
+    opacity: 1;
+    visibility: visible;
+}
+
+.pheader3{
+    position: absolute;
+    top: 1px;
+    transform: translate(120px, 400px);
+    z-index: 10;
+    font-family: Roboto;
+    height: auto;
+    width: auto;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    white-space: nowrap;
+    min-height: 0px;
+    min-width: 0px;
+    max-height: none;
+    max-width: none;
+    text-align: left;
+    line-height: 70px;
+    letter-spacing: 0px;
+    font-weight: 400;
+    font-size: 35px;
+    font-family: serif;
+    opacity: 1;
+    visibility: visible;
+    text-decoration-line: underline;
+}
+
+.pheader4{
+    position: absolute;
+    top: 1px;
+    z-index: 10;
+    font-family: Roboto;
+    height: auto;
+    width: auto;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    white-space: nowrap;
+    min-height: 0px;
+    min-width: 0px;
+    max-height: none;
+    max-width: none;
+    text-align: left;
+    line-height: 70px;
+    letter-spacing: 0px;
+    font-weight: 400;
+    font-size: 25px;
+    font-family: serif;
+    opacity: 1;
+    visibility: visible;
+}
+
+.carousel .header_phone{
+  position: absolute;
+  top: 1px;
+  transform: translate(800px,350px);
+}
+
+.carousel .header_phone a{
+    color: #fff; background: #0073e1; 
+    border-color: #FFF;  border-radius: 2em;  
+    padding: 13px 31px 13px 31px;
+    z-index: 2; 
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.header_phone:hover a{
+    color: #0073e1;
+    background: #fff;
+}
+.carousel-control-prev {
+    left: -60px !important;
+}
+
+/*.carousel-control-next {
+    right: -60px !important;
+}
+*/
+#scroll_up.top-visible {
+    font-size: 22px;
+    height: 40px;
+    width: 40px;
+}
+#scroll_up.top-visible {
+    animation: jump 4s infinite;
+}
+@keyframes jump {
+  0% { bottom: 20px; } 50% { bottom: 40px; } 100% { bottom: 20px; }
+}
+
 @media only screen and (max-width: 550px){
     .select_real_estate .column-gap-default .inner-column{
         width: 23%;
@@ -1496,7 +1655,30 @@ h3 {
     .header_bar{
         position: absolute;
     }
+    .background_header{
+    background-position: 65% 20%;
+    height: auto;
+    top: 50px;
+    }
 
+    .carousel-control-prev {
+    top: -50px;
+    left: 15px !important;
+    width: 6%;
+    }
+    .carousel-control-next {
+    top: -50px;
+    right: 10px !important;
+    width: 6%;
+    }
+
+    .pheader, .pheader2, .pheader3, .pheader4{
+        display: none;
+    }
+
+    .carousel .header_phone{
+        display: none;
+    }
 }
 
 @media (max-width: 1170px){

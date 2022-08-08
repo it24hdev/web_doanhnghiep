@@ -90,11 +90,13 @@ $(document).ready(function () {
 			$(".header_bar").addClass("master_header_sticky");
 			$(".header_wrapper").addClass("customnav");
 			// document.getElementById("logo_image").src = "/asset/images/logo.png";
+			document.getElementById("scroll_up").style.display = "block";
 		}
 		if(jQuery(window).scrollTop() <200 && ($(".header_bar").hasClass("master_header_sticky") == true)){
 			$(".header_bar").removeClass("master_header_sticky");
 			$(".header_wrapper").removeClass("customnav");
 			// document.getElementById("logo_image").src = "/asset/images/transparentopt.png";
+			document.getElementById("scroll_up").style.display = "none";
 		}
 	}
 	$(window).scroll(runOnScroll);
@@ -137,4 +139,6 @@ $(document).ready(function () {
 	    'right': (100 - calcLeftPosition(newValue)) + '%'
 	  });
 	});
+
+	
 });
