@@ -14,7 +14,7 @@
 ░░░░░░░░░░░░▀▀
 */
 #wp-content{
-    margin-top: 80px;
+    margin-top: 280px;
 }
 .container-content{
     max-width: 1170px;
@@ -181,6 +181,20 @@
 .list-category .category .wp-detail:hover{
     margin: 0px 0 20px;
 }
+.list-category .category .wp-detail .background-icon{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.list-category .category .wp-detail .background-icon i{
+    font-size: 170px;
+    color: #e6e6e66b;
+    padding-left: 40%;
+    padding-top: 20px;
+}
 .list-category .category .wp-detail .header-cat{
     padding: 30px 20px 15px 30px;
     border-bottom: 1px solid rgb(235, 233, 233);
@@ -192,6 +206,8 @@
 .list-category .category .wp-detail .content-cat {
     padding: 30px;
     border-bottom: 1px solid rgb(235, 233, 233);
+    z-index: 1;
+    position: relative;
 }
 .list-category .category .wp-detail .content-cat a{
     display: block;
@@ -554,7 +570,7 @@
 }
 .wp-banner-primary .wp-detail{
     width: 100%;
-    padding: 0 10px;
+    padding: 0 10px 0 30px;
 }
 .wp-banner-primary .wp-detail h4{
     font-weight: 500;
@@ -620,8 +636,7 @@
     }
     .wp-first-content .first-content .detail{
         width: 60%;
-        margin-bottom: 60px;
-        padding: 5px 20px 30px 50px;
+        padding: 5px 20px 20px 50px;
     }
     .wp-first-content .first-content .image .background-img{
         min-height: 550px;

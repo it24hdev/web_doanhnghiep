@@ -1,5 +1,7 @@
 @extends('frontend.layouts.base')
-
+@section('title')
+    <title>Trung tâm đào tạo ngonn ngữ Phương Đông VMA</title>
+@endsection
 @section('css')
     <link rel="stylesheet" href="{{asset('asset/css/content-home.css')}}">
 @endsection
@@ -28,7 +30,7 @@
                     </div>
                     <div class="detail">
                         <h4>Chào mừng bạn đến với chúng tôi</h4>
-                        <h2>Trung tâm ngoại ngữ <br><strong>Phương Đông</strong></h2>
+                        <h2>Trung tâm ngoại ngữ <br><strong>Phương Đông VMA</strong></h2>
                         <div class="desc">
                             Do nhu cầu học tập ngôn ngữ Trung Quốc ngày càng tăng cao nhưng chất lượng đào tạo chung chung không có sự chuyên nghiệp và thực tế khi đi làm.
                             Chúng tôi đã nghiên cứu và đưa vào đào tạo lộ trình giúp học viên nâng cao khả năng sử dụng tiếng Trung chuyên nghiệp, sát với thực tế môi trường làm việc. Hỗ trợ làm việc nước ngoài với mức lương tốt.
@@ -63,6 +65,9 @@
                 <div class="list-category owl-carousel owl-theme" id="list-category">
                     <div class="category">
                         <div class="wp-detail">
+                            <div class="background-icon">
+                                <i class="fad fa-file-certificate"></i>
+                            </div>
                             <div class="header-cat">
                                 <i class="fad fa-file-certificate"></i>
                             </div>
@@ -79,6 +84,9 @@
                     </div>
                     <div class="category">
                         <div class="wp-detail">
+                            <div class="background-icon">
+                                <i class="fad fa-certificate"></i>
+                            </div>
                             <div class="header-cat">
                                 <i class="fad fa-certificate"></i>
                             </div>
@@ -95,6 +103,9 @@
                     </div>
                     <div class="category">
                         <div class="wp-detail">
+                            <div class="background-icon">
+                                <i class="fal fa-user-graduate"></i>
+                            </div>
                             <div class="header-cat">
                                 <i class="fal fa-user-graduate"></i>
                             </div>
@@ -190,7 +201,7 @@
                     <div class="wp-detail">
                         <div class="header-detail">
                             <h2>Tại sao chọn chúng tôi</h2>
-                            <h4>Tại sao bạn nên chọn <strong>trung tâm ngoại ngữ Phương Đông?</strong></h4>
+                            <h4>Tại sao bạn nên chọn <strong>trung tâm ngoại ngữ Phương Đông VMA?</strong></h4>
                         </div>
                         <div class="content-detail">
                             <div class="desc-1">
@@ -257,7 +268,7 @@
                         <img src="{{asset('asset/images/image-5.jpg')}}" alt="">
                     </div>
                     <div class="wp-detail">
-                        <h4>Chúng tôi tạo sự khác biệt</h4>
+                        <h4>Nâng tầm giá trị</h4>
                         <h2>Chúng tôi đã hỗ trợ nhiều học viên <strong>nâng cao ngôn ngữ tiếng Trung</strong> và bắt đầu công việc với <strong>thu nhập mong muốn</strong></h2>
                         <a href="">Liên hệ với chúng tôi</a>
                     </div>

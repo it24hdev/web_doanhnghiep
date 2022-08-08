@@ -11,6 +11,7 @@ use App\Http\Controllers\Slider\SliderController;
 use App\Http\Controllers\Post\PostController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/tin-tuc', [HomeController::class, 'list_post'])->name('list-post');
 Auth::routes();
 
 /* ========== ADMIN =========== */
