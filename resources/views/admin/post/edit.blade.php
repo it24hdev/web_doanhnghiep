@@ -38,11 +38,9 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="mt-3">
-                        <label>Trạng thái</label>
-                        <div class="mt-2">
-                            <input type="checkbox" name="status" {{(old('status') == 'on' || $post->status == \App\Models\Post::ACTIVE) ? 'checked' : false}} class="form-check-switch">
-                        </div>
+                    <div class="mt-2">
+                           <input type="checkbox" class="form-check-switch" name='status'
+                        value="{{ $post->status == true ? '1' : '0' }}" {{ $post->status == true ? 'checked' : ' ' }}>
                     </div>
                     <div class="mt-3">
                         <label>Ảnh đại diện</label>

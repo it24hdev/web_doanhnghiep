@@ -5,9 +5,11 @@ namespace App\Providers;
 use App\Models\Role;
 use App\Models\Slider;
 use App\Models\User;
+use App\Models\Category;
 use App\Policies\RolePolicy;
 use App\Policies\SliderPolicy;
 use App\Policies\UserPolicy;
+use App\Policies\Catepolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -22,6 +24,7 @@ class AuthServiceProvider extends ServiceProvider
         Role::class => RolePolicy::class,
         Slider::class => SliderPolicy::class,
         Post::class => PostPolicy::class,
+        Category::class => Catepolicy::class,
     ];
 
     /**

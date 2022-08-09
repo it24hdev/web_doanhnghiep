@@ -79,8 +79,8 @@
                                 <i class="fas fa-map-marker-alt me-2"></i><span>Hải Phòng: 0326 384 981</span>
                             </div>
                         </div>
-                    </div>                   
-                </div>             
+                    </div>
+                </div>
             </div>
             <div class="wp-contact-footer">
                 <div class="container-footer">
@@ -125,9 +125,9 @@
             </div>
             <div class="wp-bottom-footer">
                 <div class="menu-bottom-footer">
-                    <a href="">Trang Chủ</a> |
-                    <a href="">Giới Thiệu</a> |
-                    <a href="">Liên Hệ</a>
+                    <a href="{{route('home')}}">Trang Chủ</a> |
+                    <a href="{{route('list-service')}}">Dịch Vụ</a> |
+                    <a href="{{route('contact')}}">Liên Hệ</a>
                 </div>
                 <p>Copyright © 2022 it24h. Thiết kế bởi it24h.vn</p>
             </div>

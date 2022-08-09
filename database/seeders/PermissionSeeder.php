@@ -116,6 +116,39 @@ class PermissionSeeder extends Seeder
             'parent_id' => 89,
         ]);
 
+        //dich vu
+        DB::table('permissions')->insert([
+            'id' => 430,
+            'name' => 'Dịch vụ',
+            'key_code' => NULL,
+            'parent_id' => 0,
+        ]);
+
+        DB::table('permissions')->insert([
+            'id' => 431,
+            'name' => 'Xem chi tiết',
+            'key_code' => 'view_post2',
+            'parent_id' => 430,
+        ]);
+        DB::table('permissions')->insert([
+            'id' => 432,
+            'name' => 'Thêm',
+            'key_code' => 'create_post2',
+            'parent_id' => 430,
+        ]);
+        DB::table('permissions')->insert([
+            'id' => 943,
+            'name' => 'Sửa',
+            'key_code' => 'update_post2',
+            'parent_id' => 430,
+        ]);
+        DB::table('permissions')->insert([
+            'id' => 434,
+            'name' => 'Xóa',
+            'key_code' => 'delete_post2',
+            'parent_id' => 430,
+        ]);
+
 
         DB::table('permissions')->insert([
             'id' => 300,

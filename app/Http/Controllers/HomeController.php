@@ -19,4 +19,10 @@ class HomeController extends Controller
     public function contact(){
         return \view('frontend.contact');
     }
+    public function detail_post(){
+        return \view('frontend.detail-post');
+    }
+    public function detail_service(){
+        return \view('frontend.detail-service');
+    }
 }

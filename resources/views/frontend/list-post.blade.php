@@ -46,8 +46,6 @@
                                     <a href="" class="title">How to ensure a direct hassle-free visa application</a>
                                     <div class="wp-cat-comment">
                                         <a href="" class="cat"><i class="fas fa-tags me-2"></i></i> Danh mục 1</a>
-                                        <i class="fas fa-circle mx-2 cham"></i>
-                                        <span class="comment"><i class="fad fa-comments me-2"></i> 2 Comments</span>
                                     </div>
                                     <div class="desc">
                                         There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
@@ -82,8 +80,6 @@
                                     <a href="" class="title">How to ensure a direct hassle-free visa application</a>
                                     <div class="wp-cat-comment">
                                         <a href="" class="cat"><i class="fas fa-tags me-2"></i></i> Danh mục 1</a>
-                                        <i class="fas fa-circle mx-2 cham"></i>
-                                        <span class="comment"><i class="fad fa-comments me-2"></i> 2 Comments</span>
                                     </div>
                                     <div class="desc">
                                         There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
@@ -117,8 +113,6 @@
                                     <a href="" class="title">How to ensure a direct hassle-free visa application</a>
                                     <div class="wp-cat-comment">
                                         <a href="" class="cat"><i class="fas fa-tags me-2"></i></i> Danh mục 1</a>
-                                        <i class="fas fa-circle mx-2 cham"></i>
-                                        <span class="comment"><i class="fad fa-comments me-2"></i> 2 Comments</span>
                                     </div>
                                     <div class="desc">
                                         There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
@@ -152,8 +146,6 @@
                                     <a href="" class="title">How to ensure a direct hassle-free visa application</a>
                                     <div class="wp-cat-comment">
                                         <a href="" class="cat"><i class="fas fa-tags me-2"></i></i> Danh mục 1</a>
-                                        <i class="fas fa-circle mx-2 cham"></i>
-                                        <span class="comment"><i class="fad fa-comments me-2"></i> 2 Comments</span>
                                     </div>
                                     <div class="desc">
                                         There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
@@ -187,8 +179,6 @@
                                     <a href="" class="title">How to ensure a direct hassle-free visa application</a>
                                     <div class="wp-cat-comment">
                                         <a href="" class="cat"><i class="fas fa-tags me-2"></i></i> Danh mục 1</a>
-                                        <i class="fas fa-circle mx-2 cham"></i>
-                                        <span class="comment"><i class="fad fa-comments me-2"></i> 2 Comments</span>
                                     </div>
                                     <div class="desc">
                                         There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive

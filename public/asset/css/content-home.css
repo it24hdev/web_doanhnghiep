@@ -26,6 +26,7 @@
     flex-wrap: wrap;
     position: relative;
     background-color: #fff;
+    padding-top: 50px;
 }
 .wp-first-content .first-content .image{
     width: 100%;
@@ -249,7 +250,7 @@
 }
 .wp-register{
     padding: 85px 0px;
-    background-color: #1f2437;
+    background-color: #1f2437ed;
     color: #fff;
 }
 .wp-register .wp-header-register{
@@ -622,6 +623,9 @@
     }
 }
 @media (min-width: 768px){
+    .wp-first-content .first-content{
+        padding-top: 0;
+    }
     .wp-first-content .first-content .image{
         width: 40%;
         position: relative;
