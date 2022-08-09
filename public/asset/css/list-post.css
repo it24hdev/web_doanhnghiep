@@ -53,6 +53,7 @@
 #wp-content .content .content-left{
     width: 100%;
     padding: 0 10px;
+    order: 2;
 }
 #wp-content .content{
     padding: 60px 0;
@@ -60,14 +61,17 @@
 #wp-content .content .content-right{
     width: 100%;
     padding: 0 10px;
+    order: 1;
 }
-.content .content-right ul{
+.content .content-left ul{
     margin: 0;
 }
-.content .content-right ul li{
+.content .content-left ul li{
     margin-bottom: 20px;
+    box-shadow: 0px 0px 10px 0px rgb(43 52 59 / 10%);
+    border-radius: 5px;
 }
-.content .content-right ul li .wp-post{
+.content .content-left ul li .wp-post{
     width: 100%;
 }
 .content .content-left ul li .wp-post .thumb{
@@ -95,12 +99,16 @@
     padding: 30px 30px;
 }
 .content-left ul li .wp-post .wp-detail a.title{
-    font-size: 28px;
-    line-height: 38px;
+    font-size: 20px;
+    line-height: 28px;
     font-weight: 700;
     display: block;
-    padding-bottom: 10px;
-    color: #1d2143
+    margin-bottom: 10px;
+    color: #1d2143;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
 }
 .content-left ul li .wp-post .wp-detail a:hover.title{
     color: #0067ed;
@@ -120,7 +128,8 @@ ul li .wp-post .wp-detail .wp-cat-comment a:hover.cat{
     color: #0067ed;
 }
 ul li .wp-post .wp-detail .desc{
-    padding: 20px 0;
+    padding-top: 20px;
+    margin-bottom: 20px;
     line-height: 25px;
     color: #898a9c;
     -webkit-line-clamp: 2;
@@ -134,6 +143,8 @@ ul li .wp-post .wp-detail .wp-action{
     position: relative;
     padding-top: 30px;
     border-top: 1px solid #e7e7e7;
+    overflow: hidden;
+    padding-bottom: 30px;
 }
 ul li .wp-post .wp-detail .wp-action a.show{
     color: #1d2143;
@@ -148,11 +159,14 @@ ul li .wp-post .wp-detail .wp-action .share{
 }
 ul li .wp-post .wp-detail .wp-action .social{
     position: absolute;
-    right: -50px;
+    right: 30px;
     top: 20px;
-    display: none;
     transition: all ease-in-out 0.4s;
 }
+.display-none{
+    display: none;
+}
+
 .wp-detail .wp-action .social ul{
     margin: 0;
     display: flex;
@@ -176,6 +190,173 @@ ul li .wp-post .wp-detail .wp-action .social{
     background-color: #0067ed;
     color: #fff;
 }
+
+/* Pagination */
+.pagination{
+    clear: both;
+    justify-content: center;
+}
+.pagination .page-numbers{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    flex-wrap: wrap;
+    margin: 0;
+}
+.pagination ul{
+    padding: 0;
+}
+.pagination .page-numbers li{
+    display: inline-block;
+    margin-right: 10px;
+}
+.pagination .page-numbers li .page-numbers.current{
+    background-color: #0073e1;
+    border-color: #0073e1;
+    color: #fff;
+}
+.pagination .page-numbers li .page-numbers{
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    color: #0073e1;
+    background-color: #fff;
+    border: 1px solid #0073e1;
+}
+.pagination .page-numbers li .page-numbers:hover{
+    background-color: #0073e1;
+    border-color: #0073e1;
+    color: #fff;
+}
+.pagination ul.page-numbers::after{
+    clear: both;
+}
+.content-right .wp-box-sidebar{
+    padding: 30px 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 10px 0px rgb(43 52 59 / 10%);
+}
+.content-right .wp-search form{
+    position: relative;
+}
+.content-right .wp-search form button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 8px;
+    border: none;
+    background: none;
+   color: #898a9c;
+}
+.content-right .wp-search input{
+    padding: 8px;
+}
+.content-right .wp-search input[placeholder]{
+    font-size: 14px;
+    color: #898a9c;
+}
+.content-right .wp-box-sidebar h3{
+    display: block;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+    color: #1d2143;
+    position: relative;
+}
+.content-right .wp-box-sidebar h3::after{
+    display: block;
+    height: 30px;
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 3px;
+    top: 0;
+    background-color: #0067ed;
+}
+.content-right .wp-box-sidebar ul{
+    margin: 0;
+}
+.content-right .list-cat ul li:not(:last-child){
+    border-bottom: 1px solid #d8d8d8;
+}
+.content-right .list-cat ul li a{
+    display: block;
+    padding: 12px 0;
+    color: #1d2143;
+}
+.content-right .list-cat ul li a:hover{
+    color: #0073e1;
+}
+.content-right .wp-post{
+    display: none;
+}
+.content-right .wp-post ul li:not(:last-child){
+    margin-bottom: 20px;
+}
+.content-right .wp-post ul li a{
+    display: flex;
+}
+.content-right .wp-post ul li a .thumb-post{
+    width:25%;
+}
+.content-right .wp-post ul li a .thumb-post img{
+    width: 100%;
+    border-radius: 3px;
+}
+.content-right .wp-post ul li a .info-post{
+    width: 75%;
+    padding-left: 10px;
+    color: #1d2143;
+}
+.content-right .wp-post ul li a .info-post .time{
+    font-size: 14px;
+    font-weight: 400;
+}
+.content-right .wp-post ul li a .info-post h4.title{
+    font-size: 14px;
+    line-height: 23px;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    transition: all ease 0.3s;
+}
+.content-right .wp-post ul li a:hover h4.title{
+    color: #0067ed;
+}
+.content-right .wp-banner{
+    display: none;
+}
+.content-right .wp-banner ul{
+    margin: 0;
+}
+.content-right .wp-banner ul li{
+    margin-bottom: 30px;
+}
+.content-right .wp-banner ul li a{
+    display: block;
+    width: 100%;
+}
+.content-right .wp-banner ul li a img{
+    width: 100%;
+    height: auto;
+}
+@media (min-width:500px){
+    .content-left ul li .wp-post .wp-detail a.title{
+        font-size: 28px;
+        line-height: 38px;
+    }
+}
 @media (min-width: 992px){
     .container-content-post{
         max-width: 970px;
@@ -183,10 +364,19 @@ ul li .wp-post .wp-detail .wp-action .social{
     }
     #wp-content .content .content-left{
         width: 70%;
-        padding-left: 30px;
+        padding-right: 30px;
+        order: 1;
     }
     #wp-content .content .content-right{
         width: 30%;
+        padding-left: 30px;
+        order: 2;
+    }
+    .content-right .wp-banner{
+        display: block;
+    }
+    .content-right .wp-post{
+        display: block;
     }
 }
 @media (min-width: 1200px){

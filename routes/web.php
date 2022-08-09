@@ -12,6 +12,8 @@ use App\Http\Controllers\Post\PostController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/tin-tuc', [HomeController::class, 'list_post'])->name('list-post');
+Route::get('/dich-vu', [HomeController::class, 'list_service'])->name('list-service');
+Route::get('/lien-he', [HomeController::class, 'contact'])->name('contact');
 Auth::routes();
 
 /* ========== ADMIN =========== */
