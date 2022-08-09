@@ -1,4 +1,5 @@
-<div id="carouselExampleControls" class="carousel slide background_header" data-bs-ride="carousel">
+<div class="background_header">
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
     <img src="asset/images/background6.jpg" class="d-block w-100" alt="..." style="min-height: 300px">
@@ -40,5 +41,6 @@
    <div class="background_header_shadow"></div>
 <div class="header_phone">
     <a  href="tel:800-555-6789">Đăng ký ngay!</a>
+</div>
 </div>
 </div>
