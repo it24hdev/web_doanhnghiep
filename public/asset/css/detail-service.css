@@ -79,31 +79,24 @@
     padding: 0 10px;
     order: 1;
 }
-.content .content-left ul{
-    margin: 0;
-}
-.content .content-left ul li{
-    margin-bottom: 20px;
-    box-shadow: 0px 0px 10px 0px rgb(43 52 59 / 10%);
-    border-radius: 5px;
-}
-.content .content-left ul li .wp-post{
+
+.content .content-left .wp-post{
     width: 100%;
 }
-.content .content-left ul li .wp-post .thumb{
+.content .content-left .wp-post .thumb{
     position: relative;
 }
-.content .content-left ul li .wp-post .thumb a{
+.content .content-left .wp-post .thumb .img{
     display: block;
     width: 100%;
     border-radius: 5px;
     overflow: hidden;
 }
-.content .content-left ul li .wp-post .thumb a img{
+.content .content-left .wp-post .thumb .img img{
     width: 100%;
     height: auto;
 }
-.content .content-left ul li .wp-post .thumb .time{
+.content .content-left .wp-post .thumb .time{
     position: absolute;
     bottom: 0;
     left: 30px;
@@ -111,25 +104,19 @@
     color: #fff;
     background-color: #0067ed;
 }
-.content-left ul li .wp-post .wp-detail{
-    padding: 30px 30px;
+.content-left .wp-post .wp-detail{
+    padding: 30px 0 60px 0;
 }
-.content-left ul li .wp-post .wp-detail a.title{
+.content-left .wp-post .wp-detail h3.title{
     font-size: 20px;
     line-height: 28px;
     font-weight: 700;
     display: block;
     margin-bottom: 10px;
     color: #1d2143;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
-    overflow: hidden;
 }
-.content-left ul li .wp-post .wp-detail a:hover.title{
-    color: #0067ed;
-}
-.content-left ul li .wp-post .wp-detail .wp-cat-comment{
+
+.content-left .wp-post .wp-detail .wp-cat-comment{
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -137,60 +124,30 @@
 .wp-cat-comment .cham{
     font-size: 5px;
 }
-ul li .wp-post .wp-detail .wp-cat-comment a.cat{
+.wp-post .wp-detail .wp-cat-comment a.cat{
     color: #898a9c;
 }
-ul li .wp-post .wp-detail .wp-cat-comment a:hover.cat{
+.wp-post .wp-detail .wp-cat-comment a:hover.cat{
     color: #0067ed;
 }
-ul li .wp-post .wp-detail .desc{
+.wp-post .wp-detail .desc{
     padding-top: 20px;
+    padding-bottom: 20px;
     margin-bottom: 20px;
     line-height: 25px;
     color: #898a9c;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
-    overflow: hidden;
-}
-ul li .wp-post .wp-detail .wp-action{
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    padding-top: 30px;
-    border-top: 1px solid #e7e7e7;
-    overflow: hidden;
-    padding-bottom: 30px;
-}
-ul li .wp-post .wp-detail .wp-action a.show{
-    color: #1d2143;
-    font-weight: 500;
-    transition: all 0.2s;
-}
-ul li .wp-post .wp-detail .wp-action a:hover.show{
-    color: #054ae0;
-}
-ul li .wp-post .wp-detail .wp-action .share{
-    cursor: pointer;
-}
-ul li .wp-post .wp-detail .wp-action .social{
-    position: absolute;
-    right: 30px;
-    top: 20px;
-    transition: all ease-in-out 0.4s;
-}
-.display-none{
-    display: none;
+    border-bottom: 1px solid rgb(221, 220, 220);
 }
 
-.wp-detail .wp-action .social ul{
+.wp-post .wp-detail .social ul{
     margin: 0;
     display: flex;
+    justify-content: end;
 }
-.wp-detail .wp-action .social ul li{
+.wp-post .wp-detail .social ul li{
     padding-right: 10px;
 }
-.wp-detail .wp-action .social ul li a{
+.wp-post .wp-detail .social ul li a{
     display: block;
     width: 36px;
     height: 36px;
@@ -207,51 +164,6 @@ ul li .wp-post .wp-detail .wp-action .social{
     color: #fff;
 }
 
-/* Pagination */
-.pagination{
-    clear: both;
-    justify-content: center;
-}
-.pagination .page-numbers{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    flex-wrap: wrap;
-    margin: 0;
-}
-.pagination ul{
-    padding: 0;
-}
-.pagination .page-numbers li{
-    display: inline-block;
-    margin-right: 10px;
-}
-.pagination .page-numbers li .page-numbers.current{
-    background-color: #0073e1;
-    border-color: #0073e1;
-    color: #fff;
-}
-.pagination .page-numbers li .page-numbers{
-    display: inline-block;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 400;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    border-radius: 5px;
-    color: #0073e1;
-    background-color: #fff;
-    border: 1px solid #0073e1;
-}
-.pagination .page-numbers li .page-numbers:hover{
-    background-color: #0073e1;
-    border-color: #0073e1;
-    color: #fff;
-}
-.pagination ul.page-numbers::after{
-    clear: both;
-}
 .content-right .wp-box-sidebar{
     padding: 30px 20px;
     border-radius: 5px;
@@ -347,9 +259,7 @@ ul li .wp-post .wp-detail .wp-action .social{
     -webkit-box-orient: vertical;
     transition: all ease 0.3s;
 }
-.content-right .wp-post ul li a:hover h4.title{
-    color: #0067ed;
-}
+
 .content-right .wp-banner{
     display: none;
 }
@@ -381,12 +291,12 @@ ul li .wp-post .wp-detail .wp-action .social{
     #wp-content .content .content-left{
         width: 70%;
         padding-right: 30px;
-        order: 1;
+        order: 2;
     }
     #wp-content .content .content-right{
         width: 30%;
-        padding-left: 30px;
-        order: 2;
+        padding-right: 30px;
+        order: 1;
     }
     .content-right .wp-banner{
         display: block;

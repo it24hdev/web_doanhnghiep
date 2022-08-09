@@ -69,7 +69,7 @@ a:hover {
 }
 
 .right-top-widet .textwidget:hover{
-    color: #0073e1 !important; 
+    color: #0073e1 !important;
 }
 .widget_custom_html{
     background: #0073b1;
@@ -85,9 +85,9 @@ a:hover {
     text-align: center;
     padding: 0px;
     background: #fff !important;
-  
+
 }
- .widget_custom_html:hover a{ 
+ .widget_custom_html:hover a{
   color: #0067ed !important;
  }
 
@@ -399,7 +399,7 @@ a:hover {
     -ms-transform: translate(0,-50%);
     transform: translate(0,-50%);
     ms-transform: translate(0,-50%);
-    max-height: 54px;
+    max-height: 160px;
     max-width: 160px;
     margin-top: 0px;
 }
@@ -1578,10 +1578,10 @@ h3 {
 }
 
 .carousel .header_phone a{
-    color: #fff; background: #0073e1; 
-    border-color: #FFF;  border-radius: 2em;  
+    color: #fff; background: #0073e1;
+    border-color: #FFF;  border-radius: 2em;
     padding: 13px 31px 13px 31px;
-    z-index: 2; 
+    z-index: 2;
     text-align: center;
     vertical-align: middle;
 }

@@ -1,0 +1,221 @@
+/*
+███████▄▄███████████▄
+▓▓▓▓▓▓█░░░░░░░░░░░░░░█
+▓▓▓▓▓▓█░░░░░░░░░░░░░░█
+▓▓▓▓▓▓█░░trungdung░░░█
+▓dungtdcs@gmail.com░░█
+▓▓▓▓▓▓█░░░░░░░░░░░░░░█
+▓▓▓▓▓▓███░░░░░░░░░░░░█
+██████▀░░░░░░░██████▀
+░░░░░░░░░█░░░░█
+░░░░░░░░░░█░░░█
+░░░░░░░░░░░█░░█
+░░░░░░░░░░░█░░█
+░░░░░░░░░░░░▀▀
+*/
+
+#titlebar-inner-wrapper{
+    background-image: url('../images/titlebar-bg-image.jpg');
+    background-color: rgba(17,24,30,0.01);
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.container-content-post{
+    max-width: 720px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#titlebar-inner-wrapper .wp-breadcrumb{
+    margin-top: 140px;
+    padding: 120px 0;
+    text-align: center;
+    color: #fff;
+}
+#titlebar-inner-wrapper .wp-breadcrumb h2{
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 40px;
+    line-height: 49px;
+    margin: 10px;
+}
+
+.wp-breadcrumb .breadcrumb-1{
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 0 10px;
+}
+.wp-breadcrumb .breadcrumb-1 a{
+    color: #fff;
+    display: inline-block;
+    padding: 0 5px;
+}
+.wp-breadcrumb .breadcrumb-1 a:hover{
+    color: #0067ed;
+}
+.wp-breadcrumb .breadcrumb-1 span{
+    display: inline-block;
+    padding: 0 5px;
+    color: #0067ed;
+}
+.wp-form-contact{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.wp-form-contact .wp-form{
+    padding: 30px 10px;
+    box-shadow: 0px 0px 10px 0px rgb(43 52 59 / 10%);
+    border-radius: 5px;
+    margin-bottom: 60px;
+}
+.wp-form-contact .wp-form .form-contact{
+    display: flex;
+    flex-wrap: wrap;
+}
+.wp-form-contact .wp-form .form-contact .content-left{
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.form-contact .content-left .box-1{
+    padding: 30px;
+    background-color: #1f2437;
+    color: #fff;
+}
+.form-contact .content-left .box-1 h4{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+.form-contact .content-left .box-1 p,
+.form-contact .content-left .box-1 a{
+    color: #fff;
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 20px;
+    display: block;
+}
+.form-contact .content-left .box-1 a:hover{
+    color: #0067ed;
+}
+.form-contact .content-left .box-2{
+    padding: 30px;
+    background-color: #0067ed;
+    color: #fff;
+}
+.form-contact .content-left .box-2 p{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    display: block;
+    margin-bottom: 20px;
+}
+.form-contact .content-left .box-2 a{
+    display: block;
+    color: #fff;
+    display: flex;
+}
+.form-contact .content-left .box-2 a span.icon{
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+.form-contact .content-left .box-2 a span.phone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+}
+.form-contact .content-left .box-2 a span.phone p{
+    font-size: 24px;
+    font-weight: 500;
+}
+.wp-form-contact .wp-form .form-contact .form-input{
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.form-contact .form-input .wp-header{
+    padding: 0;
+    text-align: center;
+    margin-top: 30px;
+}
+.form-contact .form-input .wp-header h4{
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    color: #0067ed;
+    margin-bottom: 5px;
+}
+.form-contact .form-input .wp-header h2{
+    font-weight: 300;
+    text-transform: capitalize;
+    font-size: 40px;
+    line-height: 52px;
+    color: #1d2143;
+    margin-bottom: 30px;
+}
+.form-contact .form-input .wp-header h2 strong{
+    font-weight: 700;
+}
+.form-contact .form-input input{
+    padding: 10px;
+}
+.form-contact .form-input button{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #0067ed;
+    border-radius: 20px;
+    color: #0067ed;
+    font-weight: 500;
+    transition: all ease 0.3s;
+    background-color: #fff;
+}
+.form-contact .form-input button:hover{
+    color: #fff;
+    background-color: #0067ed;
+}
+@media (min-width:1024px){
+    .form-contact .form-input .wp-header{
+        padding: 0;
+        text-align: left;
+        margin-top: 0px;
+    }
+    .wp-form-contact .wp-form{
+        padding: 60px 50px;
+    }
+    .wp-form-contact .wp-form .form-contact .content-left{
+        width: 30%;
+    }
+    .wp-form-contact .wp-form .form-contact .form-input{
+        width: 70%;
+        padding-left: 30px;
+    }
+}
+@media (min-width:1140px){
+    .wp-form-contact{
+        position: relative;
+        min-height: 620px;
+    }
+    .wp-form-contact .wp-form{
+        position: absolute;
+        top: -60px;
+        height: 0;
+        min-height: 640px;
+        z-index: 10;
+        background-color: #fff;
+    }
+}

@@ -62,7 +62,7 @@
                         <li class="widget_text widget-container " id="custom_html-3">
                             <div class="textwidget custom-html-widget">
                                 <i class="fal fa-phone"></i>
-                                <a href="https://api.whatsapp.com/send?phone=0988.758.801">
+                                <a href="tel:+84988755801">
                                    0988.758.801
                                 </a>
                             </div>
@@ -80,9 +80,8 @@
                 </i>
             </div>
             <div class="mobile-logo">
-                <a href="https://wpresidence.net">
-                    <img alt="image" class="img-responsive retina_ready" src="http://tripzia.cymolthemes.com/wp-content/uploads/2020/06/logo-overlay.png">
-                    </img>
+                <a href="{{route('home')}}">
+                    <img alt="image" class="img-responsive retina_ready" src="{{asset('asset/images/logo.png')}}">
                 </a>
             </div>
             <div class="mobile-trigger-user">
@@ -110,14 +109,15 @@
         <div class="header_wrapper header_type1 header_center hover_type_3 header_alignment_text_left">
             <div class="header_wrapper_inside full_width_header">
                 <div class="logo">
-                    <a href="https://wpresidence.net">
-                        <img alt="company logo" class="img-responsive retina_ready" id="logo_image" src="http://tripzia.cymolthemes.com/wp-content/uploads/2020/06/logo-overlay.png" style="margin-top:0px;"/>
+                    <a href="{{route('home')}}">
+                        <img alt="company logo" class="img-responsive retina_ready" id="logo_image" src="{{asset('asset/images/logo.png')}}" style="margin-top:0px;"/>
                     </a>
+
                 </div>
                 <div class="user_menu user_not_loged" id="user_menu_u">
                 <div class="submit_action">
                 <i class="far fa-search search_bar" toggle="#search"></i>
-                </div> 
+                </div>
 
                 <div class="cmt-search-overlay st-show" id="search">
                     <form action="#" class="cmt-site-searchform" method="get">
@@ -137,7 +137,7 @@
 
                 <div class="header_phone">
                 <a href="tel:800-555-6789">Nhận tư vấn!</a>
-                </div> 
+                </div>
                 </div>
                 <nav id="access">
                     <div class="menu-mega-menu-container">

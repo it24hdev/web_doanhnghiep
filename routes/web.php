@@ -14,6 +14,10 @@ use App\Http\Controllers\Service\PostController2;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/tin-tuc', [HomeController::class, 'list_post'])->name('list-post');
+Route::get('/tin-tuc/detail', [HomeController::class, 'detail_post'])->name('detail-post');
+Route::get('/dich-vu', [HomeController::class, 'list_service'])->name('list-service');
+Route::get('/dich-vu/detail', [HomeController::class, 'detail_service'])->name('detail-service');
+Route::get('/lien-he', [HomeController::class, 'contact'])->name('contact');
 Auth::routes();
 
 /* ========== ADMIN =========== */
