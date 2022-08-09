@@ -17,7 +17,12 @@ class Post extends Model
         'title',
         'slug',
         'excerpt',
-        'content', 'thumb','status','user_id'
+        'content',
+        'thumb',
+        'status',
+        'user_id',
+        'icon',
+        'service',
     ];
 
     const IMAGE = 'no-images.jpg';

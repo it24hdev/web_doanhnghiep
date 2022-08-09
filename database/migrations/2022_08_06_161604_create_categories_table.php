@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
+            $table->string('name2')->nullable();
             $table->string('slug')->unique();
             $table->unsignedBigInteger('taxonomy');
             $table->unsignedBigInteger('parent_id');
@@ -24,7 +25,7 @@ return new class extends Migration
             $table->string('banner')->nullable();
             $table->string('icon')->nullable();
             $table->boolean('status');
-            $table->boolean('show_push_product')->nullable();
+            $table->boolean('show_push_product')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

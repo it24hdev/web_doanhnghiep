@@ -157,6 +157,37 @@
                 @endcan
             </ul>
         </li>
+
+         <li>
+            <a href="javascript:;" class="side-menu {{ $module_active == 'service' ? 'side-menu--active' : '' }}">
+                <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
+                <div class="side-menu__title">
+                    Dịch vụ
+                    <div class="side-menu__sub-icon "> <i
+                            data-feather="{{ $module_active == 'service' ? 'chevron-up' : 'chevron-down' }}"
+                            class="{{ $module_active == 'service' ? 'menu__sub-icon transform rotate-180' : '' }}"></i>
+                    </div>
+                </div>
+            </a>
+            <ul class="{{ $module_active == 'service' ? 'side-menu__sub-open' : '' }}">
+                @can('view2', App\Models\Post::class)
+                    <li>
+                        <a href="{{ route('post2.index') }}" class="side-menu">
+                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                            <div class="side-menu__title"> Danh sách dịch vụ </div>
+                        </a>
+                    </li>
+                @endcan
+                @can('create2', App\Models\Post::class)
+                    <li>
+                        <a href="{{ route('post2.create') }}" class="side-menu">
+                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                            <div class="side-menu__title"> Thêm mới </div>
+                        </a>
+                    </li>
+                @endcan
+            </ul>
+        </li>
     </ul>
 </nav>
 <!-- END: Side Menu -->

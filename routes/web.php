@@ -9,6 +9,8 @@ use App\Http\Controllers\User\AdminController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Slider\SliderController;
 use App\Http\Controllers\Post\PostController;
+use App\Http\Controllers\Categorypost\CategorypostController;
+use App\Http\Controllers\Service\PostController2;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/tin-tuc', [HomeController::class, 'list_post'])->name('list-post');
@@ -70,4 +72,26 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/delete-img', [PostController::class, 'deleteImg'])->name('post.deleteImg');
     });
 
+     /* ---------- Danh muc bai viet --------------- */
+    Route::prefix('admin/categorypost')->group(function () {
+        Route::get('/', [CategorypostController::class, 'index'])->name('categorypost.index');
+        Route::get('/create', [CategorypostController::class, 'create'])->name('categorypost.create');
+        Route::get('/search', [CategorypostController::class, 'search'])->name('categorypost.search');
+        Route::post('/create', [CategorypostController::class, 'store'])->name('categorypost.store');
+        Route::post('/update/{id}', [CategorypostController::class, 'update'])->name('categorypost.update');
+        Route::get('/edit/{id}', [CategorypostController::class, 'edit'])->name('categorypost.edit');
+        Route::post('/delete', [CategorypostController::class, 'destroy'])->name('categorypost.delete');
+
+    });
+
+    /* ---------------- POST --------------- */
+    Route::prefix('admin/service')->group(function () {
+        Route::get('/', [PostController2::class, 'index'])->name('post2.index');
+        Route::get('/create', [PostController2::class, 'create'])->name('post2.create');
+        Route::post('/create', [PostController2::class, 'store'])->name('post2.store');
+        Route::get('/edit/{id}', [PostController2::class, 'edit'])->name('post2.edit');
+        Route::post('/update/{id}', [PostController2::class, 'update'])->name('post2.update');
+        Route::post('/delete', [PostController2::class, 'destroy'])->name('post2.delete');
+        Route::post('/delete-img', [PostController2::class, 'deleteImg'])->name('post2.deleteImg');
+    });
 });

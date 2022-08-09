@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Post;
+namespace App\Http\Controllers\Service;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
@@ -18,24 +18,19 @@ use Yajra\DataTables\DataTables;
 use App\Helpers\CommonHelper;
 use function Psr\Log\error;
 
-class PostController extends Controller
+class PostController2 extends Controller
 {
     public function __construct()
     {
         $this->middleware(function ($request, $next) {
-            \session(['module_active' => 'post',  'active' => 'Bài viết']);
+            \session(['module_active' => 'service',  'active' => 'Dịch vụ']);
             return $next($request);
         });
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index(Request $request)
     {
-        $this->authorize('view',Post::class);
+        $this->authorize('view2',Post::class);
         $search = $request->search;
         $limit = 10;
         if (!is_null($request->limit))
@@ -47,41 +42,31 @@ class PostController extends Controller
                 return $query->where('posts.title','like',"%$search%");
             })
             ->whereNull('posts.deleted_at')
-            ->where('posts.service','=',2)
+            ->where('posts.service','=',1)
             ->paginate($limit);
+            
         if($request->ajax()){
-            return view('admin.post.data-table',['posts'=>$posts]);
+            return view('admin.service.data-table',['posts'=>$posts]);
         }
-        return view('admin.post.index',[
-            'title' => 'Danh sách bài viết',
+        return view('admin.service.index',[
+            'title' => 'Danh sách dịch vụ',
             'posts' => $posts
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        $this->authorize('create',Post::class);
+        $this->authorize('create2',Post::class);
         $arrCate = Category::where('taxonomy',Category::BAI_VIET)->pluck('name','id');
-        return view('admin.post.create',[
+        return view('admin.service.create',[
             'arrCate' => $arrCate,
-            'title' => 'Tạo bài viết'
+            'title' => 'Tạo dịch vụ'
         ]);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        $this->authorize('create',Post::class);
+
+        $this->authorize('create2',Post::class);
         $request->validate(
             [
                 'title' => 'required|max:300|unique:posts',
@@ -109,10 +94,11 @@ class PostController extends Controller
             'content'   => $request->content,
             'thumb'     => $nameFile,
             'status'    => $status,
-            'service'   => 2,
+            'service'   => 1,
             'user_id'   => Auth::id(),
         ];
 
+        
         try {
             DB::beginTransaction();
             $post = Post::create($input);
@@ -127,45 +113,38 @@ class PostController extends Controller
                 }
             }
             DB::commit();
+
             /** Lưu ảnh vào folder*/
             if ($request->thumb != null){
+
                 $folder_large = 'upload/images/post/large/';
                 $folder_medium = 'upload/images/post/medium/';
                 $folder_thumb = 'upload/images/post/thumb/';
                 $folder = 'upload/images/post/';
+
                 $file = CommonHelper::uploadImage($request->thumb,$nameFile,$folder);
                 CommonHelper::cropImage2($file,$nameFile,1600,900,$folder_large);
                 CommonHelper::cropImage2($file,$nameFile,800,450,$folder_medium);
                 CommonHelper::cropImage2($file,$nameFile,133,75,$folder_thumb);
             }
-            return redirect()->route('post.index')->with('success','Tạo bài viết mới thành công.');
+
+          
+            return redirect()->route('post2.index')->with('success','Tạo dịch vụ mới thành công.');
+
         }catch (\Exception $exception){
             DB::rollBack();
 //            throw new \Exception($exception->getMessage());
-            return redirect()->route('post.index')->with('error','Đã có lỗi xảy ra. Vui lòng thử lại!');
+            return redirect()->route('post2.index')->with('error','Đã có lỗi xảy ra. Vui lòng thử lại!');
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        $this->authorize('update',Post::class);
+        $this->authorize('update2',Post::class);
         $post = Post::find($id);
         if (is_null($post)){
             \abort(404);
@@ -176,25 +155,18 @@ class PostController extends Controller
             foreach ($arr as $item){
                 $arrCateRela[] = $item->cat_id;
             }
-            return view('admin.post.edit',[
-                'arrCate' => $arrCate,
+            return view('admin.service.edit',[
+                'arrCate'     => $arrCate,
                 'arrCateRela' =>$arrCateRela,
-                'post' => $post,
-                'title' => 'Sửa bài viết'
+                'post'        => $post,
+                'title'       => 'Sửa dịch vụ'
             ]);
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        $this->authorize('update',Post::class);
+        $this->authorize('update2',Post::class);
 
         $request->validate(
             [
@@ -228,7 +200,7 @@ class PostController extends Controller
                 'content'   => $request->content,
                 'thumb'     => $nameFile,
                 'status'    => $status,
-                'service'   => 2,
+                'service'   => 1,
                 'user_id'   => Auth::id(),
             ];
 
@@ -267,24 +239,18 @@ class PostController extends Controller
                         CommonHelper::deleteImage($nameFileOld,$folder);
                     }
                 }
-                return redirect()->route('post.index')->with('success','Sửa bài viết thành công.');
+                return redirect()->route('post2.index')->with('success','Sửa dịch vụ thành công.');
             }catch (\Exception $exception){
                 DB::rollBack();
-                return redirect()->route('post.index')->with('error','Đã có lỗi xảy ra. Vui lòng thử lại!');
+                return redirect()->route('post2.index')->with('error','Đã có lỗi xảy ra. Vui lòng thử lại!');
             }
         }
-        return redirect()->route('post.index')->with('error','Đã có lỗi xảy ra. Vui lòng thử lại!');
+        return redirect()->route('post2.index')->with('error','Đã có lỗi xảy ra. Vui lòng thử lại!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Request $request)
     {
-        $this->authorize('delete',Post::class);
+        $this->authorize('delete2',Post::class);
         $post = Post::find($request->id);
         if (!is_null($post)){
             $post->delete();
@@ -295,7 +261,7 @@ class PostController extends Controller
     }
 
     public function deleteImg(Request $request){
-        $this->authorize('update',Post::class);
+        $this->authorize('update2',Post::class);
         if (!empty($request->id)){
             $post = Post::find($request->id);
             if (!is_null($post)){

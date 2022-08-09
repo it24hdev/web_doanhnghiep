@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('thumb',300)->default('no-images.jpg')->nullable();
             $table->integer('status')->default(0);
             $table->unsignedBigInteger('user_id');
+            $table->integer('service')->default(0);
+            $table->string('icon')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

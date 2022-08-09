@@ -20,6 +20,10 @@ class PostPolicy
     {
         return false;
     }
+    public function viewAny2(User $user)
+    {
+        return false;
+    }
 
     /**
      * Determine whether the user can view the model.
@@ -37,6 +41,16 @@ class PostPolicy
         }
     }
 
+    public function view2(User $user)
+    {
+        if ($user->is_admin == 1) {
+            return \true;
+        } else {
+            return $user->checkPermissionAccess('view_post2');
+        }
+    }
+
+
     /**
      * Determine whether the user can create models.
      *
@@ -49,6 +63,14 @@ class PostPolicy
             return \true;
         } else {
             return $user->checkPermissionAccess('create_post');
+        }
+    }
+    public function create2(User $user)
+    {
+        if ($user->is_admin == 1) {
+            return \true;
+        } else {
+            return $user->checkPermissionAccess('create_post2');
         }
     }
 
@@ -68,6 +90,14 @@ class PostPolicy
         }
     }
 
+     public function update2(User $user)
+    {
+        if ($user->is_admin == 1) {
+            return \true;
+        } else {
+            return $user->checkPermissionAccess('update_post2');
+        }
+    }
     /**
      * Determine whether the user can delete the model.
      *
@@ -81,6 +111,15 @@ class PostPolicy
             return \true;
         } else {
             return $user->checkPermissionAccess('delete_post');
+        }
+    }
+
+    public function delete2(User $user)
+    {
+        if ($user->is_admin == 1) {
+            return \true;
+        } else {
+            return $user->checkPermissionAccess('delete_post2');
         }
     }
 
