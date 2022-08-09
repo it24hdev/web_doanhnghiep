@@ -143,82 +143,40 @@
                     <div class="menu-mega-menu-container">
                         <ul class="menu" id="menu-mega-menu">
                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-megamenu " id="menu-item-7999">
-                                <a class="menu-item-link" href="#">
+                                <a class="menu-item-link" href="{{route('home')}}">
                                     Trang chủ
                                 </a>
-                                <ul class=" sub-menu " style="">
-                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children " id="menu-item-28320">
-                                        <a class="menu-item-link" href="#">
-                                           menu cap 1
-                                        </a>
-                                        <ul class=" sub-menu " style="">
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-page " id="menu-item-28330">
-                                                <a class="menu-item-link" href="#">
-                                                    menu cap 2
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
                             </li>
                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-megamenu " id="menu-item-7999">
-                                <a class="menu-item-link" href="#">
+                                <a class="menu-item-link" href="{{-- {{route('list-service')}} --}}#">
                                     Dịch vụ
                                 </a>
-                                <ul class=" sub-menu " style="">
-                                    <li class="menu-item  ">
-                                        <a class="menu-item-link" href="#">
-                                           menu cap 1
-                                        </a>
-                                        <ul class=" sub-menu " style="">
-                                            <li class="menu-item ">
-                                                <a class="menu-item-link" href="#">
-                                                    menu cap 2
-                                                </a>
-                                            </li>
-                                             <li class="menu-item ">
-                                                <a class="menu-item-link" href="#">
-                                                    menu cap 2
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                     <li class="menu-item  ">
-                                        <a class="menu-item-link" href="#">
-                                           menu cap 1
-                                        </a>
-                                        <ul class=" sub-menu " style="">
-                                            <li class="menu-item ">
-                                                <a class="menu-item-link" href="#">
-                                                    menu cap 2
-                                                </a>
-                                            </li>
-                                             <li class="menu-item ">
-                                                <a class="menu-item-link" href="#">
-                                                    menu cap 2
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
                             </li>
                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-megamenu " id="menu-item-7999">
-                                <a class="menu-item-link" href="#">
+                                <a class="menu-item-link" href="{{route('list-post')}}">
                                     Tin tức
                                 </a>
                                 <ul class=" sub-menu " style="">
+                                    @foreach($danhmucbaiviet as $dmbv)
+                                    @if($dmbv->parent_id == 0)
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children " id="menu-item-28320">
-                                        <a class="menu-item-link" href="#">
-                                           menu cap 1
+                                        <a class="menu-item-link" href="{!! route('list-post', ['slug' => $dmbv->slug]) !!}">
+                                          {{$dmbv->name}}
                                         </a>
                                         <ul class=" sub-menu " style="">
+                                             @foreach($danhmucbaiviet as $subdmbv)
+                                             @if($subdmbv->parent_id == $dmbv->id)
                                             <li class="menu-item menu-item-type-post_type menu-item-object-page " id="menu-item-28330">
                                                 <a class="menu-item-link" href="#">
-                                                    menu cap 2
+                                                     {{$subdmbv->name}} 
                                                 </a>
                                             </li>
+                                            @endif
+                                            @endforeach
                                         </ul>
                                     </li>
+                                    @endif
+                                    @endforeach
                                 </ul>
                             </li>
                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-megamenu " id="menu-item-7999">

@@ -27,11 +27,14 @@ class SliderController extends Controller
     {
         $this->authorize('view',Slider::class);
         $search = $request->search;
+        $location = $request->location;
         $limit = 10;
         if (!is_null($request->limit))
             $limit = $request->limit;
         $sliders = Slider::when($search, function ($query, $search){
             return $query->where('name','like',"%$search%");
+        })->when($location, function ($query, $location){
+            return $query->where('location','=',$location);
         })->paginate($limit)->withQueryString();
 
         if($request->ajax()){
@@ -53,6 +56,7 @@ class SliderController extends Controller
         $this->authorize('create',Slider::class);
         return view('admin.slider.create',[
             'title' => 'Tạo Slider',
+            'arrLocation' => Slider::$arr_location,
         ]);
     }
 
@@ -67,25 +71,12 @@ class SliderController extends Controller
         $this->authorize('create',Slider::class);
         $request->validate(
             [
-                'name' => 'required|string|max:250',
                 'position' => 'nullable|integer',
-                'subtitle' => 'nullable|string|max:250',
-                'description' => 'nullable|string|max:250',
-                'link_target' => 'nullable|string|max:250',
-                'image' =>'required|image|mimes:jpeg,jpg,png|mimetypes:image/jpeg,image/png,image/jpg|max:5048',
+                'image' =>'image|mimes:jpeg,jpg,png|mimetypes:image/jpeg,image/png,image/jpg|max:50048',
             ],
             [
-                'required' => ':attribute không được để trống!',
-                'integer' => ':attribute phải là số!',
-                'image' => ':attribute không đúng định dạng! (jpg, jpeg, png)',
-                'max' => ':attribute có độ dài tối đa :max ký tự!',
-            ],
-            [
-                'name' => 'Tiêu đề',
-                'subtitle' => 'Tiêu đề phụ',
-                'description' => 'Mô tả',
-                'link_target' => 'Link liên kết',
-                'image' => 'Ảnh silder'
+                'position.integer' => 'Thứ tự hiển thị phải nhập số',
+                'image.image' => 'Ảnh Slider không đúng định dạng! (jpg, jpeg, png)',
             ]
         );
 
@@ -100,14 +91,14 @@ class SliderController extends Controller
         }
         $input = [
             'name'=> $request->name,
-            'subtitle'=> $request->subtitle,
-            'description'=> $request->description,
+            'location'=> $request->location,
             'link_target'=> $request->link_target,
             'image'=> $nameFile,
             'user_id'=> Auth::id(),
             'position' => $request->position,
             'status'=> $status
         ];
+
         try {
             DB::beginTransaction();
             Slider::create($input);
@@ -149,6 +140,7 @@ class SliderController extends Controller
         else{
             return view('admin.slider.edit',[
                 'title' => 'Sửa Slider',
+                'arrLocation' => Slider::$arr_location,
                 'slider' => $slider
             ]);
         }
@@ -166,12 +158,10 @@ class SliderController extends Controller
         $this->authorize('update',Slider::class);
         $request->validate(
             [
-                'name' => 'required|string|max:250',
                 'position' => 'nullable|integer',
-                'image' =>'image|mimes:jpeg,jpg,png|mimetypes:image/jpeg,image/png,image/jpg|max:5048',
+                'image' =>'image|mimes:jpeg,jpg,png|mimetypes:image/jpeg,image/png,image/jpg|max:50048',
             ],
             [
-                'name.required' => 'Tiêu đề không được để trống!',
                 'position.integer' => 'Thứ tự hiển thị phải nhập số',
                 'image.image' => 'Ảnh Slider không đúng định dạng! (jpg, jpeg, png)',
             ]
@@ -192,8 +182,8 @@ class SliderController extends Controller
 
             $input = [
                 'name'=> $request->name,
-                'subtitle'=> $request->subtitle,
-                'description'=> $request->description,
+                'location'=> $request->location,
+                'link_target'=> $request->link_target,
                 'image'=> $nameFile,
                 'user_id'=> Auth::id(),
                 'position' => $request->position,

@@ -5,10 +5,11 @@
         <tr>
             <th class="text-center whitespace-nowrap">Hình ảnh</th>
             <th class="whitespace-nowrap">Tiêu đề</th>
-            <th class="whitespace-nowrap">Link</th>
+            <th class="whitespace-nowrap">Đường dẫn</th>
+            <th class="text-center whitespace-nowrap">Vị trí</th>
             <th class="text-center whitespace-nowrap">Thứ tự</th>
             <th class="text-center whitespace-nowrap">Trạng thái</th>
-            <th class="text-center whitespace-nowrap">Tác vụ</th>
+            <th class="text-center whitespace-nowrap">Chức năng</th>
         </tr>
         </thead>
         <tbody>
@@ -26,6 +27,9 @@
                 </td>
                 <td class="w-40">
                     <div class="font-medium ">{{$slider->link_target}}</div>
+                </td>
+                <td class="w-10">
+                    <div class="text-center">{{\App\Models\Slider::$arr_location[$slider->location]}}</div>
                 </td>
                 <td class="w-10">
                     <div class="text-center">{{$slider->position}}</div>

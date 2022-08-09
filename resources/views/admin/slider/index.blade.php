@@ -1,7 +1,4 @@
 @extends('admin.layouts.main')
-@section('title')
-    <title>Slider</title>
-@endsection
 @section('subcontent')
     <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
         <h2 class="text-lg font-medium mr-auto">
@@ -16,6 +13,12 @@
             @endcan
             <div class="hidden md:block mx-auto text-gray-600"></div>
             <form id="searchform" name="searchform" action="{{ route('slider.index')}}" class="flex flex-col sm:flex-row sm:items-end xl:items-start" onsubmit="return false">
+                <select name="location" class="form-select select-search sm:w-32 2xl:w-full mt-2 sm:mt-0 sm:w-auto box mr-3">
+                    <option value="">--Tất cả--</option>
+                    @foreach(\App\Models\Slider::$arr_location as $index => $item)
+                        <option value="{{$index}}">{{$item}}</option>
+                    @endforeach
+                </select>
                 <div class="sm:w-42 2xl:w-full mt-2 sm:mt-0 sm:w-auto box">
                     <div class="w-full relative text-gray-700 dark:text-gray-300">
                         <input type="text" class="form-control w-56 box pr-10 placeholder-theme-13" id="search" name="search" value="{{request()->search}}" placeholder="Tìm kiếm...">
