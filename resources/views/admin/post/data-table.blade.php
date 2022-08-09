@@ -93,12 +93,28 @@
                                         @endif
                                     </div>
                                 </div>
-                                <div class="intro-y text-justify pt-16 sm:pt-6 pb-6 leading-relaxed">
-                                    <p><strong>{{$post->excerpt}}</strong></p>
-                                </div>
-                                <div class="intro-y text-justify leading-relaxed">
-                                    {!! $post->content !!}
-                                </div>
+                               <div class="col-span-12">
+                                    <h2 class="text-lg font-medium" style="font-weight: 1000;">Mô tả ngắn</h2>
+                                    <div
+                                        class="intro-y flex text-xs sm:text-sm flex-col sm:flex-row items-center pt-5 border-t border-gray-200 dark:border-dark-5">
+                                        <div class="flex items-center">
+                                            <div class="ml-3 mr-auto">
+                                                <div class="intro-y text-justify leading-relaxed"> {!! $post->excerpt !!}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="col-span-12">
+                                    <h2 class="text-lg font-medium" style="font-weight: 1000;">Nội dung</h2>
+                                    <div
+                                        class="intro-y flex text-xs sm:text-sm flex-col sm:flex-row items-center pt-5 border-t border-gray-200 dark:border-dark-5">
+                                        <div class="flex items-center">
+                                            <div class="ml-3 mr-auto">
+                                                <div class="intro-y text-justify leading-relaxed"> {!! $post->content !!}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
                                 <div class="intro-y flex text-xs sm:text-sm flex-col sm:flex-row items-center mt-5 pt-5 border-t border-gray-200 dark:border-dark-5">
                                     <div class="flex items-center">
                                         <div class="ml-3 mr-auto">

@@ -254,7 +254,7 @@ class PostController2 extends Controller
         $post = Post::find($request->id);
         if (!is_null($post)){
             $post->delete();
-            Vote::where('post_id',$request->id)->delete();
+            // Vote::where('post_id',$request->id)->delete();
             return \json_encode(array('success'=>true));
         }
         return \json_encode(array('success'=>false));

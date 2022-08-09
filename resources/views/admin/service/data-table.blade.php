@@ -4,9 +4,9 @@
         <thead>
         <tr>
             <th class="text-center whitespace-nowrap">Ảnh đại diện</th>
-            <th class="whitespace-nowrap">Tiêu đề</th>
-            <th class="text-center whitespace-nowrap">Ngày đăng</th>
-            <th class="text-center whitespace-nowrap">Tác giả</th>
+            <th class="whitespace-nowrap">Tên dịch vụ</th>
+            <th class="text-center whitespace-nowrap">Mô tả ngắn</th>
+            <th class="text-center whitespace-nowrap">Nội dung</th>
             <th class="text-center whitespace-nowrap">Trạng thái</th>
             <th class="text-center whitespace-nowrap">Tác vụ</th>
         </tr>
@@ -29,11 +29,11 @@
                         </a>
                     </div>
                 </td>
-                <td class="w-10">
-                    <div class="text-center">{{\App\Helpers\CommonHelper::convertDateToDMY($post->created_at)}}</div>
+                <td class="w-40">
+                  <div class="font-medium" style="overflow-y: hidden;overflow-x: clip;width: 160px;text-overflow: ellipsis;max-height: 70px; text-align: center;"> {{ $post->excerpt }}</div>
                 </td>
-                <td class="w-10">
-                    <div class="text-center">{{$post->user_name}}</div>
+                <td class="w-40">
+                    <div class="font-medium" style="overflow-y: hidden;overflow-x: clip;width: 160px;text-overflow: ellipsis;max-height: 70px; text-align: center;">  {!! $post->content !!} </div>
                 </td>
                 <td class="w-10">
                     @if($post->status == \App\Models\Post::ACTIVE)
@@ -83,7 +83,6 @@
                                 <h2 class="intro-y font-medium text-xl sm:text-2xl">
                                     {{$post->title}}
                                 </h2>
-                                <div class="intro-y text-gray-700 dark:text-gray-600 mt-3 text-xs sm:text-sm"> {{\App\Helpers\CommonHelper::convertDateToDMY($post->created_at)}} </div>
                                 <div class="intro-y mt-6">
                                     <div class="news__preview image-fit">
                                         @if($post->thumb != \App\Models\Post::IMAGE)
@@ -93,19 +92,28 @@
                                         @endif
                                     </div>
                                 </div>
-                                <div class="intro-y text-justify pt-16 sm:pt-6 pb-6 leading-relaxed">
-                                    <p><strong>{{$post->excerpt}}</strong></p>
-                                </div>
-                                <div class="intro-y text-justify leading-relaxed">
-                                    {!! $post->content !!}
-                                </div>
-                                <div class="intro-y flex text-xs sm:text-sm flex-col sm:flex-row items-center mt-5 pt-5 border-t border-gray-200 dark:border-dark-5">
-                                    <div class="flex items-center">
-                                        <div class="ml-3 mr-auto">
-                                            <div class="text-gray-600"><strong class="mr-2">Tác giả:</strong> {{$post->user_name}}</div>
+                                  <div class="col-span-12">
+                                    <h2 class="text-lg font-medium" style="font-weight: 1000;">Mô tả ngắn</h2>
+                                    <div
+                                        class="intro-y flex text-xs sm:text-sm flex-col sm:flex-row items-center pt-5 border-t border-gray-200 dark:border-dark-5">
+                                        <div class="flex items-center">
+                                            <div class="ml-3 mr-auto">
+                                                <div class="intro-y text-justify leading-relaxed"> {!! $post->excerpt !!}</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                    </div>
+                                    <div class="col-span-12">
+                                    <h2 class="text-lg font-medium" style="font-weight: 1000;">Nội dung</h2>
+                                    <div
+                                        class="intro-y flex text-xs sm:text-sm flex-col sm:flex-row items-center pt-5 border-t border-gray-200 dark:border-dark-5">
+                                        <div class="flex items-center">
+                                            <div class="ml-3 mr-auto">
+                                                <div class="intro-y text-justify leading-relaxed"> {!! $post->content !!}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
                                 <!-- END: Blog Layout -->
                             </div>
 

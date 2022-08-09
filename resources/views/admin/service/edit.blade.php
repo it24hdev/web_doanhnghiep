@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('title')
-    <title>Bài viết</title>
+    <title>Dịch vụ</title>
 @endsection
 @section('css')
     <script src="{{ asset('lib/tinymce/js/tinymce/tinymce.min.js') }}" referrerpolicy="origin"></script>
@@ -12,7 +12,7 @@
         </h2>
         <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
             @can('view2',\App\Models\Post::class)
-                <a class="btn btn-primary shadow-md mr-2" href="{{route('post2.index')}}">Danh sách bài viết</a>
+                <a class="btn btn-primary shadow-md mr-2" href="{{route('post2.index')}}">Danh sách Dịch vụ</a>
             @endcan
         </div>
     </div>
@@ -22,7 +22,7 @@
             <form action="{{route('post2.update',['id'=>$post->id])}}" method="post" enctype="multipart/form-data" id="form-post">
                 <div class="intro-y box p-5">
                     <div>
-                        <label for="crud-form-1" class="form-label">Tiêu đề(<span class="text-red-600">*</span>)</label>
+                        <label for="crud-form-1" class="form-label">Tên dịch vụ(<span class="text-red-600">*</span>)</label>
                         <input id="crud-form-1" type="text" name="title" value="{{old('title') ?? $post->title}}" class="form-control w-full" placeholder="Nhập tiêu đề">
                         @error('title')
                         <span style="color:red">{{$message}}</span>
@@ -41,7 +41,8 @@
                     <div class="mt-3">
                         <label>Trạng thái</label>
                         <div class="mt-2">
-                            <input type="checkbox" name="status" {{(old('status') == 'on' || $post->status == \App\Models\Post::ACTIVE) ? 'checked' : false}} class="form-check-switch">
+                           <input type="checkbox" class="form-check-switch" name='status'
+                        value="{{ $post->status == true ? '1' : '0' }}" {{ $post->status == true ? 'checked' : ' ' }}>
                         </div>
                     </div>
                     <div class="mt-3">

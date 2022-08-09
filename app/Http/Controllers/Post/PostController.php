@@ -28,11 +28,6 @@ class PostController extends Controller
         });
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index(Request $request)
     {
         $this->authorize('view',Post::class);
@@ -73,12 +68,6 @@ class PostController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $this->authorize('create',Post::class);
@@ -146,23 +135,11 @@ class PostController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $this->authorize('update',Post::class);
@@ -185,13 +162,6 @@ class PostController extends Controller
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $this->authorize('update',Post::class);
@@ -276,19 +246,14 @@ class PostController extends Controller
         return redirect()->route('post.index')->with('error','Đã có lỗi xảy ra. Vui lòng thử lại!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Request $request)
     {
         $this->authorize('delete',Post::class);
         $post = Post::find($request->id);
         if (!is_null($post)){
             $post->delete();
-            Vote::where('post_id',$request->id)->delete();
+            // Vote::where('post_id',$request->id)->delete();
             return \json_encode(array('success'=>true));
         }
         return \json_encode(array('success'=>false));

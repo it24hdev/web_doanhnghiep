@@ -22,7 +22,7 @@
             <form action="{{route('post2.store')}}" method="post" enctype="multipart/form-data" id="form-post">
                 <div class="intro-y box p-5">
                     <div>
-                        <label for="crud-form-1" class="form-label">Tiêu đề(<span class="text-red-600">*</span>)</label>
+                        <label for="crud-form-1" class="form-label">Tên dịch vụ(<span class="text-red-600">*</span>)</label>
                         <input id="crud-form-1" type="text" name="title" value="{{old('title')}}" class="form-control w-full" placeholder="Nhập tiêu đề" required>
                         @error('title')
                             <span style="color:red">{{$message}}</span>
@@ -41,7 +41,7 @@
                     <div class="mt-3">
                         <label>Trạng thái</label>
                         <div class="mt-2">
-                            <input type="checkbox" {{old('status') == 'on' ? 'checked' : false}} name="status" class="form-check-switch">
+                            <input type="checkbox" checked="checked" name="status" class="form-check-switch">
                         </div>
                     </div>
                     <div class="mt-3">
@@ -57,13 +57,13 @@
                     <div class="mt-3">
                         <label>Mô tả</label>
                         <div class="mt-2">
-                            <textarea class="form-control" rows="3" name="excerpt" placeholder="Nhập mô tả ngắn">{{old('excerpt')}}</textarea>
+                            <textarea class="form-control" name="excerpt" rows="3"  placeholder="Nhập mô tả ngắn">{{old('excerpt')}}</textarea>
                         </div>
                     </div>
                     <div class="mt-3">
                         <label>Nội dung</label>
                         <div class="mt-2">
-                            <textarea name="content" {{-- id="tiny-editor" --}} rows="7" required>{{old('content')}}</textarea>
+                            <textarea name="content" id="tiny-editor" rows="7">{{old('content')}}</textarea>
                         </div>
                     </div>
                     <div class="text-right mt-5">

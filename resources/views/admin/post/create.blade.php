@@ -41,7 +41,7 @@
                     <div class="mt-3">
                         <label>Trạng thái</label>
                         <div class="mt-2">
-                            <input type="checkbox" {{old('status') == 'on' ? 'checked' : false}} name="status" class="form-check-switch">
+                           <input type="checkbox" checked="checked" name="status" class="form-check-switch">
                         </div>
                     </div>
                     <div class="mt-3">
@@ -57,13 +57,13 @@
                     <div class="mt-3">
                         <label>Mô tả</label>
                         <div class="mt-2">
-                            <textarea class="form-control" rows="3" name="excerpt" placeholder="Nhập mô tả ngắn">{{old('excerpt')}}</textarea>
+                            <textarea class="form-control" name="excerpt" rows="3"  placeholder="Nhập mô tả ngắn">{{old('excerpt')}}</textarea>
                         </div>
                     </div>
-                    <div class="mt-3">
+                     <div class="mt-3">
                         <label>Nội dung</label>
                         <div class="mt-2">
-                            <textarea name="content" {{-- id="tiny-editor" --}} rows="7" required>{{old('content')}}</textarea>
+                            <textarea name="content" id="tiny-editor" rows="7">{{old('content')}}</textarea>
                         </div>
                     </div>
                     <div class="text-right mt-5">
