@@ -33,7 +33,7 @@
     background-color: #1f2437ea;
 }
 .container-footer{
-    max-width: 1170px;
+    max-width: 750px;
     margin: 0 auto;
 }
 
@@ -255,11 +255,6 @@
     }
 }
 @media (min-width: 992px){
-    .wp-contact-footer .contact-footer .wp-mail,
-    .wp-contact-footer .contact-footer .wp-hotline,
-    .wp-contact-footer .contact-footer .wp-address{
-        width: 33.33%;
-    }
     .wp-contact-footer .contact-footer .wp-address .content-contact .detail p{
         display: none;
     }
@@ -272,5 +267,15 @@
     .first-footer-inner .content-footer-inner .wp-userfull-links{
         width: 25%;
     }
+    .container-footer{
+        max-width: 1170px;
+        margin: 0 auto;
+    }
+    .wp-contact-footer .contact-footer .wp-mail,
+    .wp-contact-footer .contact-footer .wp-hotline,
+    .wp-contact-footer .contact-footer .wp-address{
+        width: 33.33%;
+    }
 }
+
 

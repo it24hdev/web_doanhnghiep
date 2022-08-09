@@ -10,4 +10,7 @@ class HomeController extends Controller
     {
         return view('frontend.index');
     }
+    public function list_post(){
+        return \view('frontend.list-post');
+    }
 }
