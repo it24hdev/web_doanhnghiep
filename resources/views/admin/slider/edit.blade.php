@@ -1,7 +1,4 @@
 @extends('admin.layouts.main')
-@section('title')
-    <title>Slider</title>
-@endsection
 @section('subcontent')
     <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
         <h2 class="text-lg font-medium mr-auto">
@@ -37,6 +34,16 @@
 
                     <div class="mt-3">
                         <div class="grid grid-cols-12 gap-x-5">
+                            <div class="col-span-12 xl:col-span-4">
+                                <label for="crud-form-2" class="form-label">Vị trí hiển thị</label>
+                                <select name="location" data-placeholder="Chọn vị trí hiển thị" class="tom-select w-full" id="crud-form-2">
+                                    @foreach($arrLocation as $index => $item)
+                                        <option value="{{$index}}"
+                                            {{ (old('location') == $index || (old('location') == null && $slider->location == $index)) ? 'selected': false }}
+                                        >{{$item}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <div class="col-span-12 xl:col-span-4">
                                 <label for="crud-form-2" class="form-label">Thứ tự hiển thị(<span class="text-red-600">*</span>)</label>
                                 <input id="crud-form-2" type="number" name="position" value="{{old('position') ?? $slider->position}}" min="1" class="form-control w-full" placeholder="Nhập thứ tự">

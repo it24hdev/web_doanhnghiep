@@ -1,6 +1,6 @@
 @extends('frontend.layouts.base')
 @section('title')
-    <title>Trung tâm đào tạo ngonn ngữ Phương Đông VMA</title>
+    <title>Trung tâm đào tạo ngôn ngữ Phương Đông VMA</title>
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{asset('asset/css/content-home.css')}}">
@@ -9,13 +9,50 @@
 @section('header')
     @include('frontend.layouts.header-home')
 @endsection
-
+{{-- 
 @section('slider')
     @include('frontend.layouts.slider')
-@endsection
+@endsection --}}
 
 @section('menu-mobile')
     @include('frontend.layouts.menu-mobile')
+@endsection
+
+
+
+@section('slider')
+    <div id="content1" style=" padding-top: 0px;">
+        <div class="slider-home container-wp col-12" style="max-width: 1350px; padding: 0px; margin-left: auto; margin-right: auto;">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    @php
+                        $t=-1;
+                    @endphp
+                    @foreach ($sliders as $slider)
+                        @php
+                            $t++;
+                        @endphp
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$t}}" class="{{($t==0) ? 'active' : ''}}" aria-current="{{($t==0) ? 'true' : ''}}" aria-label="Slide {{$t+1}}"></button>
+                    @endforeach
+                </div>
+                <div class="carousel-inner rounded-2">
+                    @foreach ($sliders as $slider)
+                        <div class="carousel-item carousel_style  {{($slider->position == 1) ? 'active' : ''}}">
+                            <img src="{{asset('upload/images/slider/'.$slider->image)}}">
+                        </div>
+                    @endforeach
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('content')
@@ -384,4 +421,25 @@
                 }
         });
     </script>
+
+    <script>
+    $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            nav: true,
+            autoplay: true,
+            autoplayTimeout: 4500,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                600: {
+                    items: 2,
+                },
+            },
+        });
+
+
+    });
+</script>
 @endsection
