@@ -108,7 +108,7 @@ a:hover {
        background: linear-gradient(to right, #000000 30%, #fff 70%);
     opacity: 0.2;
     transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
-    height: 100%;
+    height: 700px;
     width: 100%;
     top: 0;
     left: 0;
@@ -1571,7 +1571,7 @@ h3 {
 .carousel .header_phone{
   position: absolute;
   top: 1px;
-  transform: translate(800px,350px);
+  transform: translate(800px,250px);
 }
 
 .carousel .header_phone a{
@@ -1606,6 +1606,16 @@ h3 {
 }
 @keyframes jump {
   0% { bottom: 20px; } 50% { bottom: 40px; } 100% { bottom: 20px; }
+}
+
+.editlineheightmenu{
+    line-height: 70px !important;
+}
+
+.carousel-item img{
+    max-height: 700px;
+    min-height: 350px;
+    object-fit: fill;
 }
 
 @media only screen and (max-width: 550px){
@@ -1672,12 +1682,65 @@ h3 {
     width: 6%;
     }
 
-    .pheader, .pheader2, .pheader3, .pheader4{
-        display: none;
+    .pheader{
+         transform: translate(30px, 60px) !important;
+         font-size: 25px;
     }
 
+    .pheader2{
+         transform: translate(30px, 90px) !important;
+         font-size: 30px;
+    }
+    .pheader3{
+         transform: translate(30px, 120px) !important;
+         font-size: 20px;
+    }
+
+    .ph1{
+        transform: translate(30px, 140px) !important;
+        font-size: 18px;
+    }
+
+    .ph2{
+        transform: translate(30px, 160px) !important;
+        font-size: 18px !important;
+    }
+
+    .ph3{
+        transform: translate(30px, 180px) !important;
+        font-size: 18px !important;
+    }
+    .ph4{
+        transform: translate(30px, 200px) !important;
+        font-size: 18px !important;
+    }
+
+    .ph7{
+         transform: translate(30px, 60px) !important;
+         font-size: 30px !important;
+    }
+
+    .ph8{
+         transform: translate(30px, 90px) !important;
+         font-size: 25px !important;
+    }
+
+    .ph9{
+         transform: translate(30px, 110px) !important;
+         font-size: 18px !important;
+    }
+    .ph10{
+         transform: translate(30px, 130px) !important;
+         font-size: 25px !important;
+    }
+    .ph11{
+         transform: translate(30px, 150px) !important;
+         font-size: 18px !important;
+    }
+
+
     .carousel .header_phone{
-        display: none;
+        transform: translate(100px,250px);
     }
 }
 
