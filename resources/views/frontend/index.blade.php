@@ -38,7 +38,14 @@
                 <div class="carousel-inner rounded-2">
                     @foreach ($sliders as $slider)
                         <div class="carousel-item carousel_style  {{($slider->position == 1) ? 'active' : ''}}">
-                            <img src="{{asset('upload/images/slider/'.$slider->image)}}">
+                            <img src="{{asset('upload/images/slider/'.$slider->image)}}">\
+                             <P class = "pheader">Trung tâm Ngoại ngữ</P><br>
+    <strong class="pheader2">Phương Đông VMA</strong>
+    <p class = "pheader3">Chuyên đào tạo</p>
+    <i class = "pheader4 ph1" style=" transform: translate(120px, 440px);">- Ngôn ngữ Trung Quốc</i>
+    <i class = "pheader4 ph2" style=" transform: translate(120px, 480px);">- Kĩ năng từ vựng chuyên ngành cơ bản</i>
+    <i class = "pheader4 ph3" style=" transform: translate(120px, 520px);">- Kĩ năng Vi tính văn phòng cơ bản</i>
+    <i class = "pheader4 ph4" style=" transform: translate(120px, 560px);">- Kĩ năng trong giao tiếp văn phòng</i>
                         </div>
                     @endforeach
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -50,8 +57,12 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
+                <div class="background_header_shadow"></div>
+         <div class="header_phone"><a  href="tel:800-555-6789">Đăng ký ngay!</a></div>
             </div>
+
         </div>
+         
     </div>
 @endsection
 

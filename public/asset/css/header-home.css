@@ -108,7 +108,7 @@ a:hover {
        background: linear-gradient(to right, #000000 30%, #fff 70%);
     opacity: 0.2;
     transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
-    height: 700px;
+    height: 750px;
     width: 100%;
     top: 0;
     left: 0;

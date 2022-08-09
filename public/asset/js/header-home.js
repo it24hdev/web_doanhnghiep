@@ -99,6 +99,7 @@ $(document).ready(function () {
 			$(".header_bar").removeClass("master_header_sticky");
 			$(".header_wrapper").removeClass("customnav");
 			// document.getElementById("logo_image").src = "/asset/images/transparentopt.png";
+			document.getElementById("scroll_up").style.display = "none";
 			document.getElementsByClassName("header_wrapper")[0].style.backgroundColor = "rgba(31, 36, 55, 0.78)";
 			document.getElementsByClassName("header_wrapper")[0].style.height = "90px";
 			$(".no-megamenu").removeClass("editlineheightmenu");
