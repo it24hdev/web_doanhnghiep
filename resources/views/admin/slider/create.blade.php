@@ -1,5 +1,9 @@
 @extends('admin.layouts.main')
 
+@section('title')
+    <title>Slider</title>
+@endsection
+
 @section('css')
     <script src="{{ asset('lib/tinymce/js/tinymce/tinymce.min.js') }}" referrerpolicy="origin"></script>
 @endsection
@@ -27,7 +31,7 @@
                         <label for="crud-form-1" class="form-label">Tiêu đề phụ</label>
                         <input id="crud-form-1" type="text" name="subtitle" value="{{old('subtitle')}}" class="form-control w-full" placeholder="Nhập tiêu đề phụ">
                     </div>
-                    
+
                     <div class="mt-3">
                         <label for="crud-form-1" class="form-label">Link</label>
                         <input id="crud-form-1" type="text" name="link_target" value="{{old('link_target')}}" class="form-control w-full" placeholder="Nhập đường dẫn">

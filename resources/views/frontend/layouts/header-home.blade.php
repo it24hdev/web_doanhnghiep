@@ -13,10 +13,10 @@
                     <ul class="xoxo">
                         <li class="widget-container social_sidebar" id="social_widget_top-4">
                             <div class="social_sidebar_internal">
-                                <a href="#" target="_blank">
+                                <a href="javascript:;" target="_blank">
                                    <i class="fal fa-alarm-clock"></i>Thứ 2 - Thứ 7 8.00 - 17.30
                                 </a>
-                                <a href="#" target="_blank">
+                                <a href="javascript:;" target="_blank">
                                     <i class="fal fa-map-marker-alt"></i>Đường 403 Đại Lộc 5 - Kiến Thụy - Hải Phòng
                                 </a>
                             </div>
@@ -136,7 +136,7 @@
                 </div>
 
                 <div class="header_phone">
-                <a href="tel:800-555-6789">Nhận tư vấn!</a>
+                <a href="tel:+84988755801">Nhận tư vấn!</a>
                 </div>
                 </div>
                 <nav id="access">
@@ -169,7 +169,7 @@
                                              @if($subdmbv->parent_id == $dmbv->id)
                                             <li class="menu-item menu-item-type-post_type menu-item-object-page " id="menu-item-28330">
                                                 <a class="menu-item-link" href="{!! route('list-post', ['slug' => $subdmbv->slug]) !!}">
-                                                     {{$subdmbv->name}} 
+                                                     {{$subdmbv->name}}
                                                 </a>
                                             </li>
                                             @endif
@@ -198,17 +198,17 @@
 {{-- icon ho tro --}}
 
 <div class="cmt_floting_customsett">
-    <a href="#" target="_blank" class="cmttheme_fbar_icons">
+    <a href="tel:+84988755801" target="_blank" class="cmttheme_fbar_icons">
        <i class="fas fa-headset"></i>
         <span>Hỗ trợ</span>
     </a>
     <a href="#" target="_blank" class="cmttheme_fbar_icons">
-       <i class="fas fa-pencil-alt"></i>
-        <span>Tùy biến</span>
+        <i class="fab fa-facebook-messenger"></i>
+        <span>Messenger</span>
     </a>
     <a href="#" target="_blank" class="cmttheme_fbar_icons">
-        <i class="fal fa-shopping-cart"></i>
-        <span class="buy_link">Giá:<span>10.000.000</span></span>
+        <i class="fab fa-facebook"></i>
+        <span class="buy_link"><span>Facebook</span></span>
     </a>
 </div>
 <a id="scroll_up" class="top-visible"><i class="fal fa-angle-up"></i></a>

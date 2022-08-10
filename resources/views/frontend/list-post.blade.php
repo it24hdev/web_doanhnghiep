@@ -20,8 +20,15 @@
             <div class="wp-breadcrumb">
                 <h2>Tin Tức</h2>
                 <div class="breadcrumb-1">
-                    <a href="{{route('home')}}">Trang chủ</a>/
-                    <span>Tin Tức</span>
+                    @if (empty($category_active))
+                        <a href="{{route('home')}}">Trang chủ</a>/
+                        <span>Tin Tức</span>
+                    @else
+                        <a href="{{route('home')}}">Trang chủ</a>/
+                        <a href="{{route('list-post')}}">Tin Tức</a>/
+                        <span>{{$category_active->name}}</span>
+                    @endif
+
                 </div>
             </div>
         </div>
@@ -32,250 +39,95 @@
             <div class="content">
                 <div class="content-left">
                     <ul>
-                        <li>
-                            <div class="wp-post">
-                                <div class="thumb">
-                                    <a href="">
-                                        <img src="{{asset('asset/images/post-one.jpg')}}" alt="">
-                                    </a>
-                                    <div class="time">
-                                        08/08/2022
-                                    </div>
-                                </div>
-                                <div class="wp-detail">
-                                    <a href="" class="title">How to ensure a direct hassle-free visa application</a>
-                                    <div class="wp-cat-comment">
-                                        <a href="" class="cat"><i class="fas fa-tags me-2"></i></i> Danh mục 1</a>
-                                    </div>
-                                    <div class="desc">
-                                        There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
-                                        There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
-                                    </div>
-                                    <div class="wp-action">
-                                        <a href="" class="show"><i class="fal fa-horizontal-rule me-2"></i>Xem bài viết</a>
-                                        <div class="share">
-                                            <i class="fas fa-share-alt"></i>
-                                            <div class="social display-none">
-                                                <ul>
-                                                    <li><a href="javascript:;"><i class="fab fa-facebook-f"></i></a></li>
-                                                    <li><a href="javascript:;"><i class="fab fa-twitter"></i></a></li>
-                                                </ul>
+                        @if ($posts->count() > 0)
+                            @foreach ($posts as $post)
+                                <li>
+                                    <div class="wp-post">
+                                        <div class="thumb">
+                                            <a href="{{route('detail-post', $post->slug)}}">
+                                                <img src="{{asset('upload/images/post/large/'.$post->thumb)}}" alt="">
+                                            </a>
+                                            <div class="time">
+                                                <i class="far fa-calendar-alt me-2"></i>{{\App\Helpers\CommonHelper::convertDateToDMY($post->created_at)}}
+                                            </div>
+                                        </div>
+                                        <div class="wp-detail">
+                                            <a href="{{route('detail-post', $post->slug)}}" class="title">{{$post->title}}</a>
+                                            <div class="wp-cat-comment">
+                                                @foreach($post->category as $cat)
+                                                    <a href="{{route('list-post_cat', $cat->slug)}}" class="cat me-2"><i class="fas fa-tags me-2"></i></i> {{$cat->name}}</a>
+                                                @endforeach
+                                            </div>
+                                            <div class="desc">
+                                                {{$post->excerpt}}
+                                            </div>
+                                            <div class="wp-action">
+                                                <a href="{{route('detail-post', $post->slug)}}" class="show"><i class="fal fa-horizontal-rule me-2"></i>Xem bài viết</a>
+                                                <div class="share">
+                                                    <i class="fas fa-share-alt"></i>
+                                                    <div class="social display-none">
+                                                        <ul>
+                                                            <li><a href="javascript:;"><i class="fab fa-facebook-f"></i></a></li>
+                                                            <li><a href="javascript:;"><i class="fab fa-twitter"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="wp-post">
-                                <div class="thumb">
-                                    <a href="">
-                                        <img src="{{asset('asset/images/post-one.jpg')}}" alt="">
-                                    </a>
-                                    <div class="time">
-                                        08/08/2022
-                                    </div>
-                                </div>
-                                <div class="wp-detail">
-                                    <a href="" class="title">How to ensure a direct hassle-free visa application</a>
-                                    <div class="wp-cat-comment">
-                                        <a href="" class="cat"><i class="fas fa-tags me-2"></i></i> Danh mục 1</a>
-                                    </div>
-                                    <div class="desc">
-                                        There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
-                                    </div>
-                                    <div class="wp-action">
-                                        <a href="" class="show"><i class="fal fa-horizontal-rule me-2"></i>Xem bài viết</a>
-                                        <div class="share">
-                                            <i class="fas fa-share-alt"></i>
-                                            <div class="social display-none">
-                                                <ul>
-                                                    <li><a href="javascript:;"><i class="fab fa-facebook-f"></i></a></li>
-                                                    <li><a href="javascript:;"><i class="fab fa-twitter"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="wp-post">
-                                <div class="thumb">
-                                    <a href="">
-                                        <img src="{{asset('asset/images/post-one.jpg')}}" alt="">
-                                    </a>
-                                    <div class="time">
-                                        08/08/2022
-                                    </div>
-                                </div>
-                                <div class="wp-detail">
-                                    <a href="" class="title">How to ensure a direct hassle-free visa application</a>
-                                    <div class="wp-cat-comment">
-                                        <a href="" class="cat"><i class="fas fa-tags me-2"></i></i> Danh mục 1</a>
-                                    </div>
-                                    <div class="desc">
-                                        There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
-                                    </div>
-                                    <div class="wp-action">
-                                        <a href="" class="show"><i class="fal fa-horizontal-rule me-2"></i>Xem bài viết</a>
-                                        <div class="share">
-                                            <i class="fas fa-share-alt"></i>
-                                            <div class="social display-none">
-                                                <ul>
-                                                    <li><a href="javascript:;"><i class="fab fa-facebook-f"></i></a></li>
-                                                    <li><a href="javascript:;"><i class="fab fa-twitter"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="wp-post">
-                                <div class="thumb">
-                                    <a href="">
-                                        <img src="{{asset('asset/images/post-one.jpg')}}" alt="">
-                                    </a>
-                                    <div class="time">
-                                        08/08/2022
-                                    </div>
-                                </div>
-                                <div class="wp-detail">
-                                    <a href="" class="title">How to ensure a direct hassle-free visa application</a>
-                                    <div class="wp-cat-comment">
-                                        <a href="" class="cat"><i class="fas fa-tags me-2"></i></i> Danh mục 1</a>
-                                    </div>
-                                    <div class="desc">
-                                        There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
-                                    </div>
-                                    <div class="wp-action">
-                                        <a href="" class="show"><i class="fal fa-horizontal-rule me-2"></i>Xem bài viết</a>
-                                        <div class="share">
-                                            <i class="fas fa-share-alt"></i>
-                                            <div class="social display-none">
-                                                <ul>
-                                                    <li><a href="javascript:;"><i class="fab fa-facebook-f"></i></a></li>
-                                                    <li><a href="javascript:;"><i class="fab fa-twitter"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="wp-post">
-                                <div class="thumb">
-                                    <a href="">
-                                        <img src="{{asset('asset/images/post-one.jpg')}}" alt="">
-                                    </a>
-                                    <div class="time">
-                                        08/08/2022
-                                    </div>
-                                </div>
-                                <div class="wp-detail">
-                                    <a href="" class="title">How to ensure a direct hassle-free visa application</a>
-                                    <div class="wp-cat-comment">
-                                        <a href="" class="cat"><i class="fas fa-tags me-2"></i></i> Danh mục 1</a>
-                                    </div>
-                                    <div class="desc">
-                                        There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
-                                    </div>
-                                    <div class="wp-action">
-                                        <a href="" class="show"><i class="fal fa-horizontal-rule me-2"></i>Xem bài viết</a>
-                                        <div class="share">
-                                            <i class="fas fa-share-alt"></i>
-                                            <div class="social display-none">
-                                                <ul>
-                                                    <li><a href="javascript:;"><i class="fab fa-facebook-f"></i></a></li>
-                                                    <li><a href="javascript:;"><i class="fab fa-twitter"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                                </li>
+                            @endforeach
+                        @else
+                            <li class="py-5"><p class="text-center">Không tìm thấy thông tin nào!</p></li>
+                        @endif
                     </ul>
-                    <div class="pagination">
-                        <nav class="pagination">
-                            <ul class="page-numbers">
-                                <li>
-                                    <span class="page-numbers current">1</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="page-numbers" >2</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="page-numbers" >3</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="page-numbers" >...</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="next page-numbers">
-                                        <i class="fas fa-angle-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                    {!! $posts->links('frontend.pagination') !!}
                 </div>
                 <div class="content-right">
                     <div class="wp-search wp-box-sidebar">
                         <form action="">
-                            <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                            <input type="text" name="tim-kiem" class="form-control" placeholder="Tìm kiếm...">
                             <button><i class="fas fa-search"></i></button>
                         </form>
                     </div>
                     <div class="wp-box-sidebar list-cat">
                         <h3 class="header-box">Danh mục</h3>
                         <ul>
-                            <li><a href="">Danh mục 1</a></li>
-                            <li><a href="">Danh mục 2</a></li>
-                            <li><a href="">Danh mục 3</a></li>
-                            <li><a href="">Danh mục 4</a></li>
-                            <li><a href="">Danh mục 5</a></li>
+                            @foreach ($cat_parents as $cat)
+                                <li>
+                                    <a href="{{route('list-post_cat', $cat->slug)}}" class="@if(!empty($category_active) && ($category_active->id == $cat->id))
+                                        active
+                                        @endif">
+                                        {{$cat->name}}
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="wp-box-sidebar wp-post">
                         <h3 class="header-box">Bài viết mới nhất</h3>
                         <ul>
-                            <li>
-                                <a href="">
-                                    <div class="thumb-post">
-                                        <img src="{{asset('asset/images/post-one-150x150.jpg')}}" alt="">
-                                    </div>
-                                    <div class="info-post">
-                                        <span class="time"><i class="fal fa-calendar-alt me-2"></i> 08/08/2022</span>
-                                        <h4 class="title">Beat the peak with these top visa application tips!</h4>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="thumb-post">
-                                        <img src="{{asset('asset/images/post-one-150x150.jpg')}}" alt="">
-                                    </div>
-                                    <div class="info-post">
-                                        <span class="time"><i class="fal fa-calendar-alt me-2"></i> 08/08/2022</span>
-                                        <h4 class="title">Beat the peak with these top visa application tips!</h4>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="thumb-post">
-                                        <img src="{{asset('asset/images/post-one-150x150.jpg')}}" alt="">
-                                    </div>
-                                    <div class="info-post">
-                                        <span class="time"><i class="fal fa-calendar-alt me-2"></i> 08/08/2022</span>
-                                        <h4 class="title">Beat the peak with these top visa application tips!</h4>
-                                    </div>
-                                </a>
-                            </li>
+                            @php
+                            $t = 0;
+                            @endphp
+                            @foreach ($list_post_sidebar as $post)
+                                @php
+                                $t++;
+                                @endphp
+                                @if ($t<=3)
+                                    <li>
+                                        <a href="{{route('detail-post', $post->slug)}}">
+                                            <div class="thumb-post">
+                                                <img src="{{asset('upload/images/post/thumb/'.$post->thumb)}}" alt="">
+                                            </div>
+                                            <div class="info-post">
+                                                <span class="time"><i class="fal fa-calendar-alt me-2"></i> {{\App\Helpers\CommonHelper::convertDateToDMY($post->created_at)}}</span>
+                                                <h4 class="title">{{$post->title}}</h4>
+                                            </div>
+                                        </a>
+                                    </li>
+                                @endif
+                            @endforeach
                         </ul>
                     </div>
                     <div class="wp-banner">

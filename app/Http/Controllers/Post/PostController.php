@@ -123,9 +123,9 @@ class PostController extends Controller
                 $folder_thumb = 'upload/images/post/thumb/';
                 $folder = 'upload/images/post/';
                 $file = CommonHelper::uploadImage($request->thumb,$nameFile,$folder);
-                CommonHelper::cropImage2($file,$nameFile,1600,900,$folder_large);
-                CommonHelper::cropImage2($file,$nameFile,800,450,$folder_medium);
-                CommonHelper::cropImage2($file,$nameFile,133,75,$folder_thumb);
+                CommonHelper::cropImage2($file,$nameFile,800,500,$folder_large);
+                CommonHelper::cropImage2($file,$nameFile,400,400,$folder_medium);
+                CommonHelper::cropImage2($file,$nameFile,150,150,$folder_thumb);
             }
             return redirect()->route('post.index')->with('success','Tạo bài viết mới thành công.');
         }catch (\Exception $exception){
@@ -225,9 +225,9 @@ class PostController extends Controller
                     $folder_thumb = 'upload/images/post/thumb/';
                     $folder = 'upload/images/post/';
                     $file =  CommonHelper::uploadImage($request->thumb,$nameFile,$folder);
-                    CommonHelper::cropImage2($file,$nameFile,1600,900,$folder_large);
-                    CommonHelper::cropImage2($file,$nameFile,800,450,$folder_medium);
-                    CommonHelper::cropImage2($file,$nameFile,133,75,$folder_thumb);
+                    CommonHelper::cropImage2($file,$nameFile,800,500,$folder_large);
+                    CommonHelper::cropImage2($file,$nameFile,400,400,$folder_medium);
+                    CommonHelper::cropImage2($file,$nameFile,150,150,$folder_thumb);
 
                     /** Xoá ảnh cũ khi có upload ảnh mới */
                     if ($nameFileOld != Post::IMAGE){

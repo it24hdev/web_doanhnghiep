@@ -30,19 +30,19 @@
                         <div class="wp-post">
                             <h3 class="title">Tin Tức Mới</h3>
                             <ul>
-                               {{--  @foreach($danhsachbaiviet as $dsbv)
-                                <li>
-                                    <a href="{{route('detail-post',['slug' => $dsbv->slug])}}">
-                                        <div class="thumb-post">
-                                            <img src="{{asset('upload/images/post/'.$dsbv->thumb)}}" alt="">
-                                        </div>
-                                        <div class="info-post">
-                                            <span class="time"><i class="fal fa-calendar-alt me-2"></i> {{\App\Helpers\CommonHelper::convertDateToDMY($dsbv->created_at)}}</span>
-                                            <h4 class="title">{{$dsbv->excerpt}}</h4>
-                                        </div>
-                                    </a>
-                                </li>
-                                @endforeach --}}
+                                @foreach ($list_post_sidebar as $item)
+                                    <li>
+                                        <a href="{{route('detail-post', $item->slug)}}">
+                                            <div class="thumb-post">
+                                                <img src="{{asset('upload/images/post/thumb/'.$item->thumb)}}" alt="">
+                                            </div>
+                                            <div class="info-post">
+                                                <span class="time"><i class="fal fa-calendar-alt me-2"></i> {{\App\Helpers\CommonHelper::convertDateToDMY($item->created_at)}}</span>
+                                                <h4 class="title">{{$item->title}}</h4>
+                                            </div>
+                                        </a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="wp-userfull-links">

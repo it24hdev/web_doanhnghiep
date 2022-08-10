@@ -62,22 +62,25 @@ class Category extends Model
         return $this->belongsTo(Category::class, 'parent_id');
     }
 
-    public function get_product_by_cat(){
+    public function post(){
+        return $this->belongsToMany(Post::class, 'category_relationships', 'cat_id', 'post_id');
+    }
+    public function get_post_by_cat(){
         $db = \collect();
         $list_id = \collect();
-        $db[] = $this->product;
-        $this->get_product_recursive($this, $db);
-        $products = $db->collapse()->unique('id');
-        foreach($products as $item){
+        $db[] = $this->post;
+        $this->get_post_recursive($this, $db);
+        $posts = $db->collapse()->unique('id');
+        foreach($posts as $item){
             $list_id[]=$item->id;
         }
         return $list_id;
     }
 
-    public function get_product_recursive($cat, $list_product){
+    public function get_post_recursive($cat, $list_post){
         foreach ($cat->cat_child as $cat){
-                $list_product[] = $cat->product;
-                self::get_product_recursive($cat, $list_product);
+                $list_post[] = $cat->post;
+                self::get_post_recursive($cat, $list_post);
         }
     }
 }

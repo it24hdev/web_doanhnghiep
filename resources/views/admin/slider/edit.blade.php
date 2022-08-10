@@ -1,4 +1,8 @@
 @extends('admin.layouts.main')
+
+@section('title')
+    <title>Slider</title>
+@endsection
 @section('css')
     <script src="{{ asset('lib/tinymce/js/tinymce/tinymce.min.js') }}" referrerpolicy="origin"></script>
 @endsection

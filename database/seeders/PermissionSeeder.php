@@ -93,7 +93,7 @@ class PermissionSeeder extends Seeder
 
         DB::table('permissions')->insert([
             'id' => 91,
-            'name' => 'Xem chi tiết',
+            'name' => 'Xem',
             'key_code' => 'view_post',
             'parent_id' => 89,
         ]);
@@ -126,7 +126,7 @@ class PermissionSeeder extends Seeder
 
         DB::table('permissions')->insert([
             'id' => 431,
-            'name' => 'Xem chi tiết',
+            'name' => 'Xem',
             'key_code' => 'view_post2',
             'parent_id' => 430,
         ]);
@@ -183,58 +183,24 @@ class PermissionSeeder extends Seeder
 
         DB::table('permissions')->insert([
             'id' => 305,
-            'name' => 'Đánh giá, bình luận',
+            'name' => 'Khách hàng',
             'key_code' => Null,
             'parent_id' => 0,
         ]);
 
         DB::table('permissions')->insert([
             'id' => 306,
-            'name' => 'Xem đánh giá bài viết',
-            'key_code' => 'view_vote_post',
+            'name' => 'Xem',
+            'key_code' => 'view_customer',
             'parent_id' => 305,
         ]);
         DB::table('permissions')->insert([
             'id' => 307,
-            'name' => 'Thêm đánh giá bài viết',
-            'key_code' => 'create_vote_post',
+            'name' => 'Xóa',
+            'key_code' => 'delete_customer',
             'parent_id' => 305,
         ]);
-        DB::table('permissions')->insert([
-            'id' => 308,
-            'name' => 'Sửa đánh giá bài viết',
-            'key_code' => 'update_vote_post',
-            'parent_id' => 305,
-        ]);
-        DB::table('permissions')->insert([
-            'id' => 309,
-            'name' => 'Xóa đánh giá bài viết',
-            'key_code' => 'delete_vote_post',
-            'parent_id' => 305,
-        ]);
-        DB::table('permissions')->insert([
-            'id' => 310,
-            'name' => 'Xem đánh giá sản phẩm',
-            'key_code' => 'view_vote_product',
-            'parent_id' => 305,
-        ]);
-        DB::table('permissions')->insert([
-            'id' => 311,
-            'name' => 'Thêm đánh giá sản phẩm',
-            'key_code' => 'create_vote_product',
-            'parent_id' => 305,
-        ]);
-        DB::table('permissions')->insert([
-            'id' => 312,
-            'name' => 'Sửa đánh giá sản phẩm',
-            'key_code' => 'update_vote_product',
-            'parent_id' => 305,
-        ]);
-        DB::table('permissions')->insert([
-            'id' => 313,
-            'name' => 'Xóa đánh giá sản phẩm',
-            'key_code' => 'delete_vote_product',
-            'parent_id' => 305,
-        ]);
+
+
     }
 }
