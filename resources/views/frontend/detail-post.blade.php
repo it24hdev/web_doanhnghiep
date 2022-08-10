@@ -51,12 +51,12 @@
                             <div class="desc">
                                 {!! $post->content !!}
                             </div>
-                            <div class="social">
+                            {{-- <div class="social">
                                 <ul>
                                     <li><a href="javascript:;"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="javascript:;"><i class="fab fa-twitter"></i></a></li>
                                 </ul>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 
@@ -102,16 +102,13 @@
                     </div>
                     <div class="wp-banner">
                         <ul>
-                            <li>
-                                <a href="tel:+84988758801">
-                                    <img src="{{asset('asset/images/sidebar-banner02.jpg')}}" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="tel:+84988758801">
-                                    <img src="{{asset('asset/images/sidebar-banner02.jpg')}}" alt="">
-                                </a>
-                            </li>
+                            @foreach ($banners as $banner)
+                                <li>
+                                    <a href="{{$banner->link_target}}">
+                                        <img src="{{asset('upload/images/slider/'.$banner->image)}}" alt="">
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

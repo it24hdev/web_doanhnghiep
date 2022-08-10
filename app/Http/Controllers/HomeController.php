@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Customer;
 use App\Models\Post;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -48,7 +49,7 @@ class HomeController extends Controller
         })
         ->paginate(5)->withQueryString();
         $cat_parents = Category::where('status', 1)->where('parent_id', 0)->where('taxonomy', 1)->get();
-
+        $banners = Slider::where('location', 1)->where('status', 1)->inRandomOrder()->limit(2)->get();
         $danhsachdichvu_footer = Post::where('status' , '=' , 1)
                                 ->where('service', '=' , 1)
                                 ->orderby('id','asc')->limit(5)->get();
@@ -60,6 +61,7 @@ class HomeController extends Controller
             'cat_parents'               => $cat_parents,
             'list_post_sidebar'         => $list_post_sidebar,
             'danhsachdichvu_footer'     => $danhsachdichvu_footer,
+            'banners' => $banners,
         ]);
     }
 
@@ -85,6 +87,7 @@ class HomeController extends Controller
         ->paginate(5)->withQueryString();
         $cat_parents = Category::where('status', 1)->where('parent_id', 0)->where('taxonomy', 1)->get();
         $category_active = $cat;
+        $banners = Slider::where('location', 1)->where('status', 1)->inRandomOrder()->limit(2)->get();
         $danhsachdichvu_footer = Post::where('status' , '=' , 1)
                                 ->where('service', '=' , 1)
                                 ->orderby('id','asc')->limit(5)->get();
@@ -94,6 +97,7 @@ class HomeController extends Controller
             'posts'                 => $posts,
             'cat_parents'           => $cat_parents,
             'list_post_sidebar'     => $list_post_sidebar,
+            'banners' => $banners,
             'category_active'       => $category_active,
             'danhsachdichvu_footer' => $danhsachdichvu_footer,
         ]);
@@ -108,13 +112,15 @@ class HomeController extends Controller
            return \abort(404);
         }
         $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
-        $list_post_sidebar = Post::where('status', 1)->orderBy('id', 'DESC')->limit(3)->get();
+        $list_post_sidebar = Post::where('status', 1)->whereNotIn('id', [$post->id])->orderBy('id', 'DESC')->limit(3)->get();
         $cat_parents = Category::where('status', 1)->where('parent_id', 0)->where('taxonomy', 1)->get();
+        $banners = Slider::where('location', 1)->where('status', 1)->inRandomOrder()->limit(2)->get();
         return \view('frontend.detail-post', [
             'danhmucbaiviet'        => $danhmucbaiviet,
             'post'                  => $post,
             'cat_parents'           => $cat_parents,
             'list_post_sidebar'     => $list_post_sidebar,
+            'banners' => $banners,
             'danhsachdichvu_footer' => $danhsachdichvu_footer,
         ]);
     }
@@ -149,7 +155,7 @@ class HomeController extends Controller
         ]);
     }
     public function contact_submit(Request $request){
-       
+
         $request->validate(
             [
                 'name'         => 'required|string|max:250',
@@ -192,13 +198,15 @@ class HomeController extends Controller
                                 ->orderby('id','asc')->get();
         $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
         $list_post_sidebar = Post::where('status', 1)->orderBy('id', 'DESC')->limit(3)->get();
+        $banner = Slider::where('location', 1)->where('status', 1)->inRandomOrder()->limit(1)->fisrt();
         return \view('frontend.detail-service',
-             [ 
+             [
                 'danhmucbaiviet'          => $danhmucbaiviet,
                 'danhsachdichvu'          => $danhsachdichvu,
                 'chitietdichvu'           => $chitietdichvu,
                 'danhsachdichvu_footer'   => $danhsachdichvu_footer,
                 'list_post_sidebar'       => $list_post_sidebar,
+                'banner' => $banner,
             ]);
     }
 }

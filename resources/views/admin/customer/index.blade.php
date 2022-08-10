@@ -1,4 +1,7 @@
 @extends('admin.layouts.main')
+@section('title')
+    <title>Khách hàng</title>
+@endsection
 @section('css')
     <link rel="stylesheet" href="/css/user.css">
 @endsection
@@ -146,8 +149,7 @@
                     url: "{{ route('customer.forceDelete') }}",
                     method: "POST",
                     data: data,
-                    dataType: "json",
-                    success: function(data) {
+                    success: function() {
                         $('#html-user-' + id).remove();
                     }
                 });

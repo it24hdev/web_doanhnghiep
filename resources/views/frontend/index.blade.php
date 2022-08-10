@@ -38,8 +38,8 @@
                     @endphp
                     @foreach ($sliders as $slider)
                      @php
-                            $e++;
-                        @endphp
+                        $e++;
+                    @endphp
                     <div class="carousel-item {{($e == 1) ? 'active' : ''}}">
                         <div class=" carousel_style  ">
                             <img src="{{asset('upload/images/slider/'.$slider->image)}}">
