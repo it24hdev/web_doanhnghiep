@@ -10,6 +10,7 @@
     @include('frontend.layouts.header-home')
 @endsection
 
+
 @section('menu-mobile')
     @include('frontend.layouts.menu-mobile')
 @endsection
@@ -36,8 +37,8 @@
                         $e=0;
                     @endphp
                     @foreach ($sliders as $slider)
-                    @php
-                         $e++;
+                     @php
+                        $e++;
                     @endphp
                     <div class="carousel-item {{($e == 1) ? 'active' : ''}}">
                         <div class=" carousel_style  ">
@@ -56,11 +57,11 @@
                     </button>
                 </div>
                 <div class="background_header_shadow"></div>
-         <div class="header_phone"><a  href="tel:800-555-6789">Đăng ký ngay!</a></div>
+         <div class="header_phone" style="display:none;"><a  href="tel:800-555-6789">Đăng ký ngay!</a></div>
             </div>
 
         </div>
-
+         
     </div>
 @endsection
 
@@ -219,7 +220,7 @@
                             </div>
                             <div class="desc-2">
                                 Với đội ngũ giảng viên nhiều năm kinh nghiệp, các học viên tham gia khóa học sẽ tự tin sử dụng và giao tiếp bằng tiếng Trung.
-                                Cùng với đó là kỹ năng sử dụng máy tính văn phòng nâng cao. Kết thúc khóa học với nhiều cơ hội việc làm nước ngoài thu nhập cao, chi phí 0 đồng.
+                                Cũng với đó là kỹ năng sử dụng máy tính văn phòng nâng cao. Kết thúc khóa học với nhiều cơ hội việc làm nước ngoài thu nhập cao, chi phí 0 đồng.
                             </div>
                             <div class="wp-icon">
                                 <div class="icon">
@@ -280,7 +281,7 @@
                     <div class="wp-detail">
                         <h4>Nâng tầm giá trị</h4>
                         <h2>Chúng tôi đã hỗ trợ nhiều học viên <strong>nâng cao ngôn ngữ tiếng Trung</strong> và bắt đầu công việc với <strong>thu nhập mong muốn</strong></h2>
-                        <a href="{{route('contact')}}">Liên hệ với chúng tôi</a>
+                        <a href="">Liên hệ với chúng tôi</a>
                     </div>
                 </div>
             </div>
@@ -294,30 +295,55 @@
                 </div>
                 <div class="wp-content-post">
                     <div class="list-post owl-carousel">
-                        @foreach ($posts as $post)
-                            <div class="wp-post">
-                                <div class="image">
-                                    <a href="{{route('detail-post', $post->slug)}}" class="img">
-                                        <img src="{{asset('upload/images/post/medium/'.$post->thumb)}}" alt="">
-                                    </a>
-                                    @foreach($post->category as $cat)
-                                        <a href="{{route('list-post_cat', $cat->slug)}}" class="cat-post me-2">{{$cat->name}}</a>
-                                    @endforeach
-                                </div>
-                                <div class="wp-detail">
-                                    <div class="time"><i class="far fa-calendar-alt me-2"></i>{{\App\Helpers\CommonHelper::convertDateToDMY($post->created_at)}}</div>
-                                    <a href="{{route('detail-post', $post->slug)}}" class="title">{{$post->title}}</a>
-                                    <div class="desc">
-                                        {{ $post->excerpt }}
-                                    </div>
+                        <div class="wp-post">
+                            <div class="image">
+                                <a href="" class="img">
+                                    <img src="{{asset('asset/images/post-one-720x630.jpg')}}" alt="">
+                                </a>
+                                <a href="" class="cat-post">Danh mục 1</a>
+                            </div>
+                            <div class="wp-detail">
+                                <div class="time">08/08/2022</div>
+                                <a href="" class="title">How to ensure a direct hassle-free visa application</a>
+                                <div class="desc">
+                                    There are full service engage company is to provide solution for employees needs trai...
                                 </div>
                             </div>
-                        @endforeach
-
+                        </div>
+                        <div class="wp-post">
+                            <div class="image">
+                                <a href="" class="img">
+                                    <img src="{{asset('asset/images/post-three-720x630.jpg')}}" alt="">
+                                </a>
+                                <a href="" class="cat-post">Danh mục 2</a>
+                            </div>
+                            <div class="wp-detail">
+                                <div class="time">08/08/2022</div>
+                                <a href="" class="title">How to ensure a direct hassle-free visa application</a>
+                                <div class="desc">
+                                    There are full service engage company is to provide solution for employees needs trai...
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wp-post">
+                            <div class="image">
+                                <a href="" class="img">
+                                    <img src="{{asset('asset/images/post-one-720x630.jpg')}}" alt="">
+                                </a>
+                                <a href="" class="cat-post">Danh mục 3</a>
+                            </div>
+                            <div class="wp-detail">
+                                <div class="time">08/08/2022</div>
+                                <a href="" class="title">How to ensure a direct hassle-free visa application</a>
+                                <div class="desc">
+                                    There are full service engage company is to provide solution for employees needs trai...
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="text">Hãy liên hệ với chúng tôi để nhận được trợ giúp tốt nhất! <a href="{{route('list-post')}}">Xem thêm tin tức</a></div>
+            <div class="text">Hãy liên hệ với chúng tôi để nhận được trợ giúp tốt nhất! <a href="">Xem thêm tin tức</a></div>
         </div>
     </div>
 @endsection
