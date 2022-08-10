@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title',300)->unique();
-            $table->string('slug',300);
+            $table->string('slug',300)->unique();
             $table->text('excerpt')->nullable();
             $table->longText('content')->nullable();
             $table->string('thumb',300)->default('no-images.jpg')->nullable();

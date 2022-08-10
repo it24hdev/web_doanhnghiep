@@ -479,6 +479,8 @@
 .wp-content-post .list-post .wp-post{
     box-shadow: 0px 0px 10px 0px rgb(43 52 59 / 10%);
     border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #fff;
 }
 .wp-list-post .wp-content-post .list-post .wp-post .image a.img{
     display: block;

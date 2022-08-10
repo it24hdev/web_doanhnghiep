@@ -9,17 +9,22 @@ use App\Http\Controllers\User\AdminController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Slider\SliderController;
 use App\Http\Controllers\Post\PostController;
+use App\Http\Controllers\Customer\CustomerController;
 use App\Http\Controllers\Categorypost\CategorypostController;
 use App\Http\Controllers\Service\PostController2;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/tin-tuc', [HomeController::class, 'list_post'])->name('list-post');
-Route::get('/tin-tuc/detail', [HomeController::class, 'detail_post'])->name('detail-post');
+Route::get('/tin-tuc/{slug}', [HomeController::class, 'list_post_cat'])->name('list-post_cat');
+Route::get('/{slug}.html', [HomeController::class, 'detail_post'])->name('detail-post');
 Route::get('/dich-vu', [HomeController::class, 'list_service'])->name('list-service');
 Route::get('/dich-vu/detail', [HomeController::class, 'detail_service'])->name('detail-service');
 Route::get('/lien-he', [HomeController::class, 'contact'])->name('contact');
+Route::post('/lien-he', [HomeController::class, 'contact_submit'])->name('contact_submit');
 Auth::routes();
-
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
 /* ========== ADMIN =========== */
 
 Route::group(['middleware' => ['auth']], function () {
@@ -97,5 +102,11 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/update/{id}', [PostController2::class, 'update'])->name('post2.update');
         Route::post('/delete', [PostController2::class, 'destroy'])->name('post2.delete');
         Route::post('/delete-img', [PostController2::class, 'deleteImg'])->name('post2.deleteImg');
+    });
+
+    /* ------- CUSTOMER ------------ */
+    Route::prefix('admin/customer')->group(function () {
+        Route::get('/list', [CustomerController::class, 'index'])->name('customer.list');
+        Route::post('/force-delete', [CustomerController::class, 'forceDelete'])->name('customer.forceDelete');
     });
 });

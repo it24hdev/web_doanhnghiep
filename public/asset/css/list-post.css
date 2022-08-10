@@ -189,6 +189,7 @@ ul li .wp-post .wp-detail .wp-action .social{
 }
 .wp-detail .wp-action .social ul li{
     padding-right: 10px;
+    box-shadow: none;
 }
 .wp-detail .wp-action .social ul li a{
     display: block;
@@ -307,6 +308,10 @@ ul li .wp-post .wp-detail .wp-action .social{
     display: block;
     padding: 12px 0;
     color: #1d2143;
+    font-weight: 500;
+}
+.content-right .list-cat ul li a.active{
+    color: #0067ed;
 }
 .content-right .list-cat ul li a:hover{
     color: #0073e1;

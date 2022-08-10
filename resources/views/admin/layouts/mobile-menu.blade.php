@@ -1,7 +1,7 @@
 <div class="mobile-menu md:hidden">
     <div class="mobile-menu-bar">
         <a href="{{ route('dashboard') }}" class="flex mr-auto">
-            <img alt="" class="w-6" src="/upload/images/common_img/logo.svg">
+            <img alt="" class="w-6"  style="width:150px; height:auto;" src="{{asset('asset/images/logo.png')}}">
         </a>
         <a href="javascript:;" id="mobile-menu-toggler"> <i data-feather="bar-chart-2"
                 class="w-8 h-8 text-white transform -rotate-90"></i> </a>
@@ -18,7 +18,7 @@
                     <div class="menu__sub-icon transform rotate-180"></div>
                 </div>
             </a>
-        {{-- </li>
+        </li>
         <li>
             <a href="javascript:;" class="menu {{ $module_active == 'post' ? 'menu--active' : '' }}">
                 <div class="menu__icon"> <i data-feather="file-text"></i> </div>
@@ -55,38 +55,49 @@
                         </a>
                     </li>
                 @endcan
-                @can('viewPost', App\Models\Vote::class)
-                    <li>
-                        <a href="{{ route('vote.indexPost') }}" class="menu">
-                            <div class="menu__icon"> <i data-feather="activity"></i> </div>
-                            <div class="menu__title"> Đánh giá</div>
-                        </a>
-                    </li>
-                @endcan
             </ul>
         </li>
         <li>
-            <a href="javascript:;" class="menu {{ $module_active == 'category' ? 'menu--active' : '' }}">
-                <div class="menu__icon"> <i data-feather="edit"></i> </div>
+            <a href="javascript:;" class="menu {{ $module_active == 'service' ? 'menu--active' : '' }}">
+                <div class="menu__icon"> <i data-feather="award"></i> </div>
                 <div class="menu__title">
-                    Danh mục
+                    Dịch vụ
                     <div class="menu__sub-icon "> <i
-                            data-feather="{{ $module_active == 'category' ? 'chevron-up' : 'chevron-down' }}"
-                            class="{{ $module_active == 'category' ? 'menu__sub-icon transform rotate-180' : '' }}"></i>
+                            data-feather="{{ $module_active == 'service' ? 'chevron-up' : 'chevron-down' }}"
+                            class="{{ $module_active == 'service' ? 'menu__sub-icon transform rotate-180' : '' }}"></i>
                     </div>
                 </div>
             </a>
-            <ul class="{{ $module_active == 'category' ? 'menu__sub-open' : '' }}">
-                @can('viewAny', App\Models\Category::class)
+            <ul class="{{ $module_active == 'service' ? 'menu__sub-open' : '' }}">
+                @can('view2', App\Models\Post::class)
                     <li>
-                        <a href="{{ route('category.index') }}" class="menu">
+                        <a href="{{ route('post2.index') }}" class="menu">
                             <div class="menu__icon"> <i data-feather="activity"></i> </div>
-                            <div class="menu__title"> Danh mục </div>
+                            <div class="menu__title"> Danh sách bài viết </div>
+                        </a>
+                    </li>
+                @endcan
+                @can('create2', App\Models\Post::class)
+                    <li>
+                        <a href="{{ route('post2.create') }}" class="menu">
+                            <div class="menu__icon"> <i data-feather="activity"></i> </div>
+                            <div class="menu__title"> Thêm mới </div>
                         </a>
                     </li>
                 @endcan
             </ul>
         </li>
+        @can('view', App\Models\Post::class)
+        <li>
+            <a href="{{ route('customer.list') }}" class="menu {{ $module_active == 'customer' ? 'menu--active' : '' }}">
+                <div class="menu__icon"> <i data-feather="home"></i> </div>
+                <div class="menu__title">
+                    Khách hàng
+                    <div class="menu__sub-icon transform rotate-180"></div>
+                </div>
+            </a>
+        </li>
+        @endcan
         <li>
             <a href="javascript:;" class="menu {{ $module_active == 'slider' ? 'menu--active' : '' }}">
                 <div class="menu__icon"> <i data-feather="layout"></i> </div>
@@ -146,7 +157,6 @@
                     </li>
                 @endcan
             </ul>
-
         </li>
         <li>
             <a href="javascript:;" class="menu {{ $module_active == 'role' ? 'menu--active' : '' }}">
@@ -177,6 +187,6 @@
                     </li>
                 @endcan
             </ul>
-        </li> --}}
+        </li>
     </ul>
 </div>

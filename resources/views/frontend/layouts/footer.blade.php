@@ -32,39 +32,20 @@
                         <div class="wp-post">
                             <h3 class="title">Tin Tức Mới</h3>
                             <ul>
-                                <li>
-                                    <a href="">
-                                        <div class="thumb-post">
-                                            <img src="{{asset('asset/images/post-one-150x150.jpg')}}" alt="">
-                                        </div>
-                                        <div class="info-post">
-                                            <span class="time"><i class="fal fa-calendar-alt me-2"></i> 08/08/2022</span>
-                                            <h4 class="title">Beat the peak with these top visa application tips!</h4>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <div class="thumb-post">
-                                            <img src="{{asset('asset/images/post-one-150x150.jpg')}}" alt="">
-                                        </div>
-                                        <div class="info-post">
-                                            <span class="time"><i class="fal fa-calendar-alt me-2"></i> 08/08/2022</span>
-                                            <h4 class="title">Beat the peak with these top visa application tips!</h4>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <div class="thumb-post">
-                                            <img src="{{asset('asset/images/post-one-150x150.jpg')}}" alt="">
-                                        </div>
-                                        <div class="info-post">
-                                            <span class="time"><i class="fal fa-calendar-alt me-2"></i> 08/08/2022</span>
-                                            <h4 class="title">Beat the peak with these top visa application tips!</h4>
-                                        </div>
-                                    </a>
-                                </li>
+                                @foreach ($list_post_sidebar as $item)
+                                    <li>
+                                        <a href="{{route('detail-post', $item->slug)}}">
+                                            <div class="thumb-post">
+                                                <img src="{{asset('upload/images/post/thumb/'.$item->thumb)}}" alt="">
+                                            </div>
+                                            <div class="info-post">
+                                                <span class="time"><i class="fal fa-calendar-alt me-2"></i> {{\App\Helpers\CommonHelper::convertDateToDMY($item->created_at)}}</span>
+                                                <h4 class="title">{{$item->title}}</h4>
+                                            </div>
+                                        </a>
+                                    </li>
+                                @endforeach
+
                             </ul>
                         </div>
                         <div class="wp-userfull-links">

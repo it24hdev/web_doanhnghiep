@@ -22,7 +22,7 @@
                 <div class="breadcrumb-1">
                     <a href="{{route('home')}}">Trang chủ</a>/
                     <a href="{{route('list-post')}}">Tin tức</a>/
-                    <span>How to ensure a direct hassle-free visa application</span>
+                    <span>{{$post->title}}</span>
                 </div>
             </div>
         </div>
@@ -35,25 +35,21 @@
                     <div class="wp-post">
                         <div class="thumb">
                             <div class="img">
-                                <img src="{{asset('asset/images/post-one.jpg')}}" alt="">
+                                <img src="{{asset('upload/images/post/large/'.$post->thumb)}}" alt="">
                             </div>
                             <div class="time">
-                                08/08/2022
+                                <i class="far fa-calendar-alt me-2"></i>{{\App\Helpers\CommonHelper::convertDateToDMY($post->created_at)}}
                             </div>
                         </div>
                         <div class="wp-detail">
-                            <h3 class="title">How to ensure a direct hassle-free visa application</h3>
+                            <h3 class="title">{{$post->title}}</h3>
                             <div class="wp-cat-comment">
-                                <a href="" class="cat"><i class="fas fa-tags me-2"></i></i> Danh mục 1</a>
+                                @foreach($post->category as $cat)
+                                    <a href="" class="cat me-2"><i class="fas fa-tags me-2"></i></i> {{$cat->name}}</a>
+                                @endforeach
                             </div>
                             <div class="desc">
-                                There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
-                                There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
-                                There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
-                                There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
-                                There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
-                                There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
-                                There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
+                                {!! $post->content !!}
                             </div>
                             <div class="social">
                                 <ul>
@@ -67,61 +63,50 @@
                 </div>
                 <div class="content-right">
                     <div class="wp-search wp-box-sidebar">
-                        <form action="">
-                            <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                        <form action="{{route('list-post')}}">
+                            <input type="text" name="tim-kiem" class="form-control" placeholder="Tìm kiếm...">
                             <button><i class="fas fa-search"></i></button>
                         </form>
                     </div>
                     <div class="wp-box-sidebar list-cat">
                         <h3 class="header-box">Danh mục</h3>
                         <ul>
-                            <li><a href="">Danh mục 1</a></li>
-                            <li><a href="">Danh mục 2</a></li>
-                            <li><a href="">Danh mục 3</a></li>
-                            <li><a href="">Danh mục 4</a></li>
-                            <li><a href="">Danh mục 5</a></li>
+                            @foreach ($cat_parents as $cat)
+                                <li>
+                                    <a href="{{route('list-post_cat', $cat->slug)}}" class="@if(!empty($category_active) && ($category_active->id == $cat->id))
+                                        active
+                                        @endif">
+                                        {{$cat->name}}
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="wp-box-sidebar wp-post">
                         <h3 class="header-box">Bài viết mới nhất</h3>
                         <ul>
-                            <li>
-                                <a href="">
-                                    <div class="thumb-post">
-                                        <img src="{{asset('asset/images/post-one-150x150.jpg')}}" alt="">
-                                    </div>
-                                    <div class="info-post">
-                                        <span class="time"><i class="fal fa-calendar-alt me-2"></i> 08/08/2022</span>
-                                        <h4 class="title">Beat the peak with these top visa application tips!</h4>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="thumb-post">
-                                        <img src="{{asset('asset/images/post-one-150x150.jpg')}}" alt="">
-                                    </div>
-                                    <div class="info-post">
-                                        <span class="time"><i class="fal fa-calendar-alt me-2"></i> 08/08/2022</span>
-                                        <h4 class="title">Beat the peak with these top visa application tips!</h4>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="thumb-post">
-                                        <img src="{{asset('asset/images/post-one-150x150.jpg')}}" alt="">
-                                    </div>
-                                    <div class="info-post">
-                                        <span class="time"><i class="fal fa-calendar-alt me-2"></i> 08/08/2022</span>
-                                        <h4 class="title">Beat the peak with these top visa application tips!</h4>
-                                    </div>
-                                </a>
-                            </li>
+                            @foreach ($list_post_sidebar as $item)
+                                    <li>
+                                        <a href="{{route('detail-post', $item->slug)}}">
+                                            <div class="thumb-post">
+                                                <img src="{{asset('upload/images/post/thumb/'.$item->thumb)}}" alt="">
+                                            </div>
+                                            <div class="info-post">
+                                                <span class="time"><i class="fal fa-calendar-alt me-2"></i> {{\App\Helpers\CommonHelper::convertDateToDMY($item->created_at)}}</span>
+                                                <h4 class="title">{{$item->title}}</h4>
+                                            </div>
+                                        </a>
+                                    </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="wp-banner">
                         <ul>
+                            <li>
+                                <a href="tel:+84988758801">
+                                    <img src="{{asset('asset/images/sidebar-banner02.jpg')}}" alt="">
+                                </a>
+                            </li>
                             <li>
                                 <a href="tel:+84988758801">
                                     <img src="{{asset('asset/images/sidebar-banner02.jpg')}}" alt="">
