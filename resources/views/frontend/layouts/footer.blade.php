@@ -22,49 +22,27 @@
                         <div class="wp-services">
                             <h3 class="title">Dịch Vụ</h3>
                             <ul class="menu-footer">
-                                <li><a href=""><i class="fas fa-horizontal-rule me-2"></i>Dịch vụ 1</a></li>
-                                <li><a href=""><i class="fas fa-horizontal-rule me-2"></i>Dịch vụ 2</a></li>
-                                <li><a href=""><i class="fas fa-horizontal-rule me-2"></i>Dịch vụ 3</a></li>
-                                <li><a href=""><i class="fas fa-horizontal-rule me-2"></i>Dịch vụ 4</a></li>
-                                <li><a href=""><i class="fas fa-horizontal-rule me-2"></i>Dịch vụ 5</a></li>
+                                @foreach($danhsachdichvu_footer as $dsdv)
+                                <li><a href="{{route('detail-service',['slug' => $dsdv->slug])}}"><i class="fas fa-horizontal-rule me-2"></i>{{$dsdv->title}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="wp-post">
                             <h3 class="title">Tin Tức Mới</h3>
                             <ul>
+                                @foreach($danhsachbaiviet_footer as $dsbv)
                                 <li>
-                                    <a href="">
+                                    <a href="{{route('detail-post',['slug' => $dsbv->slug])}}">
                                         <div class="thumb-post">
-                                            <img src="{{asset('asset/images/post-one-150x150.jpg')}}" alt="">
+                                            <img src="{{asset('upload/images/post/'.$dsbv->thumb)}}" alt="">
                                         </div>
                                         <div class="info-post">
-                                            <span class="time"><i class="fal fa-calendar-alt me-2"></i> 08/08/2022</span>
-                                            <h4 class="title">Beat the peak with these top visa application tips!</h4>
+                                            <span class="time"><i class="fal fa-calendar-alt me-2"></i> {{\App\Helpers\CommonHelper::convertDateToDMY($dsbv->created_at)}}</span>
+                                            <h4 class="title">{{$dsbv->excerpt}}</h4>
                                         </div>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="">
-                                        <div class="thumb-post">
-                                            <img src="{{asset('asset/images/post-one-150x150.jpg')}}" alt="">
-                                        </div>
-                                        <div class="info-post">
-                                            <span class="time"><i class="fal fa-calendar-alt me-2"></i> 08/08/2022</span>
-                                            <h4 class="title">Beat the peak with these top visa application tips!</h4>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <div class="thumb-post">
-                                            <img src="{{asset('asset/images/post-one-150x150.jpg')}}" alt="">
-                                        </div>
-                                        <div class="info-post">
-                                            <span class="time"><i class="fal fa-calendar-alt me-2"></i> 08/08/2022</span>
-                                            <h4 class="title">Beat the peak with these top visa application tips!</h4>
-                                        </div>
-                                    </a>
-                                </li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="wp-userfull-links">

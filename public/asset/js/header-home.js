@@ -111,6 +111,8 @@ $(document).ready(function () {
 	}
 	$(window).scroll(runOnScroll);
 
+
+
 	 $(".adv_search_tab_item").on("click",function(){
         var item = $(".adv_search_tab_item");
         item.removeClass('active');
@@ -149,6 +151,9 @@ $(document).ready(function () {
 	    'right': (100 - calcLeftPosition(newValue)) + '%'
 	  });
 	});
-
+	$('#scroll_up').on("click",function(){
+		document.body.scrollTop = 0;
+  		document.documentElement.scrollTop = 0;
+	})
 
 });

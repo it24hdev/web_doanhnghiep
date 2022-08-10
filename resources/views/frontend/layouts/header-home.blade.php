@@ -211,4 +211,4 @@
         <span class="buy_link">Giá:<span>10.000.000</span></span>
     </a>
 </div>
-<a id="scroll_up" href="#top" class="top-visible"><i class="fal fa-angle-up"></i></a>
+<a id="scroll_up" class="top-visible"><i class="fal fa-angle-up"></i></a>
