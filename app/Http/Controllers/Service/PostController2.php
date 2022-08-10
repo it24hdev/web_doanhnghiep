@@ -95,6 +95,7 @@ class PostController2 extends Controller
             'thumb'     => $nameFile,
             'status'    => $status,
             'service'   => 1,
+            'icon'      => $request->icon,
             'user_id'   => Auth::id(),
         ];
 
@@ -201,6 +202,7 @@ class PostController2 extends Controller
                 'thumb'     => $nameFile,
                 'status'    => $status,
                 'service'   => 1,
+                'icon'      => $request->icon,
                 'user_id'   => Auth::id(),
             ];
 

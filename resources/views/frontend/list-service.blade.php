@@ -33,121 +33,23 @@
 
                     <div class="category">
                         <div class="wp-detail">
+                            @foreach($danhsachdichvu as $dsdv)
                             <div class="background-icon">
-                                <i class="fad fa-file-certificate"></i>
+                               {!! $dsdv->icon !!}
                             </div>
                             <div class="header-cat">
-                                <i class="fad fa-file-certificate"></i>
+                                {!! $dsdv->icon !!}
                             </div>
                             <div class="content-cat">
-                                <a href="">Đào tạo ngôn ngữ Trung Quốc</a>
+                                <a href="{{route('detail-service',['slug' => $dsdv->slug])}}">{{$dsdv->title}}</a>
                                 <div class="detail">
-                                    Đào tạo học viên kiến thức và giao tiếp tốt ngôn ngữ tiếng Trung từ cơ bản đến nâng cao.
+                                    {{$dsdv->excerpt}}
                                 </div>
                             </div>
                             <div class="bottom-cat">
-                                <a href="">Xem nội dung chi tiết</a>
+                                <a href="{{route('detail-service',['slug' => $dsdv->slug])}}">Xem nội dung chi tiết</a>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="category">
-                        <div class="wp-detail">
-                            <div class="background-icon">
-                                <i class="fad fa-certificate"></i>
-                            </div>
-                            <div class="header-cat">
-                                <i class="fad fa-certificate"></i>
-                            </div>
-                            <div class="content-cat">
-                                <a href="">Đào tạo Kỹ năng máy tính</a>
-                                <div class="detail">
-                                    Hỗ trợ học viên nắm được các kỹ năng máy tính văn phòng.
-                                </div>
-                            </div>
-                            <div class="bottom-cat">
-                                <a href="">Xem nội dung chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="category">
-                        <div class="wp-detail">
-                            <div class="background-icon">
-                                <i class="fal fa-user-graduate"></i>
-                            </div>
-                            <div class="header-cat">
-                                <i class="fal fa-user-graduate"></i>
-                            </div>
-                            <div class="content-cat">
-                                <a href="">Lao động tại nước ngoài</a>
-                                <div class="detail">
-                                    Hỗ trợ học viên tham gia lao động nước ngoài với chi phí 0 đồng.
-                                </div>
-                            </div>
-                            <div class="bottom-cat">
-                                <a href="">Xem nội dung chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="category">
-                        <div class="wp-detail">
-                            <div class="background-icon">
-                                <i class="fad fa-file-certificate"></i>
-                            </div>
-                            <div class="header-cat">
-                                <i class="fad fa-file-certificate"></i>
-                            </div>
-                            <div class="content-cat">
-                                <a href="">Đào tạo ngôn ngữ Trung Quốc</a>
-                                <div class="detail">
-                                    Đào tạo học viên kiến thức và giao tiếp tốt ngôn ngữ tiếng Trung từ cơ bản đến nâng cao.
-                                </div>
-                            </div>
-                            <div class="bottom-cat">
-                                <a href="">Xem nội dung chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="category">
-                        <div class="wp-detail">
-                            <div class="background-icon">
-                                <i class="fad fa-certificate"></i>
-                            </div>
-                            <div class="header-cat">
-                                <i class="fad fa-certificate"></i>
-                            </div>
-                            <div class="content-cat">
-                                <a href="">Đào tạo Kỹ năng máy tính</a>
-                                <div class="detail">
-                                    Hỗ trợ học viên nắm được các kỹ năng máy tính văn phòng.
-                                </div>
-                            </div>
-                            <div class="bottom-cat">
-                                <a href="">Xem nội dung chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="category">
-                        <div class="wp-detail">
-                            <div class="background-icon">
-                                <i class="fal fa-user-graduate"></i>
-                            </div>
-                            <div class="header-cat">
-                                <i class="fal fa-user-graduate"></i>
-                            </div>
-                            <div class="content-cat">
-                                <a href="">Lao động tại nước ngoài</a>
-                                <div class="detail">
-                                    Hỗ trợ học viên tham gia lao động nước ngoài với chi phí 0 đồng.
-                                </div>
-                            </div>
-                            <div class="bottom-cat">
-                                <a href="">Xem nội dung chi tiết</a>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

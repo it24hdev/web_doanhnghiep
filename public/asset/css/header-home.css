@@ -1529,6 +1529,14 @@ h3 {
     color: #fff;
     z-index: 99;
 }
+.editsubmenu_ul:hover ul{
+    top: 70px !important;
+}
+
+.editsubmenu_ul2:hover ul{
+    top: 0px !important;
+}
+
 @media only screen and (max-width: 1023px){
     .mobile_header {
         display: block;

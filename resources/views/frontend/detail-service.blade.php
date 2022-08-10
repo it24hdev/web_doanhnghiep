@@ -7,7 +7,7 @@
 @endsection
 
 @section('header')
-    {{-- @include('frontend.layouts.header-home') --}}
+    @include('frontend.layouts.header-home')
 @endsection
 
 @section('menu-mobile')

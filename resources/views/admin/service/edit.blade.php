@@ -45,6 +45,13 @@
                         value="{{ $post->status == true ? '1' : '0' }}" {{ $post->status == true ? 'checked' : ' ' }}>
                         </div>
                     </div>
+                    <div class="form-group mb-4">
+                        <label>Icon</label>
+                        <input type="text" class="form-control" name='icon' value=" {{old('icon') ?? $post->icon}}">
+                    </div>
+                     <div class="form-group mb-4">
+                        <a type="button" class="btn btn-primary" href="https://fontawesome.com/v5/search" target="_blank">Lấy icon</a>
+                     </div>
                     <div class="mt-3">
                         <label>Ảnh đại diện</label>
                         <div class="mt-2">
