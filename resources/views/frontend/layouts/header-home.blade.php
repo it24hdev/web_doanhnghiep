@@ -152,28 +152,30 @@
                                     Dịch vụ
                                 </a>
                             </li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-megamenu " id="menu-item-7999">
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-megamenu submenu_ul">
                                 <a class="menu-item-link" href="{{route('list-post')}}">
                                     Tin tức
                                 </a>
                                 <ul class=" sub-menu " style="">
                                     @foreach($danhmucbaiviet as $dmbv)
                                     @if($dmbv->parent_id == 0)
-                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children " id="menu-item-28320">
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children submenu_ul2" >
                                         <a class="menu-item-link" href="{!! route('list-post', ['slug' => $dmbv->slug]) !!}">
                                           {{$dmbv->name}}
                                         </a>
+                                        @if(count($dmbv->childs))
                                         <ul class=" sub-menu " style="">
                                              @foreach($danhmucbaiviet as $subdmbv)
                                              @if($subdmbv->parent_id == $dmbv->id)
                                             <li class="menu-item menu-item-type-post_type menu-item-object-page " id="menu-item-28330">
-                                                <a class="menu-item-link" href="#">
+                                                <a class="menu-item-link" href="{!! route('list-post', ['slug' => $subdmbv->slug]) !!}">
                                                      {{$subdmbv->name}}
                                                 </a>
                                             </li>
                                             @endif
                                             @endforeach
                                         </ul>
+                                        @endif
                                     </li>
                                     @endif
                                     @endforeach

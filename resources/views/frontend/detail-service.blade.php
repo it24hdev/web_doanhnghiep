@@ -7,7 +7,7 @@
 @endsection
 
 @section('header')
-    {{-- @include('frontend.layouts.header-home') --}}
+    @include('frontend.layouts.header-home')
 @endsection
 
 @section('menu-mobile')
@@ -15,14 +15,16 @@
 @endsection
 
 @section('content')
+   
     <div id="titlebar-inner-wrapper">
         <div class="container-content">
             <div class="wp-breadcrumb">
-                <h2>Đào tạo ngôn ngữ Trung Quốc</h2>
+
+                <h2>{{$chitietdichvu->title}}</h2>
                 <div class="breadcrumb-1">
                     <a href="{{route('home')}}">Trang chủ</a>/
                     <a href="{{route('list-post')}}">Dịch vụ</a>/
-                    <span>Đào tạo ngôn ngữ Trung Quốc</span>
+                    <span>{{$chitietdichvu->title}}</span>
                 </div>
             </div>
         </div>
@@ -40,13 +42,8 @@
                         </div>
                         <div class="wp-detail">
                             <div class="desc">
-                                There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
-                                There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
-                                There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
-                                There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
-                                There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
-                                There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
-                                There are full service engage company is to provide solution for employees needs training manage the entire HR department for companies. We offer comprehensive
+                               
+                               {!! $chitietdichvu->content !!}
                             </div>                           
                         </div>
                     </div>
@@ -55,9 +52,9 @@
                 <div class="content-right">
                     <div class="list-service">
                         <ul>
-                            <li><a href="" class="active">Đào tạo ngôn ngữ Trung Quốc <span><i class="fas fa-caret-right"></i></span></a></li>
-                            <li><a href="">Kỹ năng máy tính văn phòng <span><i class="fas fa-caret-right"></i></a></li>
-                            <li><a href="">Lao động nước ngoài <span><i class="fas fa-caret-right"></i></a></li>
+                            @foreach($danhsachdichvu  as $dsdv)
+                            <li><a href="{{route('detail-service',['slug' => $dsdv->slug])}}" class="active">{{$dsdv->title}}<span><i class="fas fa-caret-right"></i></span></a></li>
+                            @endforeach
                         </ul>
                     </div>
 

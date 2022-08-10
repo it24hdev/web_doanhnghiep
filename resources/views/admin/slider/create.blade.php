@@ -1,6 +1,11 @@
 @extends('admin.layouts.main')
+
 @section('title')
     <title>Slider</title>
+@endsection
+
+@section('css')
+    <script src="{{ asset('lib/tinymce/js/tinymce/tinymce.min.js') }}" referrerpolicy="origin"></script>
 @endsection
 @section('subcontent')
     <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
@@ -22,14 +27,11 @@
                         <label for="crud-form-1" class="form-label">Tiêu đề</label>
                         <input id="crud-form-1" type="text" name="name" value="{{old('name')}}" class="form-control w-full" placeholder="Nhập tiêu đề">
                     </div>
-                    <div class="mt-3">
+                    <div class="mt-3" style="display:none;">
                         <label for="crud-form-1" class="form-label">Tiêu đề phụ</label>
                         <input id="crud-form-1" type="text" name="subtitle" value="{{old('subtitle')}}" class="form-control w-full" placeholder="Nhập tiêu đề phụ">
                     </div>
-                    <div class="mt-3">
-                        <label for="crud-form-1" class="form-label">Mô tả</label>
-                        <input id="crud-form-1" type="text" name="description" value="{{old('description')}}" class="form-control w-full" placeholder="Nhập mô tả">
-                    </div>
+
                     <div class="mt-3">
                         <label for="crud-form-1" class="form-label">Link</label>
                         <input id="crud-form-1" type="text" name="link_target" value="{{old('link_target')}}" class="form-control w-full" placeholder="Nhập đường dẫn">
@@ -57,7 +59,7 @@
                             <div class="col-span-12 xl:col-span-4">
                                 <label>Trạng thái</label>
                                 <div class="mt-2">
-                                    <input type="checkbox" {{old('status') == 'on' ? 'checked' : false}} name="status" class="form-check-switch">
+                                    <input type="checkbox" name='status' checked="checked" class="form-check-switch">
                                 </div>
                             </div>
                         </div>
@@ -73,7 +75,10 @@
                             @enderror
                         </div>
                     </div>
-
+                    <div class="mt-3">
+                        <label for="crud-form-1" class="form-label">Mô tả</label>
+                        <textarea name="description" id="tiny-editor" rows="7">{{old('description')}}</textarea>
+                    </div>
                     <div class="text-right mt-5">
                         @can('view',\App\Models\Slider::class)
                             <a type="button" href="{{route('slider.index')}}" class="btn btn-outline-secondary w-24 mr-1">Hủy</a>
@@ -88,3 +93,7 @@
     </div>
 @endsection
 
+
+@section('js')
+    <script src="{{ asset('/js/post-form.js') }}"></script>
+@endsection

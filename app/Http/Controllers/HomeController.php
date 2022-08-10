@@ -7,7 +7,6 @@ use App\Models\Customer;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -25,6 +24,7 @@ class HomeController extends Controller
                 'list_post_sidebar' => $list_post_sidebar,
             ]);
     }
+
     public function list_post(Request $request){
         $searchValues = '';
         if($request->query('tim-kiem') !=""){
@@ -49,6 +49,7 @@ class HomeController extends Controller
             'list_post_sidebar'     => $list_post_sidebar,
         ]);
     }
+
     public function list_post_cat(Request $request, $slug){
         $cat = Category::where('slug', $slug)->first();
         if (empty($cat)) {
@@ -98,7 +99,15 @@ class HomeController extends Controller
     }
 
     public function list_service(){
-        return \view('frontend.list-service');
+        $danhsachdichvu = Post::where('status' , '=' , 1)
+                                ->where('service', '=' , 1)
+                                ->orderby('id','asc')->get();
+        $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
+        return \view('frontend.list-service',
+            [
+                'danhmucbaiviet'  => $danhmucbaiviet,
+                'danhsachdichvu'  => $danhsachdichvu,
+            ]);
     }
     public function contact(){
         $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
@@ -141,7 +150,17 @@ class HomeController extends Controller
         return \redirect()->route('contact')->with('success', 'Bạn đã gửi yêu cầu thành công!');
     }
 
-    public function detail_service(){
-        return \view('frontend.detail-service');
+    public function detail_service($slug){
+        $chitietdichvu  = Post::where('slug','=',$slug)->first();
+        $danhsachdichvu = Post::where('status' , '=' , 1)
+                                ->where('service', '=' , 1)
+                                ->orderby('id','asc')->get();
+        $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
+        return \view('frontend.detail-service',
+             [
+                'danhmucbaiviet'  => $danhmucbaiviet,
+                'danhsachdichvu'  => $danhsachdichvu,
+                'chitietdichvu'   => $chitietdichvu,
+            ]);
     }
 }
