@@ -5,9 +5,9 @@
             <!-- BEGIN: Login Info -->
             <div class="hidden xl:flex flex-col min-h-screen">
                 <a href="" class="-intro-x flex items-center pt-5">
-                    <img alt="" class="w-6"
-                        src="{{ asset('upload/images/common_img/logo.svg') }}">
-                    <span class="text-white text-lg ml-3"> Trung tâm ngoại ngữ Phương Đông </span>
+                    <img alt="" class="" style="width:200px; height:auto;"
+                        src="{{ asset('asset/images/logo.png') }}">
+                    {{-- <span class="text-white text-lg ml-3"> Trung tâm ngoại ngữ Phương Đông </span> --}}
                 </a>
                 <div class="my-auto">
                     <img alt="" class="-intro-x w-1/2 -mt-16" src="{{ asset('upload/images/common_img/illustration.svg') }}">

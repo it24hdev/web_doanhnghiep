@@ -10,7 +10,6 @@
     @include('frontend.layouts.header-home')
 @endsection
 
-
 @section('menu-mobile')
     @include('frontend.layouts.menu-mobile')
 @endsection
@@ -37,8 +36,8 @@
                         $e=0;
                     @endphp
                     @foreach ($sliders as $slider)
-                     @php
-                        $e++;
+                    @php
+                         $e++;
                     @endphp
                     <div class="carousel-item {{($e == 1) ? 'active' : ''}}">
                         <div class=" carousel_style  ">
@@ -57,11 +56,11 @@
                     </button>
                 </div>
                 <div class="background_header_shadow"></div>
-         <div class="header_phone" style="display:none;"><a  href="tel:800-555-6789">Đăng ký ngay!</a></div>
+         <div class="header_phone"><a  href="tel:800-555-6789">Đăng ký ngay!</a></div>
             </div>
 
         </div>
-         
+
     </div>
 @endsection
 
@@ -220,7 +219,7 @@
                             </div>
                             <div class="desc-2">
                                 Với đội ngũ giảng viên nhiều năm kinh nghiệp, các học viên tham gia khóa học sẽ tự tin sử dụng và giao tiếp bằng tiếng Trung.
-                                Cũng với đó là kỹ năng sử dụng máy tính văn phòng nâng cao. Kết thúc khóa học với nhiều cơ hội việc làm nước ngoài thu nhập cao, chi phí 0 đồng.
+                                Cùng với đó là kỹ năng sử dụng máy tính văn phòng nâng cao. Kết thúc khóa học với nhiều cơ hội việc làm nước ngoài thu nhập cao, chi phí 0 đồng.
                             </div>
                             <div class="wp-icon">
                                 <div class="icon">
@@ -281,7 +280,7 @@
                     <div class="wp-detail">
                         <h4>Nâng tầm giá trị</h4>
                         <h2>Chúng tôi đã hỗ trợ nhiều học viên <strong>nâng cao ngôn ngữ tiếng Trung</strong> và bắt đầu công việc với <strong>thu nhập mong muốn</strong></h2>
-                        <a href="">Liên hệ với chúng tôi</a>
+                        <a href="{{route('contact')}}">Liên hệ với chúng tôi</a>
                     </div>
                 </div>
             </div>
@@ -318,7 +317,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text">Hãy liên hệ với chúng tôi để nhận được trợ giúp tốt nhất! <a href="">Xem thêm tin tức</a></div>
+            <div class="text">Hãy liên hệ với chúng tôi để nhận được trợ giúp tốt nhất! <a href="{{route('list-post')}}">Xem thêm tin tức</a></div>
         </div>
     </div>
 @endsection
