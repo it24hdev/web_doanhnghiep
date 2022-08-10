@@ -56,7 +56,7 @@
                     </button>
                 </div>
                 <div class="background_header_shadow"></div>
-         <div class="header_phone"><a  href="tel:800-555-6789">Đăng ký ngay!</a></div>
+         <div class="header_phone" style="display: none;"><a  href="tel:800-555-6789">Đăng ký ngay!</a></div>
             </div>
 
         </div>

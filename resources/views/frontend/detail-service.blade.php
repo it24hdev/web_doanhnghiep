@@ -15,7 +15,7 @@
 @endsection
 
 @section('content')
-   
+
     <div id="titlebar-inner-wrapper">
         <div class="container-content">
             <div class="wp-breadcrumb">
@@ -37,14 +37,14 @@
                     <div class="wp-post">
                         <div class="thumb">
                             <div class="img">
-                                <img src="{{asset('asset/images/post-one.jpg')}}" alt="">
+                                <img src="{{asset('upload/images/post/large/'.$chitietdichvu->thumb)}}" alt="">
                             </div>
                         </div>
                         <div class="wp-detail">
                             <div class="desc">
-                               
+
                                {!! $chitietdichvu->content !!}
-                            </div>                           
+                            </div>
                         </div>
                     </div>
 
@@ -61,8 +61,8 @@
                     <div class="wp-banner">
                         <ul>
                             <li>
-                                <a href="tel:+84988758801">
-                                    <img src="{{asset('asset/images/sidebar-banner02.jpg')}}" alt="">
+                                <a href="{{$banner->link_target}}">
+                                    <img src="{{asset('upload/images/slider/'.$banner->image)}}" alt="">
                                 </a>
                             </li>
                         </ul>

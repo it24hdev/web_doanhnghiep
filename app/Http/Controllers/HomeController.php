@@ -18,8 +18,8 @@ class HomeController extends Controller
                                 ->orderby('id','asc')->limit(5)->get();
         $danhmucbaiviet    = Category::where('status','=',1)->orderby('id','asc')->get();
         $sliders = DB::table('sliders')->where('location',2)->where('status', 1)->orderBy('position', 'ASC')->get();
-        $posts   = Post::where('status', 1)->orderBy('id', 'DESC')->limit(5)->get();
-        $list_post_sidebar = Post::where('status', 1)->orderBy('id', 'DESC')->limit(3)->get();
+        $posts   = Post::where('status', 1)->where('service', 2)->orderBy('id', 'DESC')->limit(5)->get();
+        $list_post_sidebar = Post::where('status', 1)->where('service', 2)->orderBy('id', 'DESC')->limit(3)->get();
         return view('frontend.index',
             [
                 'danhmucbaiviet'        => $danhmucbaiviet,
@@ -39,8 +39,8 @@ class HomeController extends Controller
             $searchValues = preg_split('/\s+/', $request->query('tim-kiem'), -1, PREG_SPLIT_NO_EMPTY);
         }
         $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
-        $list_post_sidebar = Post::where('status', 1)->orderBy('id', 'DESC')->limit(3)->get();
-        $posts = Post::where('status', 1)->orderBy('id', 'DESC')
+        $list_post_sidebar = Post::where('status', 1)->where('service', 2)->orderBy('id', 'DESC')->limit(3)->get();
+        $posts = Post::where('status', 1)->where('service', 2)->orderBy('id', 'DESC')
         ->where(function ($q) use ($searchValues) {
             if($searchValues!="")
               foreach ($searchValues as $value) {
@@ -76,7 +76,7 @@ class HomeController extends Controller
             $searchValues = preg_split('/\s+/', $request->query('tim-kiem'), -1, PREG_SPLIT_NO_EMPTY);
         }
         $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
-        $list_post_sidebar = Post::where('status', 1)->orderBy('id', 'DESC')->limit(3)->get();
+        $list_post_sidebar = Post::where('status', 1)->where('service', 2)->orderBy('id', 'DESC')->limit(3)->get();
         $posts = Post::where('status', 1)->orderBy('id', 'DESC')->whereIn('id', $list_id)
         ->where(function ($q) use ($searchValues) {
             if($searchValues!="")
@@ -107,12 +107,12 @@ class HomeController extends Controller
         $danhsachdichvu_footer = Post::where('status' , '=' , 1)
                                 ->where('service', '=' , 1)
                                 ->orderby('id','asc')->limit(5)->get();
-        $post = Post::where('slug', $slug)->first();
+        $post = Post::where('slug', $slug)->where('service', 2)->first();
         if(empty($post)){
            return \abort(404);
         }
         $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
-        $list_post_sidebar = Post::where('status', 1)->whereNotIn('id', [$post->id])->orderBy('id', 'DESC')->limit(3)->get();
+        $list_post_sidebar = Post::where('status', 1)->where('service', 2)->whereNotIn('id', [$post->id])->orderBy('id', 'DESC')->limit(3)->get();
         $cat_parents = Category::where('status', 1)->where('parent_id', 0)->where('taxonomy', 1)->get();
         $banners = Slider::where('location', 1)->where('status', 1)->inRandomOrder()->limit(2)->get();
         return \view('frontend.detail-post', [
@@ -192,13 +192,13 @@ class HomeController extends Controller
         $danhsachdichvu_footer = Post::where('status' , '=' , 1)
                                 ->where('service', '=' , 1)
                                 ->orderby('id','asc')->limit(5)->get();
-        $chitietdichvu  = Post::where('slug','=',$slug)->first();
+        $chitietdichvu  = Post::where('slug',$slug)->first();
         $danhsachdichvu = Post::where('status' , '=' , 1)
                                 ->where('service', '=' , 1)
                                 ->orderby('id','asc')->get();
         $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
         $list_post_sidebar = Post::where('status', 1)->orderBy('id', 'DESC')->limit(3)->get();
-        $banner = Slider::where('location', 1)->where('status', 1)->inRandomOrder()->limit(1)->fisrt();
+        $banner = Slider::where('location', 1)->where('status', 1)->inRandomOrder()->first();
         return \view('frontend.detail-service',
              [
                 'danhmucbaiviet'          => $danhmucbaiviet,
