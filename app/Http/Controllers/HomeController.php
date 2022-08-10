@@ -20,18 +20,23 @@ class HomeController extends Controller
             ]);
     }
     public function list_post(){
-        return \view('frontend.list-post');
+        $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
+        return \view('frontend.list-post',[  'danhmucbaiviet'  => $danhmucbaiviet]);
     }
     public function list_service(){
-        return \view('frontend.list-service');
+        $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
+        return \view('frontend.list-service',[  'danhmucbaiviet'  => $danhmucbaiviet]);
     }
     public function contact(){
-        return \view('frontend.contact');
+        $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
+        return \view('frontend.contact',[  'danhmucbaiviet'  => $danhmucbaiviet]);
     }
     public function detail_post(){
-        return \view('frontend.detail-post');
+        $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
+        return \view('frontend.detail-post',[  'danhmucbaiviet'  => $danhmucbaiviet]);
     }
     public function detail_service(){
-        return \view('frontend.detail-service');
+        $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
+        return \view('frontend.detail-service',[  'danhmucbaiviet'  => $danhmucbaiviet]);
     }
 }

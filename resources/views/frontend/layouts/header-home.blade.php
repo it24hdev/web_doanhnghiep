@@ -148,7 +148,7 @@
                                 </a>
                             </li>
                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-megamenu " id="menu-item-7999">
-                                <a class="menu-item-link" href="{{-- {{route('list-service')}} --}}#">
+                                <a class="menu-item-link" href="{{route('list-service')}}">
                                     Dịch vụ
                                 </a>
                             </li>
@@ -167,7 +167,7 @@
                                              @foreach($danhmucbaiviet as $subdmbv)
                                              @if($subdmbv->parent_id == $dmbv->id)
                                             <li class="menu-item menu-item-type-post_type menu-item-object-page " id="menu-item-28330">
-                                                <a class="menu-item-link" href="#">
+                                                <a class="menu-item-link" href="{!! route('list-post', ['slug' => $subdmbv->slug]) !!}">
                                                      {{$subdmbv->name}} 
                                                 </a>
                                             </li>
@@ -180,7 +180,7 @@
                                 </ul>
                             </li>
                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-megamenu " id="menu-item-7999">
-                                <a class="menu-item-link" href="#">
+                                <a class="menu-item-link" href="{{route('contact')}}">
                                     Liên hệ
                                 </a>
                             </li>
