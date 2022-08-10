@@ -62,8 +62,6 @@ class HomeController extends Controller
                 'danhmucbaiviet'          => $danhmucbaiviet,
                 'danhsachdichvu'          => $danhsachdichvu,
                 'chitietdichvu'           => $chitietdichvu,
-                'danhsachdichvu_footer'   => $danhsachdichvu_footer,
-                'danhsachbaiviet_footer'  => $danhsachbaiviet_footer,
             ]);
     }
 }

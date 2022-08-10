@@ -106,7 +106,7 @@
                 <div class="list-category owl-carousel owl-theme" id="list-category">
                     <div class="category">
                         <div class="wp-detail">
-                            @foreach($danhsachdichvu_footer as $dsdv)
+                            @foreach($danhsachdichvu as $dsdv)
                             <div class="background-icon">
                                 {!! $dsdv->icon !!}
                             </div>

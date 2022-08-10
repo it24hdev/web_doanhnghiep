@@ -21,16 +21,16 @@
                         </div>
                         <div class="wp-services">
                             <h3 class="title">Dịch Vụ</h3>
-                            <ul class="menu-footer">
-                                @foreach($danhsachdichvu_footer as $dsdv)
+                           {{--  <ul class="menu-footer">
+                                @foreach($danhsachdichvu as $dsdv)
                                 <li><a href="{{route('detail-service',['slug' => $dsdv->slug])}}"><i class="fas fa-horizontal-rule me-2"></i>{{$dsdv->title}}</a></li>
                                 @endforeach
-                            </ul>
+                            </ul> --}}
                         </div>
                         <div class="wp-post">
                             <h3 class="title">Tin Tức Mới</h3>
                             <ul>
-                                @foreach($danhsachbaiviet_footer as $dsbv)
+                               {{--  @foreach($danhsachbaiviet as $dsbv)
                                 <li>
                                     <a href="{{route('detail-post',['slug' => $dsbv->slug])}}">
                                         <div class="thumb-post">
@@ -42,7 +42,7 @@
                                         </div>
                                     </a>
                                 </li>
-                                @endforeach
+                                @endforeach --}}
                             </ul>
                         </div>
                         <div class="wp-userfull-links">
