@@ -43,8 +43,17 @@ class HomeController extends Controller
         $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
         return \view('frontend.detail-post',[  'danhmucbaiviet'  => $danhmucbaiviet]);
     }
-    public function detail_service(){
+    public function detail_service($slug){
+        $chitietdichvu  = Post::where('slug','=',$slug)->first();
+        $danhsachdichvu = Post::where('status' , '=' , 1)
+                                ->where('service', '=' , 1)
+                                ->orderby('id','asc')->get();
         $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
-        return \view('frontend.detail-service',[  'danhmucbaiviet'  => $danhmucbaiviet]);
+        return \view('frontend.detail-service',
+             [ 
+                'danhmucbaiviet'  => $danhmucbaiviet,
+                'danhsachdichvu'  => $danhsachdichvu,
+                'chitietdichvu'   => $chitietdichvu,
+            ]);
     }
 }
