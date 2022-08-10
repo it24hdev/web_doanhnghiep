@@ -1,4 +1,7 @@
 @extends('admin.layouts.main')
+@section('css')
+    <script src="{{ asset('lib/tinymce/js/tinymce/tinymce.min.js') }}" referrerpolicy="origin"></script>
+@endsection
 @section('subcontent')
     <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
         <h2 class="text-lg font-medium mr-auto">
@@ -19,13 +22,9 @@
                         <label for="crud-form-1" class="form-label">Tiêu đề</label>
                         <input id="crud-form-1" type="text" name="name" value="{{old('name') ?? $slider->name}}" class="form-control w-full" placeholder="Nhập tiêu đề">
                     </div>
-                    <div class="mt-3">
+                    <div class="mt-3" style="display:none">
                         <label for="crud-form-1" class="form-label">Tiêu đề phụ</label>
                         <input id="crud-form-1" type="text" name="subtitle" value="{{old('subtitle') ?? $slider->subtitle}}" class="form-control w-full" placeholder="Nhập tiêu đề phụ">
-                    </div>
-                    <div class="mt-3">
-                        <label for="crud-form-1" class="form-label">Mô tả</label>
-                        <input id="crud-form-1" type="text" name="description" value="{{old('description') ?? $slider->description}}" class="form-control w-full" placeholder="Nhập mô tả">
                     </div>
                     <div class="mt-3">
                         <label for="crud-form-1" class="form-label">Link</label>
@@ -54,7 +53,7 @@
                             <div class="col-span-12 xl:col-span-4">
                                 <label>Trạng thái</label>
                                 <div class="mt-2">
-                                    <input type="checkbox" name="status" {{(old('status') == 'on' || $slider->status == \App\Models\Slider::ACTIVE) ? 'checked' : false}} class="form-check-switch">
+                                   <input type="checkbox" class="form-check-switch" name='status' value="{{$slider->status == true ? '1' : '0'}}" {{$slider->status == true ? 'checked' : ' '}}>
                                 </div>
                             </div>
                         </div>
@@ -79,6 +78,10 @@
                             @enderror
                         </div>
                     </div>
+                     <div class="mt-3">
+                        <label for="crud-form-1" class="form-label">Mô tả</label>
+                            <textarea name="description" id="tiny-editor" rows="7">{{old('description') ?? $slider->description}}</textarea>
+                    </div>
 
                     <div class="text-right mt-5">
                         @can('view',\App\Models\Slider::class)
@@ -95,6 +98,7 @@
 @endsection
 
 @section('js')
+<script src="{{ asset('/js/post-form.js') }}"></script>
     <script>
         $(document).ready(function () {
             $(document).on("click", ".btn-delete-img", function(e) {
@@ -123,4 +127,3 @@
         })
     </script>
 @endsection
-

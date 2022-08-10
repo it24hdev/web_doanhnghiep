@@ -18,11 +18,7 @@ class SliderController extends Controller
             return $next($request);
         });
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index(Request $request)
     {
         $this->authorize('view',Slider::class);
@@ -46,11 +42,6 @@ class SliderController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $this->authorize('create',Slider::class);
@@ -60,23 +51,17 @@ class SliderController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $this->authorize('create',Slider::class);
         $request->validate(
             [
                 'position' => 'nullable|integer',
-                'image' =>'image|mimes:jpeg,jpg,png|mimetypes:image/jpeg,image/png,image/jpg|max:50048',
+                'image'    =>'image|mimes:jpeg,jpg,png|mimetypes:image/jpeg,image/png,image/jpg|max:50048',
             ],
             [
                 'position.integer' => 'Thứ tự hiển thị phải nhập số',
-                'image.image' => 'Ảnh Slider không đúng định dạng! (jpg, jpeg, png)',
+                'image.image'      => 'Ảnh Slider không đúng định dạng! (jpg, jpeg, png)',
             ]
         );
 
@@ -90,13 +75,15 @@ class SliderController extends Controller
             $nameFile = time().'.'.$request->image->extension();
         }
         $input = [
-            'name'=> $request->name,
-            'location'=> $request->location,
+            'name'       => $request->name,
+            'location'   => $request->location,
             'link_target'=> $request->link_target,
-            'image'=> $nameFile,
-            'user_id'=> Auth::id(),
-            'position' => $request->position,
-            'status'=> $status
+            'image'      => $nameFile,
+            'user_id'    => Auth::id(),
+            'position'   => $request->position,
+            'status'     => $status,
+            'subtitle'   => $request->subtitle,
+            'description'=> $request->description,
         ];
 
         try {
@@ -114,23 +101,6 @@ class SliderController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $this->authorize('update',Slider::class);
@@ -139,31 +109,24 @@ class SliderController extends Controller
             \abort(404);
         else{
             return view('admin.slider.edit',[
-                'title' => 'Sửa Slider',
+                'title'       => 'Sửa Slider',
                 'arrLocation' => Slider::$arr_location,
-                'slider' => $slider
+                'slider'      => $slider
             ]);
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $this->authorize('update',Slider::class);
         $request->validate(
             [
                 'position' => 'nullable|integer',
-                'image' =>'image|mimes:jpeg,jpg,png|mimetypes:image/jpeg,image/png,image/jpg|max:50048',
+                'image'    =>'image|mimes:jpeg,jpg,png|mimetypes:image/jpeg,image/png,image/jpg|max:50048',
             ],
             [
                 'position.integer' => 'Thứ tự hiển thị phải nhập số',
-                'image.image' => 'Ảnh Slider không đúng định dạng! (jpg, jpeg, png)',
+                'image.image'      => 'Ảnh Slider không đúng định dạng! (jpg, jpeg, png)',
             ]
         );
         $slider = Slider::find($id);
@@ -181,13 +144,15 @@ class SliderController extends Controller
             /** Update bản ghi */
 
             $input = [
-                'name'=> $request->name,
-                'location'=> $request->location,
+                'name'       => $request->name,
+                'location'   => $request->location,
                 'link_target'=> $request->link_target,
-                'image'=> $nameFile,
-                'user_id'=> Auth::id(),
-                'position' => $request->position,
-                'status'=> $status
+                'image'      => $nameFile,
+                'user_id'    => Auth::id(),
+                'position'   => $request->position,
+                'status'     => $status,
+                'subtitle'   => $request->subtitle,
+                'description'=> $request->description,
             ];
 
             try {
@@ -213,12 +178,6 @@ class SliderController extends Controller
         return redirect()->route('slider.index')->with('error','Đã có lỗi xảy ra. Vui lòng thử lại!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Request $request)
     {
         $this->authorize('delete',Slider::class);

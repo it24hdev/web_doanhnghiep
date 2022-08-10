@@ -26,13 +26,6 @@ class Slider extends Model
     public static $arr_location = [
         1 => 'Banner',
         2 => 'Slider_Home',
-        // 3 => 'Banner_3',
-        // 4 => 'Banner_4',
-        // 5 => 'Banner_5',
-        // 6 => 'Banner_6',
-        // 7 => 'Banner_7',
-        // 8 => 'Banner_8',
-        // 9 => 'Slider_Home',
     ];
 
     public function getUser(){
