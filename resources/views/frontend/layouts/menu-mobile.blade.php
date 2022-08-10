@@ -13,19 +13,38 @@
         <li class="menu-item "><a href="{{route('home')}}">Trang chủ</a>
             <button class="angledown"><i class="fal fa-angle-down fa-xs"></i></button>
         </li>
-        <li class="menu-item "><a href=" # {{-- {{route('list_product')}} --}}">Dịch vụ</a>
+        <li class="menu-item "><a href="{{route('list-service')}}">Dịch vụ</a>
             <button class="angledown" id='menuitem-699'><i class="fal fa-angle-down fa-xs"></i></button>
+
             <ul class="sub-menu2" id='sub-menuitem-699' >
-                <li class="menu-item"><a href="#">Danh mục phụ cấp 2</a></li>
+                @foreach($danhmucbaiviet as $dmbv)
+                @if($dmbv->parent_id == 0)
+                <li class="menu-item"><a href="{!! route('list-post_cat', ['slug' => $dmbv->slug]) !!}">{{$dmbv->name}}</a>
+
+                    <button class="angledown2" id='menuitemlv2-{{$dmbv->id}}'><i class="fal fa-angle-down fa-xs"></i></button>
+
+
+                     @if(count($dmbv->childs))
+                    <ul class="sub-menu" id='sub-menuitemlv2-{{$dmbv->id}}' >
+                        @foreach($danhmucbaiviet as $subdmbv)
+                        @if($subdmbv->parent_id == $dmbv->id)
+                        <li class="levelmenu_li1">
+                            <a class="menu-item-link" href="{!! route('list-post_cat', ['slug' => $subdmbv->slug]) !!}">
+                                 {{$subdmbv->name}}
+                            </a>
+                        </li>
+                        @endif
+                        @endforeach
+                    </ul>
+                    @endif
+
+
+                </li>
+                @endif
+                @endforeach
             </ul>
         </li>
-        <li class="menu-item "><a href=" # {{-- {{route('list_product')}} --}}">Tin tức</a>
-            <button class="angledown" id='menuitem-699'><i class="fal fa-angle-down fa-xs"></i></button>
-            <ul class="sub-menu2" id='sub-menuitem-699' >
-                <li class="menu-item"><a href="#">Danh mục phụ cấp 2</a></li>
-            </ul>
-        </li>
-        <li class="menu-item "><a href=" # {{-- {{route('list_product')}} --}}">Liên hệ</a>
+        <li class="menu-item "><a href=" {{route('contact')}}">Liên hệ</a>
             <button class="angledown" id='menuitem-699'><i class="fal fa-angle-down fa-xs"></i></button>
         </li>
         </ul>
