@@ -1117,7 +1117,7 @@ nav .sub-menu2 {
     list-style: none;
 }
 
-.menu-item .sub-menu{
+.mobile-navigation .menu-item .sub-menu{
     display: none;
     font-size: 14px;
     border-bottom: 1px solid;
