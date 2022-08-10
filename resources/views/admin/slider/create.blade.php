@@ -51,7 +51,7 @@
                             </div>
                             <div class="col-span-12 xl:col-span-4">
                                 <label for="crud-form-2" class="form-label">Thứ tự hiển thị(<span class="text-red-600">*</span>)</label>
-                                <input id="crud-form-2" type="number" name="position" value="{{old('position')}}" min="1" class="form-control w-full" placeholder="Nhập thứ tự">
+                                <input id="crud-form-2" type="number" name="position" value="{{$getmaxstt}}" min="1" class="form-control w-full" placeholder="Nhập thứ tự">
                                 @error('position')
                                 <span style="color:red">{{$message}}</span>
                                 @enderror

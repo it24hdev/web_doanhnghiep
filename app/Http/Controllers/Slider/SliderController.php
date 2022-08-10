@@ -45,9 +45,12 @@ class SliderController extends Controller
     public function create()
     {
         $this->authorize('create',Slider::class);
+        $getmaxstt  = Slider::max('position');
+        $getmaxstt  = $getmaxstt + 1;
         return view('admin.slider.create',[
-            'title' => 'Tạo Slider',
+            'title'       => 'Tạo Slider',
             'arrLocation' => Slider::$arr_location,
+            'getmaxstt'   => $getmaxstt,
         ]);
     }
 
@@ -56,11 +59,12 @@ class SliderController extends Controller
         $this->authorize('create',Slider::class);
         $request->validate(
             [
-                'position' => 'nullable|integer',
+                'position' => 'required|integer',
                 'image'    =>'image|mimes:jpeg,jpg,png|mimetypes:image/jpeg,image/png,image/jpg|max:50048',
             ],
             [
                 'position.integer' => 'Thứ tự hiển thị phải nhập số',
+                'position.required'=> 'Chưa nhập thứ tự hiển thị',
                 'image.image'      => 'Ảnh Slider không đúng định dạng! (jpg, jpeg, png)',
             ]
         );
@@ -121,11 +125,12 @@ class SliderController extends Controller
         $this->authorize('update',Slider::class);
         $request->validate(
             [
-                'position' => 'nullable|integer',
+                'position' => 'required|integer',
                 'image'    =>'image|mimes:jpeg,jpg,png|mimetypes:image/jpeg,image/png,image/jpg|max:50048',
             ],
             [
                 'position.integer' => 'Thứ tự hiển thị phải nhập số',
+                'position.required'=> 'Chưa nhập thứ tự hiển thị',
                 'image.image'      => 'Ảnh Slider không đúng định dạng! (jpg, jpeg, png)',
             ]
         );
