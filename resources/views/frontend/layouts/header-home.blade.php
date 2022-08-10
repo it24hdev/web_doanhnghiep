@@ -120,11 +120,11 @@
                 </div>
 
                 <div class="cmt-search-overlay st-show" id="search">
-                    <form action="#" class="cmt-site-searchform" method="get">
+                    <form action="{{route('list-post')}}" class="cmt-site-searchform" method="get">
                         <div class="w-search-form-h">
                             <div class="w-search-form-row">
                                 <div class="w-search-input">
-                                    <input class="field searchform-s" name="s" placeholder="Tìm kiếm..." type="search">
+                                    <input class="field searchform-s" name="tim-kiem" placeholder="Tìm kiếm..." type="search">
                                         <button type="submit">
                                              <i class="far fa-search"></i>
                                         </button>
