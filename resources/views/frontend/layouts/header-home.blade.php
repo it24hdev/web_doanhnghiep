@@ -160,7 +160,7 @@
                                     @foreach($danhmucbaiviet as $dmbv)
                                     @if($dmbv->parent_id == 0)
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children submenu_ul2" >
-                                        <a class="menu-item-link" href="{!! route('list-post', ['slug' => $dmbv->slug]) !!}">
+                                        <a class="menu-item-link" href="{!! route('list-post_cat', ['slug' => $dmbv->slug]) !!}">
                                           {{$dmbv->name}}
                                         </a>
                                         @if(count($dmbv->childs))
@@ -168,7 +168,7 @@
                                              @foreach($danhmucbaiviet as $subdmbv)
                                              @if($subdmbv->parent_id == $dmbv->id)
                                             <li class="menu-item menu-item-type-post_type menu-item-object-page " id="menu-item-28330">
-                                                <a class="menu-item-link" href="{!! route('list-post', ['slug' => $subdmbv->slug]) !!}">
+                                                <a class="menu-item-link" href="{!! route('list-post_cat', ['slug' => $subdmbv->slug]) !!}">
                                                      {{$subdmbv->name}}
                                                 </a>
                                             </li>
@@ -211,4 +211,4 @@
         <span class="buy_link"><span>Facebook</span></span>
     </a>
 </div>
-<a id="scroll_up" href="#top" class="top-visible"><i class="fal fa-angle-up"></i></a>
+<a id="scroll_up" class="top-visible"><i class="fal fa-angle-up"></i></a>

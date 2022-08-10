@@ -22,11 +22,9 @@
                         <div class="wp-services">
                             <h3 class="title">Dịch Vụ</h3>
                             <ul class="menu-footer">
-                                <li><a href=""><i class="fas fa-horizontal-rule me-2"></i>Dịch vụ 1</a></li>
-                                <li><a href=""><i class="fas fa-horizontal-rule me-2"></i>Dịch vụ 2</a></li>
-                                <li><a href=""><i class="fas fa-horizontal-rule me-2"></i>Dịch vụ 3</a></li>
-                                <li><a href=""><i class="fas fa-horizontal-rule me-2"></i>Dịch vụ 4</a></li>
-                                <li><a href=""><i class="fas fa-horizontal-rule me-2"></i>Dịch vụ 5</a></li>
+                                @foreach($danhsachdichvu_footer as $dsdv)
+                                <li><a href="{{route('detail-service',['slug' => $dsdv->slug])}}"><i class="fas fa-horizontal-rule me-2"></i>{{$dsdv->title}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="wp-post">
@@ -45,7 +43,6 @@
                                         </a>
                                     </li>
                                 @endforeach
-
                             </ul>
                         </div>
                         <div class="wp-userfull-links">
