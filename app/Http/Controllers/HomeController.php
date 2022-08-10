@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Customer;
 use App\Models\Post;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -41,12 +42,14 @@ class HomeController extends Controller
         })
         ->paginate(5)->withQueryString();
         $cat_parents = Category::where('status', 1)->where('parent_id', 0)->where('taxonomy', 1)->get();
+        $banners = Slider::where('location', 1)->where('status', 1)->inRandomOrder()->limit(2)->get();
         return \view('frontend.list-post',
         [
             'danhmucbaiviet'  => $danhmucbaiviet,
             'posts'           => $posts,
             'cat_parents'     => $cat_parents,
             'list_post_sidebar'     => $list_post_sidebar,
+            'banners' => $banners,
         ]);
     }
 
@@ -72,6 +75,7 @@ class HomeController extends Controller
         ->paginate(5)->withQueryString();
         $cat_parents = Category::where('status', 1)->where('parent_id', 0)->where('taxonomy', 1)->get();
         $category_active = $cat;
+        $banners = Slider::where('location', 1)->where('status', 1)->inRandomOrder()->limit(2)->get();
         return \view('frontend.list-post',
         [
             'danhmucbaiviet'  => $danhmucbaiviet,
@@ -79,6 +83,7 @@ class HomeController extends Controller
             'cat_parents'     => $cat_parents,
             'list_post_sidebar'     => $list_post_sidebar,
             'category_active' => $category_active,
+            'banners' => $banners,
         ]);
     }
 
@@ -90,11 +95,13 @@ class HomeController extends Controller
         $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
         $list_post_sidebar = Post::where('status', 1)->orderBy('id', 'DESC')->limit(3)->get();
         $cat_parents = Category::where('status', 1)->where('parent_id', 0)->where('taxonomy', 1)->get();
+        $banners = Slider::where('location', 1)->where('status', 1)->inRandomOrder()->limit(2)->get();
         return \view('frontend.detail-post', [
             'danhmucbaiviet'  => $danhmucbaiviet,
             'post'           => $post,
             'cat_parents'     => $cat_parents,
             'list_post_sidebar'     => $list_post_sidebar,
+            'banners' => $banners,
         ]);
     }
 
@@ -103,10 +110,12 @@ class HomeController extends Controller
                                 ->where('service', '=' , 1)
                                 ->orderby('id','asc')->get();
         $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
+        $list_post_sidebar = Post::where('status', 1)->orderBy('id', 'DESC')->limit(3)->get();
         return \view('frontend.list-service',
             [
                 'danhmucbaiviet'  => $danhmucbaiviet,
                 'danhsachdichvu'  => $danhsachdichvu,
+                'list_post_sidebar'     => $list_post_sidebar,
             ]);
     }
     public function contact(){
@@ -156,11 +165,15 @@ class HomeController extends Controller
                                 ->where('service', '=' , 1)
                                 ->orderby('id','asc')->get();
         $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
+        $list_post_sidebar = Post::where('status', 1)->orderBy('id', 'DESC')->limit(3)->get();
+        $banner = Slider::where('location', 1)->where('status', 1)->inRandomOrder()->limit(1)->fisrt();
         return \view('frontend.detail-service',
-             [
+            [
                 'danhmucbaiviet'  => $danhmucbaiviet,
                 'danhsachdichvu'  => $danhsachdichvu,
                 'chitietdichvu'   => $chitietdichvu,
+                'list_post_sidebar'     => $list_post_sidebar,
+                'banner' => $banner,
             ]);
     }
 }

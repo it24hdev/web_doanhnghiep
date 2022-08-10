@@ -64,13 +64,13 @@
                                             <div class="wp-action">
                                                 <a href="{{route('detail-post', $post->slug)}}" class="show"><i class="fal fa-horizontal-rule me-2"></i>Xem bài viết</a>
                                                 <div class="share">
-                                                    <i class="fas fa-share-alt"></i>
+                                                    {{-- <i class="fas fa-share-alt"></i>
                                                     <div class="social display-none">
                                                         <ul>
                                                             <li><a href="javascript:;"><i class="fab fa-facebook-f"></i></a></li>
                                                             <li><a href="javascript:;"><i class="fab fa-twitter"></i></a></li>
                                                         </ul>
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
                                             </div>
                                         </div>
@@ -132,16 +132,13 @@
                     </div>
                     <div class="wp-banner">
                         <ul>
-                            <li>
-                                <a href="tel:+84988758801">
-                                    <img src="{{asset('asset/images/sidebar-banner02.jpg')}}" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="tel:+84988758801">
-                                    <img src="{{asset('asset/images/sidebar-banner02.jpg')}}" alt="">
-                                </a>
-                            </li>
+                            @foreach ($banners as $banner)
+                                <li>
+                                    <a href="{{$banner->link_target}}">
+                                        <img src="{{asset('upload/images/slider/'.$banner->image)}}" alt="">
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -154,13 +151,3 @@
     @include('frontend.layouts.footer')
 @endsection
 
-@section('js')
-<script>
-    $(document).ready(function(){
-        $('.share').click(function(){
-            $(this).children('.social').toggleClass('display-none');
-        });
-    })
-
-</script>
-@endsection
