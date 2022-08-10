@@ -295,51 +295,26 @@
                 </div>
                 <div class="wp-content-post">
                     <div class="list-post owl-carousel">
-                        <div class="wp-post">
-                            <div class="image">
-                                <a href="" class="img">
-                                    <img src="{{asset('asset/images/post-one-720x630.jpg')}}" alt="">
-                                </a>
-                                <a href="" class="cat-post">Danh mục 1</a>
-                            </div>
-                            <div class="wp-detail">
-                                <div class="time">08/08/2022</div>
-                                <a href="" class="title">How to ensure a direct hassle-free visa application</a>
-                                <div class="desc">
-                                    There are full service engage company is to provide solution for employees needs trai...
+                        @foreach ($posts as $post)
+                            <div class="wp-post">
+                                <div class="image">
+                                    <a href="{{route('detail-post', $post->slug)}}" class="img">
+                                        <img src="{{asset('upload/images/post/medium/'.$post->thumb)}}" alt="">
+                                    </a>
+                                    @foreach($post->category as $cat)
+                                        <a href="{{route('list-post_cat', $cat->slug)}}" class="cat-post me-2">{{$cat->name}}</a>
+                                    @endforeach
+                                </div>
+                                <div class="wp-detail">
+                                    <div class="time"><i class="far fa-calendar-alt me-2"></i>{{\App\Helpers\CommonHelper::convertDateToDMY($post->created_at)}}</div>
+                                    <a href="{{route('detail-post', $post->slug)}}" class="title">{{$post->title}}</a>
+                                    <div class="desc">
+                                        {{ $post->excerpt }}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="wp-post">
-                            <div class="image">
-                                <a href="" class="img">
-                                    <img src="{{asset('asset/images/post-three-720x630.jpg')}}" alt="">
-                                </a>
-                                <a href="" class="cat-post">Danh mục 2</a>
-                            </div>
-                            <div class="wp-detail">
-                                <div class="time">08/08/2022</div>
-                                <a href="" class="title">How to ensure a direct hassle-free visa application</a>
-                                <div class="desc">
-                                    There are full service engage company is to provide solution for employees needs trai...
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wp-post">
-                            <div class="image">
-                                <a href="" class="img">
-                                    <img src="{{asset('asset/images/post-one-720x630.jpg')}}" alt="">
-                                </a>
-                                <a href="" class="cat-post">Danh mục 3</a>
-                            </div>
-                            <div class="wp-detail">
-                                <div class="time">08/08/2022</div>
-                                <a href="" class="title">How to ensure a direct hassle-free visa application</a>
-                                <div class="desc">
-                                    There are full service engage company is to provide solution for employees needs trai...
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
             </div>
