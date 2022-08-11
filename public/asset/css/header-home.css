@@ -189,9 +189,11 @@ a:hover {
 .top_bar_wrapper.transparent_border_topbar {
     border-bottom: 1px solid rgba(255,255,255,0.09);
 }
-
+.social_sidebar_internal a{
+    color: #fff !important;
+}
 .top_bar_wrapper.transparent_topbar {
-    background-color: #1f2437;
+    background-color: #cb0109;
 }
 
 .top_bar_wrapper {
@@ -361,7 +363,8 @@ a:hover {
     -moz-transition: height 0.3s ease;
     -o-transition: height 0.3s ease;
     transition: height 0.3s ease;
-    background: rgba(31, 36, 55, 0.78);
+    /* background: rgba(31, 36, 55, 0.78); */
+    background: rgb(239 82 82 / 41%);
     position: relative;
     float: left;
     -webkit-transform-style: preserve-3d;
@@ -602,7 +605,7 @@ svg:not(:root) {
 
 .hover_type_3 #access .menu > li:hover>a {
     /*background: #0073e1!important;*/
-    color: #0073e1;
+    color: #fff936;
     display: inline;
     padding: 7px 15px;
     border-radius: 2px;
@@ -671,7 +674,7 @@ svg:not(:root) {
 #access a {
     display: block;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
     padding-left: 15px;
     padding-right: 15px;
@@ -906,7 +909,7 @@ svg:not(:root) {
 }
 
 .mobile_header {
-    background-color: #001a33;
+    background-color: #ed1c24;
     height: 70px;
     width: 100%;
     float: left;
@@ -1252,11 +1255,11 @@ h3 {
     background-attachment: fixed;
 }
 .cmt-search-overlay {
-    border-top-color: #0067ed;
+    border-top-color: #ed1c24;
 }
 
 .cmt-search-overlay2 {
-    border-top-color: #0067ed;
+    border-top-color: #ed1c24;
 }
 
 .cmt-search-overlay.st-show{
@@ -1332,11 +1335,11 @@ h3 {
 }
 
 .cmt-search-overlay .w-search-form-row:before {
-    border-bottom-color: #0067ed;
+    border-bottom-color: #ed1c24;
 }
 
 .cmt-search-overlay2 .w-search-form-row:before {
-    border-bottom-color: #0067ed;
+    border-bottom-color: #ed1c24;
 }
 
 
@@ -1387,7 +1390,7 @@ h3 {
     line-height: 45px;
     color: #fff;
     float: left;
-    background: #0067ed;
+    background: #ed1c24;
 }
 
 .cmt-search-overlay2 .cmt-site-searchform button {
@@ -1492,7 +1495,8 @@ h3 {
     border-radius: 3px;
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
-    background: #0067ed;
+    background-color: #ed1c24;
+    cursor: pointer;
 }
 
 

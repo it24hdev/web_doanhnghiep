@@ -70,11 +70,32 @@
 
                     <div class="wp-box-sidebar">
                         <h3 class="header-box">Tư vấn miễn phí</h3>
-                        <form action="" class="mb-4 form-input">
-                            <input type="text" name="name" class="form-control mb-3" placeholder="Họ tên (*)" required>
-                            <input type="email" name="email" class="form-control mb-3" placeholder="Email">
-                            <input type="email" name="phone_number" class="form-control mb-3" placeholder="Số điện thoại (*)" required>
-                            <textarea name="note" id="" rows="4" class="form-control mb-3 " placeholder="Ghi chú"></textarea>
+                        <form action="{{route('contact_submit')}}" method="POST" class="form-input mb-4">
+                            @csrf
+                            <input type="text" name="name" class="form-control mb-3 " placeholder="Họ và tên (*)" required>
+                            @error('name')
+                                <span role="alert">
+                                    <p class="text-danger fst-italic mb-3" style="font-size: 14px;">{{ $message }}</p>
+                                </span>
+                            @enderror
+                            <input type="email" name="email" class="form-control mb-3 " placeholder="Email">
+                            @error('email')
+                                <span role="alert">
+                                    <p class="text-danger fst-italic mb-3" style="font-size: 14px;">{{ $message }}</p>
+                                </span>
+                            @enderror
+                            <input type="text" name="phone_number" class="form-control mb-3 " placeholder="Số điện thoại(*)" required>
+                            @error('phone_number')
+                                <span role="alert">
+                                    <p class="text-danger fst-italic mb-3" style="font-size: 14px;">{{ $message }}</p>
+                                </span>
+                            @enderror
+                            <textarea name="note" id="" rows="3" class="form-control mb-3 " placeholder="Ghi chú"></textarea>
+                            @error('note')
+                                <span role="alert">
+                                    <p class="text-danger fst-italic mb-3" style="font-size: 14px;">{{ $message }}</p>
+                                </span>
+                            @enderror
                             <button>Gửi thông tin</button>
                         </form>
                     </div>

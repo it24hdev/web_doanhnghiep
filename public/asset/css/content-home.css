@@ -42,7 +42,7 @@
     height: 8px;
     top: -78px;
     left: 0px;
-    background-color: #0067ed;
+    background-color: #ed1c24;
     z-index: 11;
 }
 .wp-first-content .first-content .image .background-img{
@@ -74,7 +74,7 @@
     font-size: 13px;
     line-height: 24px;
     letter-spacing: 1px;
-    color: #0067ed;
+    color: #ed1c24;
 }
 .wp-first-content .first-content .detail h2{
     margin-bottom: 20px;
@@ -111,7 +111,7 @@
 }
 .wp-first-content .first-content .detail .wp-icon .icon .box-icon i{
     font-size: 50px;
-    color: #0067ed;
+    color: #ed1c24;
 }
 .wp-first-content .first-content .detail .wp-icon .icon .info{
     width: 75%;
@@ -137,7 +137,7 @@
     font-size: 13px;
     line-height: 24px;
     letter-spacing: 1px;
-    color: #0067ed;
+    color: #ed1c24;
 }
 .wp-category .content-header h2{
     font-weight: 300;
@@ -199,7 +199,7 @@
     border-bottom: 1px solid rgb(235, 233, 233);
 }
 .list-category .category .wp-detail .header-cat i{
-    color: #0067ed;
+    color: #ed1c24;
     font-size: 50px;
 }
 .list-category .category .wp-detail .content-cat {
@@ -217,7 +217,7 @@
     padding-bottom: 20px;
 }
 .list-category .category .wp-detail .content-cat a:hover{
-    color: #0067ed;
+    color: #b9030a;
 }
 .list-category .category .wp-detail .content-cat .detail{
     line-height: 1.5rem;
@@ -232,7 +232,7 @@
     padding: 20px 30px;
 }
 .list-category .category .wp-detail .bottom-cat a{
-    color: #0067ed;
+    color: #ed1c24;
     font-weight: 500;
 }
 .wp-category .text{
@@ -245,12 +245,12 @@
     color: #1D2143;
 }
 .wp-category .text a{
-    color: #0067ed;
+    color: #b9030a;
     font-weight: 500;
 }
 .wp-register{
     padding: 85px 0px;
-    background-color: #1f2437ed;
+    background-color: #682828de;
     color: #fff;
 }
 .wp-register .wp-header-register{
@@ -264,7 +264,7 @@
     font-size: 13px;
     line-height: 24px;
     letter-spacing: 1px;
-    color: #0067ed;
+    color: #ff4046;
 }
 .wp-register .wp-header-register h2{
     font-weight: 300;
@@ -286,7 +286,7 @@
     width: 80px;
     height: 70px;
     margin: 20px auto;
-    background-color: #0067ed;
+    background-color: #ed1c24;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -346,7 +346,7 @@
     font-size: 13px;
     line-height: 24px;
     letter-spacing: 1px;
-    color: #0067ed;
+    color: #ed1c24;
     margin-top: 30px;
 }
 .wp-why-choose .why-choose .wp-detail .header-detail h4{
@@ -395,7 +395,7 @@
     top: 20px;
     left: 20px;
     font-size: 40px;
-    color: #0067ed;
+    color: #ed1c24;
 }
 .wp-why-choose .why-choose .wp-detail .content-detail .wp-icon:hover .icon{
     width: 80px;
@@ -459,7 +459,7 @@
     font-size: 13px;
     line-height: 24px;
     letter-spacing: 1px;
-    color: #0067ed;
+    color: #ed1c24;
     margin-top: 30px;
 }
 .wp-list-post .wp-header-post h4{
@@ -495,7 +495,7 @@
     left: 10px;
     padding: 5px 8px;
     color: #fff;
-    background-color: #0067ed;
+    background-color: #ed1c24;
     border-radius: 5px;
     font-size: 14px;
 }
@@ -526,7 +526,7 @@
     overflow: hidden;
 }
 .wp-content-post .list-post .wp-post .wp-detail a:hover.title{
-    color: #0067ed;
+    color: #b9030a;
 }
 .wp-content-post .list-post .wp-post .wp-detail .desc{
     font-weight: 400;
@@ -549,7 +549,7 @@
     color: #1D2143;
 }
 .wp-list-post .text a{
-    color: #0067ed;
+    color: #b9030a;
     font-weight: 500;
 }
 .wp-banner-primary{
@@ -568,6 +568,7 @@
 .wp-banner-primary .wp-box-banner .image img{
     width: 100%;
     border-radius: 5px;
+    box-shadow: 0px 0px 2px 2px rgb(255 255 255);
 }
 .wp-banner-primary .wp-detail{
     width: 100%;
@@ -598,7 +599,7 @@
     padding: 10px;
     border-radius: 12px;
     background-color: #fff;
-    color: #0067ed;
+    color: #ed1c24;
     font-weight: 500;
 }
 @media (min-width: 400px){

@@ -30,7 +30,7 @@
     background-color: #1f2437;
 }
 .wp-footer .wp-body-footer{
-    background-color: #1f2437ea;
+    background-color: #8d2222d4;
 }
 .container-footer{
     max-width: 750px;
@@ -57,7 +57,7 @@
     left: 0;
     width: 18px;
     bottom: -10px;
-    background-color: #0067ed
+    background-color: #edc500;
 }
 
 .first-footer-inner .content-footer-inner{
@@ -97,12 +97,12 @@
     text-align: center;
     display: block;
     border-radius: 50%;
-    color: #0067ed;
-    border: 1px solid #0067ed;
+    color: #fff;
+    border: 1px solid #fff;
     transition: all ease 0.5s;
 }
 .content-footer-inner .wp-about ul li a:hover{
-    background-color: #0067ed;
+    background-color: #ed1c24;
     color: #fff;
 }
 .content-footer-inner .wp-about ul li a i{
@@ -169,7 +169,7 @@
     height: auto;
 }
 .wp-userfull-links .address i{
-    color: #0067ed;
+    color: #edc500;
 }
 .wp-contact-footer{
     position: relative;
@@ -225,7 +225,7 @@
     background-color: #1a1f31;
 }
 .wp-contact-footer .contact-footer .wp-hotline{
-    background-color: #0067ed;
+    background-color: #edc500;
 }
 .wp-bottom-footer{
     padding: 30px 0px 20px 0px;
@@ -238,7 +238,7 @@
     padding: 0 5px;
 }
 .wp-bottom-footer .menu-bottom-footer a:hover{
-    color: #0067ed;
+    color: #b9030a;
 }
 .wp-bottom-footer p{
     color: #fff;

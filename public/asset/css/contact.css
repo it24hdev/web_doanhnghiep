@@ -29,8 +29,7 @@
     padding-right: 10px;
 }
 #titlebar-inner-wrapper .wp-breadcrumb{
-    margin-top: 140px;
-    padding: 120px 0;
+    padding: 200px 0 140px 0;
     text-align: center;
     color: #fff;
 }
@@ -84,8 +83,8 @@
 
 .form-contact .content-left .box-1{
     padding: 30px;
-    background-color: #1f2437;
-    color: #fff;
+    background-color: #e7cf2a;
+    color: rgb(0, 0, 0);
 }
 .form-contact .content-left .box-1 h4{
     font-size: 24px;
@@ -96,7 +95,7 @@
 }
 .form-contact .content-left .box-1 p,
 .form-contact .content-left .box-1 a{
-    color: #fff;
+    color: rgb(0, 0, 0);
     font-size: 15px;
     line-height: 22px;
     margin-bottom: 20px;
@@ -107,7 +106,7 @@
 }
 .form-contact .content-left .box-2{
     padding: 30px;
-    background-color: #0067ed;
+    background-color: #ed1c24;
     color: #fff;
 }
 .form-contact .content-left .box-2 p{
@@ -157,7 +156,7 @@
     font-size: 13px;
     line-height: 24px;
     letter-spacing: 1px;
-    color: #0067ed;
+    color: #ed1c24;
     margin-bottom: 5px;
 }
 .form-contact .form-input .wp-header h2{
@@ -177,18 +176,21 @@
 .form-contact .form-input button{
     width: 100%;
     padding: 12px;
-    border: 1px solid #0067ed;
+    border: 1px solid #ed1c24;
     border-radius: 20px;
-    color: #0067ed;
+    color: #ed1c24;
     font-weight: 500;
     transition: all ease 0.3s;
     background-color: #fff;
 }
 .form-contact .form-input button:hover{
     color: #fff;
-    background-color: #0067ed;
+    background-color: #ed1c24;
 }
 @media (min-width:1024px){
+    #titlebar-inner-wrapper .wp-breadcrumb{
+        padding: 260px 0 140px 0;
+    }
     .form-contact .form-input .wp-header{
         padding: 0;
         text-align: left;

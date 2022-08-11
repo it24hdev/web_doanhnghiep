@@ -29,8 +29,7 @@
     padding-right: 10px;
 }
 #titlebar-inner-wrapper .wp-breadcrumb{
-    margin-top: 140px;
-    padding: 120px 0;
+    padding: 200px 0 140px 0;
     text-align: center;
     color: #fff;
 }
@@ -373,5 +372,10 @@
     .container-content-post{
         max-width: 1170px;
         margin: 0 auto;
+    }
+}
+@media (min-width: 1024px){
+    #titlebar-inner-wrapper .wp-breadcrumb{
+        padding: 260px 0 140px 0;
     }
 }
