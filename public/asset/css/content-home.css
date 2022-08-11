@@ -35,7 +35,7 @@
     height: 100%;
     position: relative;
 }
-.wp-first-content .first-content .image .border-top-image{
+/* .wp-first-content .first-content .image .border-top-image{
     display: none;
     position: absolute;
     width: 100%;
@@ -44,12 +44,13 @@
     left: 0px;
     background-color: #ee2624;
     z-index: 11;
-}
+} */
 .wp-first-content .first-content .image .background-img{
     width: 100%;
-    background-image: url('../images/col-bgimage-4.jpg');
+    background-image: url('../images/image-4.jpg');
     min-height: 400px;
     background-size: cover;
+    background-position: center;
     height: 100%;
 }
 
