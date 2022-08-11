@@ -71,7 +71,6 @@
                 <div class="first-content">
                     <div class="background-top"></div>
                     <div class="image">
-                        <div class="border-top-image"></div>
                         <div class="background-img"></div>
                     </div>
                     <div class="detail">
@@ -111,9 +110,9 @@
                 <div class="list-category owl-carousel owl-theme" id="list-category">
                     @foreach($danhsachdichvu as $dsdv)
                     <div class="category">
-                        
+
                         <div class="wp-detail">
-                            
+
                             <div class="background-icon">
                                 {!! $dsdv->icon !!}
                             </div>
@@ -129,7 +128,7 @@
                             <div class="bottom-cat">
                                 <a href="{{route('detail-service',['slug' => $dsdv->slug])}}">Xem nội dung chi tiết</a>
                             </div>
-                            
+
                         </div>
 
                     </div>

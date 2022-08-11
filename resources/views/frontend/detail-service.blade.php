@@ -53,7 +53,7 @@
                     <div class="list-service">
                         <ul>
                             @foreach($danhsachdichvu  as $dsdv)
-                            <li><a href="{{route('detail-service',['slug' => $dsdv->slug])}}" class="active">{{$dsdv->title}}<span><i class="fas fa-caret-right"></i></span></a></li>
+                            <li><a href="{{route('detail-service',['slug' => $dsdv->slug])}}" class="{{($dsdv->id ==$chitietdichvu->id ) ? 'active' : ''}}">{{$dsdv->title}}<span><i class="fas fa-caret-right"></i></span></a></li>
                             @endforeach
                         </ul>
                     </div>

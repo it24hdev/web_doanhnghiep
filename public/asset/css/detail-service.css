@@ -100,7 +100,7 @@
     left: 30px;
     padding: 8px 15px;
     color: #fff;
-    background-color: #0067ed;
+    background-color: #ed1c24;
 }
 .content-left .wp-post .wp-detail{
     padding: 30px 0 60px 0;
@@ -133,7 +133,7 @@
     padding-bottom: 20px;
     margin-bottom: 20px;
     line-height: 25px;
-    color: #898a9c;
+    color: #000;
 }
 
 .wp-post .wp-detail .social ul{
@@ -205,7 +205,7 @@
     left: 0;
     width: 3px;
     top: 0;
-    background-color: #0067ed;
+    background-color: #ed1c24;
 }
 .content-right .wp-box-sidebar ul{
     margin: 0;
@@ -278,16 +278,16 @@
 .form-input button{
     width: 100%;
     padding: 12px;
-    border: 1px solid #0067ed;
+    border: 1px solid #ed1c24;
     border-radius: 20px;
-    color: #0067ed;
+    color: #ed1c24;
     font-weight: 500;
     transition: all ease 0.3s;
     background-color: #fff;
 }
 .form-input button:hover{
     color: #fff;
-    background-color: #0067ed;
+    background-color: #ed1c24;
 }
 .content-right .list-service ul{
     margin: 0 0 30px 0;
@@ -316,7 +316,7 @@
     top: 0;
     left: 0;
     transition: width 0.3s linear;
-    background-color: #0067ed;
+    background-color: #ed1c24;
     z-index: -1;
 }
 .content-right .list-service ul li:hover::after{
@@ -336,7 +336,7 @@
     transform: translateY(-50%);
 }
 .content-right .list-service .active{
-    background-color: #0067ed;
+    background-color: #ed1c24;
     color: #fff;
 }
 @media (min-width:500px){
