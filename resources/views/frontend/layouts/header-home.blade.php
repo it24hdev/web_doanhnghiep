@@ -1,14 +1,10 @@
 
 <header class="col-12">
-   {{--  <section class="background_header" style="background-image: url('{{asset('asset/images/background.jpg')}}');">
-        <div class="background_header_shadow">
-        </div>
-    </section> --}}
     <div class="header_bar">
 
         {{-- top menu --}}
         <div class="top_bar_wrapper topbar_show_mobile_no transparent_topbar transparent_border_topbar ">
-            <div class="top_bar">
+            <div class="top_bar max_header">
                 <div class="left-top-widet">
                     <ul class="xoxo">
                         <li class="widget-container social_sidebar" id="social_widget_top-4">
@@ -107,7 +103,7 @@
 
         {{-- menu --}}
         <div class="header_wrapper header_type1 header_center hover_type_3 header_alignment_text_left">
-            <div class="header_wrapper_inside full_width_header">
+            <div class="header_wrapper_inside full_width_header max_header">
                 <div class="logo">
                     <a href="{{route('home')}}">
                         <img alt="company logo" class="img-responsive retina_ready" id="logo_image" src="{{asset('asset/images/logo.png')}}" style="margin-top:0px;"/>

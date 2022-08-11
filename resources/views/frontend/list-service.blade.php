@@ -30,10 +30,10 @@
         <div class="wp-category">
             <div class="container-content">
                 <div class="list-category">
-
+                @foreach($danhsachdichvu as $dsdv)
                     <div class="category">
                         <div class="wp-detail">
-                            @foreach($danhsachdichvu as $dsdv)
+                            
                             <div class="background-icon">
                                {!! $dsdv->icon !!}
                             </div>
@@ -49,9 +49,10 @@
                             <div class="bottom-cat">
                                 <a href="{{route('detail-service',['slug' => $dsdv->slug])}}">Xem nội dung chi tiết</a>
                             </div>
-                            @endforeach
+                            
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>
