@@ -27,28 +27,28 @@
                                 contact@mail.com
                             </div>
                         </li>
-                        <li class="widget_text widget-container widget_custom_html" id="custom_html-6" style="background: #0073b1;">
+                        <li class="widget_text widget-container widget_custom_html" id="custom_html-6" style="background: #d52220;">
                             <div class="textwidget ">
                                <a href="#" target="_blank" >
                                  <i class="fab fa-linkedin-in"></i>
                                 </a>
                             </div>
                         </li>
-                        <li class="widget_text widget-container widget_custom_html" id="custom_html-6" style="background: #33ccff;">
+                        <li class="widget_text widget-container widget_custom_html" id="custom_html-6" style="background: #d52220;">
                             <div class="textwidget">
                                <a href="#" target="_blank" >
                                     <i class="fab fa-twitter"></i>
                                 </a>
                             </div>
                         </li>
-                        <li class="widget_text widget-container widget_custom_html" id="custom_html-6" style="background: #c4302b;">
+                        <li class="widget_text widget-container widget_custom_html" id="custom_html-6" style="background: #d52220;">
                             <div class="textwidget">
                                <a href="#" target="_blank" >
                                     <i class="fab fa-youtube"></i>
                                 </a>
                             </div>
                         </li>
-                        <li class="widget_text widget-container widget_custom_html" id="custom_html-6" style="background: #385da9;">
+                        <li class="widget_text widget-container widget_custom_html" id="custom_html-6" style="background: #d52220;">
                             <div class="textwidget">
                                <a href="https://facebook.com/tiengtrungtimesvn" target="_blank" >
                                     <i class="fab fa-facebook-f"></i>

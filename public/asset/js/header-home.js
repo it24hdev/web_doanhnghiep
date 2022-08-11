@@ -91,7 +91,7 @@ $(document).ready(function () {
 			$(".header_wrapper").addClass("customnav");
 			// document.getElementById("logo_image").src = "/asset/images/logo.png";
 			document.getElementById("scroll_up").style.display = "block";
-			document.getElementsByClassName("header_wrapper")[0].style.backgroundColor = "#ed1c24";
+			document.getElementsByClassName("header_wrapper")[0].style.backgroundColor = "#ee2624";
 			document.getElementsByClassName("header_wrapper")[0].style.height = "70px";
 			$(".no-megamenu").addClass("editlineheightmenu");
 			$(".submenu_ul").addClass("editsubmenu_ul");
@@ -102,7 +102,7 @@ $(document).ready(function () {
 			$(".header_wrapper").removeClass("customnav");
 			// document.getElementById("logo_image").src = "/asset/images/transparentopt.png";
             document.getElementById("scroll_up").style.display = "none";
-			document.getElementsByClassName("header_wrapper")[0].style.backgroundColor = "rgb(239 82 82 / 41%)";
+			document.getElementsByClassName("header_wrapper")[0].style.backgroundColor = "#ee2624";
 			document.getElementsByClassName("header_wrapper")[0].style.height = "90px";
 			$(".no-megamenu").removeClass("editlineheightmenu");
 			$(".submenu_ul").removeClass("editsubmenu_ul");

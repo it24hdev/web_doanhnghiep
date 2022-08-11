@@ -69,7 +69,7 @@ a:hover {
 }
 
 .right-top-widet .textwidget:hover{
-    color: #0073e1 !important;
+    /*color: #0073e1 !important;*/
 }
 .widget_custom_html{
     background: #0073b1;
@@ -88,7 +88,7 @@ a:hover {
 
 }
  .widget_custom_html:hover a{
-  color: #0067ed !important;
+  color: #ed1c24 !important;
  }
 
 .background_header{
@@ -193,7 +193,7 @@ a:hover {
     color: #fff !important;
 }
 .top_bar_wrapper.transparent_topbar {
-    background-color: #cb0109;
+    background-color: #d52220;
 }
 
 .top_bar_wrapper {
@@ -364,7 +364,7 @@ a:hover {
     -o-transition: height 0.3s ease;
     transition: height 0.3s ease;
     /* background: rgba(31, 36, 55, 0.78); */
-    background: rgb(239 82 82 / 41%);
+    background: #ee2624;
     position: relative;
     float: left;
     -webkit-transform-style: preserve-3d;
@@ -604,8 +604,8 @@ svg:not(:root) {
 }
 
 .hover_type_3 #access .menu > li:hover>a {
-    /*background: #0073e1!important;*/
-    color: #fff936;
+    background: #f1514f !important;
+    /*color: #fff936;*/
     display: inline;
     padding: 7px 15px;
     border-radius: 2px;
@@ -731,7 +731,7 @@ svg:not(:root) {
 }
 
 .sub-menu li:hover {
-    background-color: #0073e1;
+    background-color: #ff2d2b;
     color: #fff;
     border: none;
     padding: 0 60px;
@@ -876,10 +876,12 @@ svg:not(:root) {
 }
 
 .user_menu .header_phone a{
-    color: #ffffff;
+ color: #3f4b53;
+    line-height: 1.29;
     display: inline-block;
     margin-bottom: 0;
     text-align: center;
+    font-weight: 700;
     vertical-align: middle;
     cursor: pointer;
     background-image: none;
@@ -891,12 +893,11 @@ svg:not(:root) {
     position: relative;
     top: 0;
     transition: all .2s ease-in-out;
-    line-height: normal;
     font-size: 14px;
     padding: 13px 31px 13px 31px;
     z-index: 2;
     border-color: #FFF;
-    background-color: transparent;
+    background-color: #fff;
     border-radius: 2em;
 
 }
@@ -934,7 +935,7 @@ svg:not(:root) {
     margin: 26px;
 }
 .mobile-trigger-user:hover i, .mobile-trigger:hover i {
-    color: #0073e1;
+    color: #fff;
 }
 
 .mobile-logo img {
@@ -988,7 +989,7 @@ svg:not(:root) {
     z-index: 9999;
     overflow: hidden;
     overflow-y: auto;
-    background-color: #161d21;
+    background-color: #fff;
     opacity: 0;
     visibility: hidden;
     transition: transform .25s ease;
@@ -1015,7 +1016,7 @@ svg:not(:root) {
 }
 .mobilenavs .mobile-nav-tabs {
     clear: both;
-    background-color: #001a33;
+    background-color: #ee2624;
 }
 
 .mobilenavs .mobile-nav-tabs ul {
@@ -1092,7 +1093,7 @@ nav .sub-menu2 {
     font-size: 14px;
     border-bottom: 1px solid;
     border-bottom-color: #efefef;
-    color: #ffffff;
+    color: #3f4b53;
     text-decoration: none;
     list-style: none;
 }
@@ -1131,7 +1132,7 @@ nav .sub-menu2 {
 }
 
 nav .angledown {
-    background-color: #161d21;
+    background-color: #fff;
     position: absolute;
     top: 0;
     right: 0;
@@ -1142,7 +1143,7 @@ nav .angledown {
     text-align: right;
     border: none;
     font-size: 16px;
-    color: #ffffff;
+    color: #3f4b53;
 }
 
 .form-control:focus {
@@ -1404,7 +1405,7 @@ h3 {
     line-height: 45px;
     color: #fff;
     float: left;
-    background: #0067ed;
+    background: #ee2624;
 }
 
 .w-search-input i {
@@ -1475,7 +1476,7 @@ h3 {
 }
 
 .cmttheme_fbar_icons > span:hover, .cmttheme_fbar_icons:hover i {
-    color: #0067ed;
+    color: #ee2624;
 }
 
 #scroll_up {
@@ -1516,10 +1517,10 @@ h3 {
 }
 
 
-.header_phone:hover a{
+/*.header_phone:hover a{
     color: #0073e1;
     background: #fff;
-}
+}*/
 .carousel-control-prev {
     left: -60px !important;
 }
@@ -1541,7 +1542,7 @@ h3 {
 }
 
 .carousel-item img{
-    margin-top: 50px;
+    margin-top: 140px;
     width: 100%;
     max-height: 700px;
     min-height: 350px;
@@ -1633,6 +1634,10 @@ nav .angledown2 {
 
     .descriptionheader span{
       font-size: 25px !important;
+    }
+
+    .carousel-item img{
+        margin-top: 70px!important;
     }
 }
 
