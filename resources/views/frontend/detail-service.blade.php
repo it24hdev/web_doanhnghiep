@@ -61,9 +61,11 @@
                     <div class="wp-banner">
                         <ul>
                             <li>
-                                <a href="{{$banner->link_target}}">
-                                    <img src="{{asset('upload/images/slider/'.$banner->image)}}" alt="">
+                                @foreach($banner as $bn)
+                                <a href="{{$bn->link_target}}">
+                                    <img src="{{asset('upload/images/slider/'.$bn->image)}}" alt="">
                                 </a>
+                                @endforeach
                             </li>
                         </ul>
                     </div>
