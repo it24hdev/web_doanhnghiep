@@ -109,9 +109,11 @@
                     <h2>Đào tạo ngôn ngữ Trung Quốc - <strong> Hỗ trợ việc làm nước ngoài</strong></h2>
                 </div>
                 <div class="list-category owl-carousel owl-theme" id="list-category">
+                    @foreach($danhsachdichvu as $dsdv)
                     <div class="category">
+                        
                         <div class="wp-detail">
-                            @foreach($danhsachdichvu as $dsdv)
+                            
                             <div class="background-icon">
                                 {!! $dsdv->icon !!}
                             </div>
@@ -127,9 +129,11 @@
                             <div class="bottom-cat">
                                 <a href="{{route('detail-service',['slug' => $dsdv->slug])}}">Xem nội dung chi tiết</a>
                             </div>
-                            @endforeach
+                            
                         </div>
+
                     </div>
+                     @endforeach
                 </div>
                 <div class="text">Hãy liên hệ với chúng tôi để nhận được trợ giúp tốt nhất. <a href="{{route('list-service')}}">Xem thêm</a></div>
             </div>

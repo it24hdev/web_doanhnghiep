@@ -1120,7 +1120,7 @@ nav .sub-menu2 {
     list-style: none;
 }
 
-.menu-item .sub-menu{
+.mobile-navigation .menu-item .sub-menu{
     display: none;
     font-size: 14px;
     border-bottom: 1px solid;
@@ -1578,6 +1578,12 @@ nav .angledown2 {
     border: none;
     font-size: 16px;
     color: #ffffff;
+}
+
+.max_header{
+    max-width: 1290px !important;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 @media only screen and (max-width: 1023px){

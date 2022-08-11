@@ -198,7 +198,7 @@ class HomeController extends Controller
                                 ->orderby('id','asc')->get();
         $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
         $list_post_sidebar = Post::where('status', 1)->orderBy('id', 'DESC')->limit(3)->get();
-        $banner = Slider::where('location', 1)->where('status', 1)->inRandomOrder()->first();
+        $banner = Slider::where('location', 1)->where('status', 1)->inRandomOrder()->limit(1)->get();
         return \view('frontend.detail-service',
              [
                 'danhmucbaiviet'          => $danhmucbaiviet,
