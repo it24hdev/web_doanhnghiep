@@ -129,17 +129,17 @@
             </ul>
         </li>
         <li>
-            <a href="javascript:;" class="menu {{ $module_active == 'user' ? 'menu--active' : '' }}">
-                <div class="menu__icon"> <i data-feather="user"></i> </div>
+            <a href="javascript:;" class="menu {{ (($module_active == 'user') || ( $module_active == 'role')) ? 'menu--active' : '' }}">
+                <div class="menu__icon"> <i data-feather="settings"></i> </div>
                 <div class="menu__title">
                     Nhân viên
                     <div class="menu__sub-icon "> <i
-                            data-feather="{{ $module_active == 'user' ? 'chevron-up' : 'chevron-down' }}"
-                            class="{{ $module_active == 'user' ? 'menu__sub-icon transform rotate-180' : '' }}"></i>
+                            data-feather="{{ (($module_active == 'user') || ( $module_active == 'role')) ? 'chevron-up' : 'chevron-down' }}"
+                            class="{{ (($module_active == 'user') || ( $module_active == 'role')) ? 'menu__sub-icon transform rotate-180' : '' }}"></i>
                     </div>
                 </div>
             </a>
-            <ul class="{{ $module_active == 'user' ? 'menu__sub-open' : '' }}">
+            <ul class="{{ (($module_active == 'user') || ( $module_active == 'role')) ? 'menu__sub-open' : '' }}">
                 @can('view', App\Models\User::class)
                     <li>
                         <a href="{{ route('user.list') }}" class="menu">
@@ -156,9 +156,25 @@
                         </a>
                     </li>
                 @endcan
+                @can('view', App\Models\Role::class)
+                    <li>
+                        <a href="{{ route('role.list') }}" class="menu">
+                            <div class="menu__icon"> <i data-feather="activity"></i> </div>
+                            <div class="menu__title"> Danh sách quyền </div>
+                        </a>
+                    </li>
+                @endcan
+                @can('create', App\Models\Role::class)
+                    <li>
+                        <a href="{{ route('role.create') }}" class="menu">
+                            <div class="menu__icon"> <i data-feather="activity"></i> </div>
+                            <div class="menu__title"> Thêm mới </div>
+                        </a>
+                    </li>
+                @endcan
             </ul>
         </li>
-        <li>
+        {{-- <li>
             <a href="javascript:;" class="menu {{ $module_active == 'role' ? 'menu--active' : '' }}">
                 <div class="menu__icon"> <i data-feather="bookmark"></i> </div>
                 <div class="menu__title">
@@ -187,6 +203,6 @@
                     </li>
                 @endcan
             </ul>
-        </li>
+        </li> --}}
     </ul>
 </div>

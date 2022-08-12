@@ -77,8 +77,7 @@
                         <h4>Chào mừng bạn đến với chúng tôi</h4>
                         <h2>Trung tâm ngoại ngữ <br><strong>Phương Đông VMA</strong></h2>
                         <div class="desc">
-                            Do nhu cầu học tập ngôn ngữ Trung Quốc ngày càng tăng cao nhưng chất lượng đào tạo chung chung không có sự chuyên nghiệp và thực tế khi đi làm.
-                            Chúng tôi đã nghiên cứu và đưa vào đào tạo lộ trình giúp học viên nâng cao khả năng sử dụng tiếng Trung chuyên nghiệp, sát với thực tế môi trường làm việc. Hỗ trợ làm việc nước ngoài với mức lương tốt.
+                            Tự hào là một trong những đơn vị tiên phong trong lĩnh vực đào tạo ngoại ngữ tiếng Trung hàng đầu tại Hải Phòng. Phương Đông VMA cam kết với lộ trình học cùng đội ngũ giảng viên, trợ giảng giàu kinh nghiệm, đảm bảo chất lượng đào tạo, giúp học viên nâng cao khả năng sử dụng tiếng Trung chuyên nghiệp, sát với thực tế môi trường làm việc, hỗ trợ làm việc tại Trung Quốc với mức lương tốt nhất.
                         </div>
                         <div class="wp-icon">
                             <div class="icon">
