@@ -7,6 +7,7 @@
             <th class="whitespace-nowrap">Tên dịch vụ</th>
             <th class="text-center whitespace-nowrap">Mô tả ngắn</th>
             <th class="text-center whitespace-nowrap">Nội dung</th>
+            <th class="text-center whitespace-nowrap">Menu</th>
             <th class="text-center whitespace-nowrap">Trạng thái</th>
             <th class="text-center whitespace-nowrap">Tác vụ</th>
         </tr>
@@ -34,6 +35,13 @@
                 </td>
                 <td class="w-40">
                     <div class="font-medium" style="overflow-y: hidden;overflow-x: clip;width: 160px;text-overflow: ellipsis;max-height: 70px; text-align: center;">  {!! $post->content !!} </div>
+                </td>
+                <td class="w-10">
+                    @if($post->show_menu == 1)
+                        <div class="text-theme-9 text-center"> <i class="fa-regular fa-circle-check"></i></div>
+                    @else
+                        <div class="text-theme-6 text-center"> <i class="fa-solid fa-ban"></i></div>
+                    @endif
                 </td>
                 <td class="w-10">
                     @if($post->status == \App\Models\Post::ACTIVE)

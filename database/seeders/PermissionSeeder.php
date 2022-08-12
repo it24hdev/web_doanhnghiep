@@ -84,6 +84,7 @@ class PermissionSeeder extends Seeder
             'parent_id' => 84,
         ]);
 
+        //bai viet
         DB::table('permissions')->insert([
             'id' => 89,
             'name' => 'Bài viết',
@@ -116,6 +117,39 @@ class PermissionSeeder extends Seeder
             'parent_id' => 89,
         ]);
 
+        //danh muc bai viet
+        DB::table('permissions')->insert([
+            'id' => 450,
+            'name' => 'Danh mục bài viết',
+            'key_code' => NULL,
+            'parent_id' => 0,
+        ]);
+
+        DB::table('permissions')->insert([
+            'id' => 451,
+            'name' => 'Xem',
+            'key_code' => 'view_categorypost',
+            'parent_id' => 450,
+        ]);
+        DB::table('permissions')->insert([
+            'id' => 452,
+            'name' => 'Thêm',
+            'key_code' => 'create_categorypost',
+            'parent_id' => 450,
+        ]);
+        DB::table('permissions')->insert([
+            'id' => 453,
+            'name' => 'Sửa',
+            'key_code' => 'update_categorypost',
+            'parent_id' => 450,
+        ]);
+        DB::table('permissions')->insert([
+            'id' => 454,
+            'name' => 'Xóa',
+            'key_code' => 'delete_categorypost',
+            'parent_id' => 450,
+        ]);
+
         //dich vu
         DB::table('permissions')->insert([
             'id' => 430,
@@ -137,7 +171,7 @@ class PermissionSeeder extends Seeder
             'parent_id' => 430,
         ]);
         DB::table('permissions')->insert([
-            'id' => 943,
+            'id' => 433,
             'name' => 'Sửa',
             'key_code' => 'update_post2',
             'parent_id' => 430,
@@ -149,7 +183,7 @@ class PermissionSeeder extends Seeder
             'parent_id' => 430,
         ]);
 
-
+        //slider
         DB::table('permissions')->insert([
             'id' => 300,
             'name' => 'Slider',
@@ -181,6 +215,7 @@ class PermissionSeeder extends Seeder
             'parent_id' => 300,
         ]);
 
+        // Customer
         DB::table('permissions')->insert([
             'id' => 305,
             'name' => 'Khách hàng',

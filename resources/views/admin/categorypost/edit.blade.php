@@ -53,6 +53,10 @@
                 <label>Trạng thái</label><br>
                  <input type="checkbox" class="form-check-switch" name='status' value="{{$edit->status == true ? '1' : '0'}}" {{$edit->status == true ? 'checked' : ' '}}>
             </div>
+            <div class="form-group mb-4">
+                <label>Hiển thị trên menu</label><br>
+                 <input type="checkbox" class="form-check-switch" name='show_menu' value="{{$edit->show_menu == true ? '1' : '0'}}" {{$edit->show_menu == true ? 'checked' : ' '}}>
+            </div>
             <div class="modal-footer">
                 <a type="button" class="btn btn-default" href="{{ route('categorypost.index')}}">Hủy</a>
                 <input type="submit" class="btn btn-primary " value="Cập nhật">

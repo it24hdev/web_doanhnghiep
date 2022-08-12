@@ -50,6 +50,10 @@
                 <label>Trạng thái</label> <br>
                  <input type="checkbox" name='status' checked="checked" class="form-check-switch">
             </div>
+            <div class="form-group mb-4">
+                <label>Hiển thị trên menu</label> <br>
+                 <input type="checkbox" name='show_menu' checked="checked" class="form-check-switch">
+            </div>
             <div class="modal-footer">
                 <a type="button" class="btn btn-default" href="{{ route('categorypost.index')}}">Hủy</a>
                 <input type="submit" class="btn btn-primary " value="Thêm mới">

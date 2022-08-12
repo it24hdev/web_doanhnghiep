@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('banner')->nullable();
             $table->string('icon')->nullable();
             $table->boolean('status');
+            $table->boolean('show_menu')->default(1);
             $table->boolean('show_push_product')->default(0);
             $table->timestamps();
             $table->softDeletes();
