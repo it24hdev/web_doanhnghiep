@@ -154,7 +154,7 @@
                     <li>
                         <a href="{{ route('admin.create') }}" class="side-menu">
                             <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                            <div class="side-menu__title"> Thêm mới </div>
+                            <div class="side-menu__title"> Thêm mới nhân viên</div>
                         </a>
                     </li>
                 @endcan
@@ -170,7 +170,7 @@
                     <li>
                         <a href="{{ route('role.create') }}" class="side-menu">
                             <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                            <div class="side-menu__title"> Thêm mới </div>
+                            <div class="side-menu__title"> Thêm mới quyền</div>
                         </a>
                     </li>
                 @endcan

@@ -152,7 +152,7 @@
                     <li>
                         <a href="{{ route('admin.create') }}" class="menu">
                             <div class="menu__icon"> <i data-feather="activity"></i> </div>
-                            <div class="menu__title"> Thêm mới </div>
+                            <div class="menu__title"> Thêm mới nhân viên</div>
                         </a>
                     </li>
                 @endcan
@@ -168,7 +168,7 @@
                     <li>
                         <a href="{{ route('role.create') }}" class="menu">
                             <div class="menu__icon"> <i data-feather="activity"></i> </div>
-                            <div class="menu__title"> Thêm mới </div>
+                            <div class="menu__title"> Thêm mới quyền</div>
                         </a>
                     </li>
                 @endcan
