@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <link href="/upload/images/common_img/logo.svg" rel="shortcut icon">
+    <link href="/upload/images/common_img/logo-icon.png" rel="shortcut icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	@yield('title')
     <meta name="description" content="Phương Đông VMA, trung tâm đào tạo ngôn ngữ Trung và việc làm nước ngoài">

@@ -3,7 +3,7 @@
     <!-- BEGIN: Head -->
     <head>
         <meta charset="utf-8">
-        <link href="/upload/images/common_img/logo.svg" rel="shortcut icon">
+        <link href="/upload/images/common_img/logo-icon.png" rel="shortcut icon">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="It24h, công ty cung cấp giải pháp CNTT">
         <meta name="keywords" content="Thiết kế website, website doanh nghiệp, seo web, website bán hàng">
