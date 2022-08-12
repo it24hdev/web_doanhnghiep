@@ -11,7 +11,7 @@
         <div class="handheld-navigation">
         <ul id="menu-main-menu" class="menu">
         <li class="menu-item "><a href="{{route('home')}}">Trang chủ</a>
-            <button class="angledown"><i class="fal fa-angle-down fa-xs"></i></button>
+            {{-- <button class="angledown"><i class="fal fa-angle-down fa-xs"></i></button> --}}
         </li>
         <li class="menu-item "><a href="{{route('list-service')}}">Dịch vụ</a>
             <button class="angledown"  id='menuitem-693'><i class="fal fa-angle-down fa-xs"></i></button>
@@ -24,7 +24,7 @@
             </ul>
         </li>
         <li class="menu-item "><a href="{{route('list-post')}}">Tin tức</a>
-            <button class="angledown" id='menuitem-699'><i class="fal fa-angle-down fa-xs"></i></button>
+            {{-- <button class="angledown" id='menuitem-699'><i class="fal fa-angle-down fa-xs"></i></button>
 
             <ul class="sub-menu2" id='sub-menuitem-699' >
                 @foreach($danhmucbaiviet as $dmbv)
@@ -52,10 +52,10 @@
                 </li>
                 @endif
                 @endforeach
-            </ul>
+            </ul> --}}
         </li>
         <li class="menu-item "><a href=" {{route('contact')}}">Liên hệ</a>
-            <button class="angledown" id='menuitem-699'><i class="fal fa-angle-down fa-xs"></i></button>
+            {{-- <button class="angledown" id='menuitem-699'><i class="fal fa-angle-down fa-xs"></i></button> --}}
         </li>
         </ul>
         </div>

@@ -96,6 +96,8 @@ $(document).ready(function () {
 			$(".no-megamenu").addClass("editlineheightmenu");
 			$(".submenu_ul").addClass("editsubmenu_ul");
 			$(".submenu_ul2").addClass("editsubmenu_ul2");
+			document.getElementById("logo_image").style.maxWidth = "230px";
+
 		}
 		if(jQuery(window).scrollTop() <80 && ($(".header_bar").hasClass("master_header_sticky") == true)){
 			$(".header_bar").removeClass("master_header_sticky");
@@ -107,6 +109,7 @@ $(document).ready(function () {
 			$(".no-megamenu").removeClass("editlineheightmenu");
 			$(".submenu_ul").removeClass("editsubmenu_ul");
 			$(".submenu_ul2").removeClass("editsubmenu_ul2");
+			document.getElementById("logo_image").style.maxWidth = "300px";
 		}
 	}
 	$(window).scroll(runOnScroll);

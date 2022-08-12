@@ -5,8 +5,8 @@
     <link href="/upload/images/common_img/logo-icon.png" rel="shortcut icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	@yield('title')
-    <meta name="description" content="Phương Đông VMA, trung tâm đào tạo ngôn ngữ Trung và việc làm nước ngoài">
-    <meta name="keywords" content="Đào tạo ngữ hán, giao tiếp tiếng Trung, kỹ năng máy tính văn phòng, lao động nước ngoài">
+    <meta name="description" content="Phương Đông VMA - trung tâm đào tạo ngoại ngữ Trung Quốc">
+    <meta name="keywords" content="Đào tạo ngữ Hán, giao tiếp tiếng Trung, kỹ năng máy tính văn phòng, lao động nước ngoài">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

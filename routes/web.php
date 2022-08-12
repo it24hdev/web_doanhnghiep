@@ -25,6 +25,14 @@ Auth::routes();
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
+
+Route::get('/token', function (Request $request) {
+    $token = $request->session()->token();
+ 
+    $token = csrf_token();
+ 
+    // ...
+});
 /* ========== ADMIN =========== */
 
 Route::group(['middleware' => ['auth']], function () {

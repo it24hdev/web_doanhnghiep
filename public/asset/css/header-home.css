@@ -193,7 +193,7 @@ a:hover {
     color: #fff !important;
 }
 .top_bar_wrapper.transparent_topbar {
-    background-color: #d52220;
+    background-color: #605e5d;
 }
 
 .top_bar_wrapper {
@@ -394,16 +394,15 @@ a:hover {
     color: #333;
     -webkit-transition: color 0.4s linear;
 }
-
 .logo img {
-    top: 50%;
+    top: 60%;
     position: absolute;
     -webkit-transform: translate(0,-50%);
     -ms-transform: translate(0,-50%);
     transform: translate(0,-50%);
     ms-transform: translate(0,-50%);
-    max-height: 160px;
-    max-width: 160px;
+    min-height: 100px;
+    max-width: 300px;
     margin-top: 0px;
 }
 
@@ -415,6 +414,9 @@ a:hover {
     left: 0px;
     position: fixed;
     z-index: 9999;
+}
+.header_alignment_text_left{
+    border-bottom: 2px solid rgb(255, 255, 255);
 }
 
 .property_details_modal_back, .modal_login_back {
@@ -940,10 +942,10 @@ svg:not(:root) {
 
 .mobile-logo img {
     margin: 0px auto;
-    max-height: 70px;
+    max-height: 230px;
     width: auto;
-    max-width: 200px;
-    top: 50%;
+    /* max-width: 200px; */
+    top: 60%;
     -webkit-transform: translate(0,-50%);
     -ms-transform: translate(0,-50%);
     transform: translate(0,-50%);
@@ -1645,6 +1647,19 @@ nav .angledown2 {
     .carousel-item img{
         margin-top: 70px!important;
     }
+
+    .cmt_floting_customsett {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    margin: -65px 0 0;
+    background-color: transparent;
+    box-shadow: none;
+    z-index: 99999;
+    }
+    .cmt_floting_customsett i{
+        color: #0d6efd !important;
+    }
 }
 
 @media only screen and (max-width: 768px){
@@ -1687,6 +1702,8 @@ nav .angledown2 {
     .descriptionheader span{
       font-size: 20px !important;
     }
+
+
 }
 
 
@@ -1698,6 +1715,7 @@ nav .angledown2 {
     width: 20%;
     height: fit-content;
     }
+    
 }
 
 @media (min-width: 992px){
@@ -1711,6 +1729,8 @@ nav .angledown2 {
     .container {
     width: 1170px;
     }
+
+
 }
 
 
@@ -1718,7 +1738,10 @@ nav .angledown2 {
     .mobilelanguage{
     display: none;
     }
-
+    .carousel-control-next-icon,.carousel-control-prev-icon{
+        position: relative;
+    top: 40px;
+    }
 }
 @media (max-width: 1250px){
     /*.header_phone{

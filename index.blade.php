@@ -188,10 +188,9 @@
 
                                 <div class="info">
 
-                                    <h4>Đào tạo</h4>
+                                    <h4>Ngôn ngữ Trung Quốc</h4>
 
-                                    <p>- Kỹ năng tiếng Trung<br>
-                                    - Kỹ năng tin học văn phòng</p>
+                                    <p>Nắm vững tiếng Trung, kỹ năng từ vựng chuyên ngành cơ bản</p>
 
                                 </div>
 
@@ -203,10 +202,9 @@
 
                                 <div class="info">
 
-                                    <h4>Cam kết việc làm</h4>
+                                    <h4>Cam kết việc làm đầu ra cho các học viên tại các tập đoàn lớn ở Philippines-Singapore và DuBai</h4>
 
-                                    <p>- Mức lương từ 40-60 triệu </br>- Chi phí xuất ngoại 0đ</p>
-                                   
+                                    <p>Lương khởi điểm 30 - 60 triệu, chi phí xuất ngoại 0 đồng</p>
 
                                 </div>
 

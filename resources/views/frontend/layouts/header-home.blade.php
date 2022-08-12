@@ -161,7 +161,7 @@
                                 <a class="menu-item-link" href="{{route('list-post')}}">
                                     Tin tức
                                 </a>
-                                <ul class=" sub-menu " style="">
+                          {{--       <ul class=" sub-menu " style="">
                                     @foreach($danhmucbaiviet as $dmbv)
                                     @if($dmbv->parent_id == 0)
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children submenu_ul2" >
@@ -184,7 +184,7 @@
                                     </li>
                                     @endif
                                     @endforeach
-                                </ul>
+                                </ul> --}}
                             </li>
                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-megamenu " id="menu-item-7999">
                                 <a class="menu-item-link" href="{{route('contact')}}">
