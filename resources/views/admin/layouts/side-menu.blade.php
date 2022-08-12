@@ -209,7 +209,7 @@
         </li> --}}
     </ul>
     <div class="develop" style="position:absolute; bottom: 0px; left: 10px; color: rgb(179 173 173); font-size:13px;">
-        © Develop by IT24H
+        © Develop by <a href="https://it24h.vn/" target="_blank">IT24H</a>
     </div>
 </nav>
 <!-- END: Side Menu -->
