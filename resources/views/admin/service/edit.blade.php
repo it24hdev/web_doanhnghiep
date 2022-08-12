@@ -45,6 +45,13 @@
                         value="{{ $post->status == true ? '1' : '0' }}" {{ $post->status == true ? 'checked' : ' ' }}>
                         </div>
                     </div>
+                    <div class="mt-3">
+                        <label>Hiển thị menu</label>
+                        <div class="mt-2">
+                           <input type="checkbox" class="form-check-switch" name='show_menu'
+                        value="{{ $post->show_menu == true ? '1' : '0' }}" {{ $post->show_menu == true ? 'checked' : ' ' }}>
+                        </div>
+                    </div>
                     <div class="form-group mb-4">
                         <label>Icon</label>
                         <input type="text" class="form-control" name='icon' value=" {{old('icon') ?? $post->icon}}">

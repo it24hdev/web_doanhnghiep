@@ -105,10 +105,10 @@ a:hover {
 }
 .background_header_shadow{
     background-color: transparent;
-       background: linear-gradient(to right, #000000 30%, #fff 70%);
-    opacity: 0.2;
+  /*     background: linear-gradient(to right, #000000 30%, #fff 70%);
+    opacity: 0.2;*/
     transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
-    height: 750px;
+    height: 840px;
     width: 100%;
     top: 0;
     left: 0;

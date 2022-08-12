@@ -97,6 +97,7 @@ class PostController2 extends Controller
             'service'   => 1,
             'icon'      => $request->icon,
             'user_id'   => Auth::id(),
+            'show_menu' => $request->has('show_menu'),
         ];
 
         
@@ -204,6 +205,7 @@ class PostController2 extends Controller
                 'service'   => 1,
                 'icon'      => $request->icon,
                 'user_id'   => Auth::id(),
+                'show_menu' => $request->has('show_menu'),
             ];
 
             try {

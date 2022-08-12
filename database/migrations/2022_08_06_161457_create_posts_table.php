@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('status')->default(0);
             $table->unsignedBigInteger('user_id');
             $table->integer('service')->default(0);
+            $table->integer('show_menu')->default(1);
             $table->string('icon')->nullable();
             $table->timestamps();
             $table->softDeletes();

@@ -23,6 +23,7 @@ class Post extends Model
         'user_id',
         'icon',
         'service',
+        'show_menu',
     ];
 
     const IMAGE = 'no-images.jpg';

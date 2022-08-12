@@ -14,7 +14,14 @@
             <button class="angledown"><i class="fal fa-angle-down fa-xs"></i></button>
         </li>
         <li class="menu-item "><a href="{{route('list-service')}}">Dịch vụ</a>
-            <button class="angledown"><i class="fal fa-angle-down fa-xs"></i></button>
+            <button class="angledown"  id='menuitem-693'><i class="fal fa-angle-down fa-xs"></i></button>
+
+            <ul class="sub-menu2" id='sub-menuitem-693' >
+                @foreach($danhsachdichvu as $dsdv)
+                <li class="menu-item"><a href="{!! route('detail-service', ['slug' => $dsdv->slug]) !!}">{{$dsdv->title}}</a>
+                </li>
+                @endforeach
+            </ul>
         </li>
         <li class="menu-item "><a href="{{route('list-post')}}">Tin tức</a>
             <button class="angledown" id='menuitem-699'><i class="fal fa-angle-down fa-xs"></i></button>

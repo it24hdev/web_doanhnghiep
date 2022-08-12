@@ -18,7 +18,7 @@ class CategorypostController extends Controller
     public function __construct()
     {
         $this->middleware(function ($request, $next) {
-            \session(['module_active' => 'post', 'active' => 'Bài viết']);
+            \session(['module_active' => 'post', 'active' => 'Danh mục bài viết']);
             return $next($request);
         });
     }
@@ -86,9 +86,8 @@ class CategorypostController extends Controller
             'parent_id' => $request->parent_id,
             'user_id'   => Auth::user()->id,
             'status'    => $request->has('status'),
+            'show_menu' => $request->has('show_menu'),
         ];
-
- // dd($Category);
             Category::create($Category);
         try {
             DB::beginTransaction();
@@ -156,6 +155,7 @@ class CategorypostController extends Controller
             'parent_id' => $request->parent_id,
             'user_id'   => Auth::user()->id,
             'status'    => $request->has('status'),
+            'show_menu' => $request->has('show_menu'),
         ];
 
         try {

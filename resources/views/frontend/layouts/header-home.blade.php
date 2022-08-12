@@ -27,28 +27,28 @@
                                 contact@mail.com
                             </div>
                         </li>
-                        <li class="widget_text widget-container widget_custom_html" id="custom_html-6" style="background: #d52220;">
+                        <li class="widget_text widget-container widget_custom_html" id="custom_html-6" style="background: #605e5d;">
                             <div class="textwidget ">
                                <a href="#" target="_blank" >
                                  <i class="fab fa-linkedin-in"></i>
                                 </a>
                             </div>
                         </li>
-                        <li class="widget_text widget-container widget_custom_html" id="custom_html-6" style="background: #d52220;">
+                        <li class="widget_text widget-container widget_custom_html" id="custom_html-6" style="background: #605e5d;">
                             <div class="textwidget">
                                <a href="#" target="_blank" >
                                     <i class="fab fa-twitter"></i>
                                 </a>
                             </div>
                         </li>
-                        <li class="widget_text widget-container widget_custom_html" id="custom_html-6" style="background: #d52220;">
+                        <li class="widget_text widget-container widget_custom_html" id="custom_html-6" style="background: #605e5d;">
                             <div class="textwidget">
                                <a href="#" target="_blank" >
                                     <i class="fab fa-youtube"></i>
                                 </a>
                             </div>
                         </li>
-                        <li class="widget_text widget-container widget_custom_html" id="custom_html-6" style="background: #d52220;">
+                        <li class="widget_text widget-container widget_custom_html" id="custom_html-6" style="background: #605e5d;">
                             <div class="textwidget">
                                <a href="https://facebook.com/tiengtrungtimesvn" target="_blank" >
                                     <i class="fab fa-facebook-f"></i>
@@ -143,10 +143,19 @@
                                     Trang chủ
                                 </a>
                             </li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-megamenu " id="menu-item-7999">
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-megamenu submenu_ul" id="menu-item-7999">
                                 <a class="menu-item-link" href="{{route('list-service')}}">
                                     Dịch vụ
                                 </a>
+                                <ul class=" sub-menu " style="">
+                                    @foreach($danhsachdichvu as $dsdv)
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children submenu_ul2" >
+                                        <a class="menu-item-link" href="{!! route('detail-service', ['slug' => $dsdv->slug]) !!}">
+                                          {{$dsdv->title}}
+                                        </a>
+                                    </li>
+                                    @endforeach
+                                </ul>
                             </li>
                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-megamenu submenu_ul">
                                 <a class="menu-item-link" href="{{route('list-post')}}">

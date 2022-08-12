@@ -44,6 +44,12 @@
                             <input type="checkbox" checked="checked" name="status" class="form-check-switch">
                         </div>
                     </div>
+                    <div class="mt-3">
+                        <label>Hiển thị menu</label>
+                        <div class="mt-2">
+                            <input type="checkbox" checked="checked" name="show_menu" class="form-check-switch">
+                        </div>
+                    </div>
                     <div class="form-group mb-4">
                         <label>Icon</label>
                         <input type="text" class="form-control" name='icon' value=" {{old('icon')}}">

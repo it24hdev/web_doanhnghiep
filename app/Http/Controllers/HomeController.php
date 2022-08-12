@@ -15,8 +15,10 @@ class HomeController extends Controller
     {
         $danhsachdichvu    = $danhsachdichvu_footer = Post::where('status' , '=' , 1)
                                 ->where('service', '=' , 1)
-                                ->orderby('id','asc')->limit(5)->get();
-        $danhmucbaiviet    = Category::where('status','=',1)->orderby('id','asc')->get();
+                                ->where('show_menu', '=' , 1)
+                                ->orderby('id','asc')->get();
+        $danhmucbaiviet    = Category::where('status','=',1)
+                                ->where('show_menu',1)->orderby('id','asc')->get();
         $sliders = DB::table('sliders')->where('location',2)->where('status', 1)->orderBy('position', 'ASC')->get();
         $posts   = Post::where('status', 1)->where('service', 2)->orderBy('id', 'DESC')->limit(5)->get();
         $list_post_sidebar = Post::where('status', 1)->where('service', 2)->orderBy('id', 'DESC')->limit(3)->get();
@@ -50,9 +52,10 @@ class HomeController extends Controller
         ->paginate(5)->withQueryString();
         $cat_parents = Category::where('status', 1)->where('parent_id', 0)->where('taxonomy', 1)->get();
         $banners = Slider::where('location', 1)->where('status', 1)->inRandomOrder()->limit(2)->get();
-        $danhsachdichvu_footer = Post::where('status' , '=' , 1)
+        $danhsachdichvu    = $danhsachdichvu_footer = Post::where('status' , '=' , 1)
                                 ->where('service', '=' , 1)
-                                ->orderby('id','asc')->limit(5)->get();
+                                ->where('show_menu', '=' , 1)
+                                ->orderby('id','asc')->get();
 
         return \view('frontend.list-post',
         [
@@ -61,7 +64,8 @@ class HomeController extends Controller
             'cat_parents'               => $cat_parents,
             'list_post_sidebar'         => $list_post_sidebar,
             'danhsachdichvu_footer'     => $danhsachdichvu_footer,
-            'banners' => $banners,
+            'danhsachdichvu'            => $danhsachdichvu,
+            'banners'                   => $banners,
         ]);
     }
 
@@ -88,9 +92,10 @@ class HomeController extends Controller
         $cat_parents = Category::where('status', 1)->where('parent_id', 0)->where('taxonomy', 1)->get();
         $category_active = $cat;
         $banners = Slider::where('location', 1)->where('status', 1)->inRandomOrder()->limit(2)->get();
-        $danhsachdichvu_footer = Post::where('status' , '=' , 1)
+         $danhsachdichvu    = $danhsachdichvu_footer = Post::where('status' , '=' , 1)
                                 ->where('service', '=' , 1)
-                                ->orderby('id','asc')->limit(5)->get();
+                                ->where('show_menu', '=' , 1)
+                                ->orderby('id','asc')->get();
         return \view('frontend.list-post',
         [
             'danhmucbaiviet'        => $danhmucbaiviet,
@@ -100,13 +105,15 @@ class HomeController extends Controller
             'banners' => $banners,
             'category_active'       => $category_active,
             'danhsachdichvu_footer' => $danhsachdichvu_footer,
+            'danhsachdichvu' => $danhsachdichvu,
         ]);
     }
 
     public function detail_post(Request $request, $slug){
-        $danhsachdichvu_footer = Post::where('status' , '=' , 1)
+        $danhsachdichvu    = $danhsachdichvu_footer = Post::where('status' , '=' , 1)
                                 ->where('service', '=' , 1)
-                                ->orderby('id','asc')->limit(5)->get();
+                                ->where('show_menu', '=' , 1)
+                                ->orderby('id','asc')->get();
         $post = Post::where('slug', $slug)->where('service', 2)->first();
         if(empty($post)){
            return \abort(404);
@@ -122,17 +129,16 @@ class HomeController extends Controller
             'list_post_sidebar'     => $list_post_sidebar,
             'banners' => $banners,
             'danhsachdichvu_footer' => $danhsachdichvu_footer,
+            'danhsachdichvu' => $danhsachdichvu,
         ]);
     }
 
     public function list_service(){
-        $danhsachdichvu_footer = Post::where('status' , '=' , 1)
+        $danhsachdichvu    = $danhsachdichvu_footer = Post::where('status' , '=' , 1)
                                 ->where('service', '=' , 1)
-                                ->orderby('id','asc')->limit(5)->get();
-        $danhsachdichvu = Post::where('status' , '=' , 1)
-                                ->where('service', '=' , 1)
+                                ->where('show_menu', '=' , 1)
                                 ->orderby('id','asc')->get();
-        $list_post_sidebar = Post::where('status', 1)->orderBy('id', 'DESC')->limit(3)->get();
+        $list_post_sidebar = Post::where('status', 1)->where('service', 2)->orderBy('id', 'DESC')->limit(3)->get();
         $danhmucbaiviet    = Category::where('status','=',1)->orderby('id','asc')->get();
         return \view('frontend.list-service',
             [
@@ -143,15 +149,17 @@ class HomeController extends Controller
             ]);
     }
     public function contact(){
-        $danhsachdichvu_footer = Post::where('status' , '=' , 1)
+        $danhsachdichvu    = $danhsachdichvu_footer = Post::where('status' , '=' , 1)
                                 ->where('service', '=' , 1)
-                                ->orderby('id','asc')->limit(5)->get();
+                                ->where('show_menu', '=' , 1)
+                                ->orderby('id','asc')->get();
         $danhmucbaiviet     = Category::where('status','=',1)->orderby('id','asc')->get();
-        $list_post_sidebar  = Post::where('status', 1)->orderBy('id', 'DESC')->limit(3)->get();
+        $list_post_sidebar  = Post::where('status', 1)->where('service', 2)->orderBy('id', 'DESC')->limit(3)->get();
         return \view('frontend.contact', [
             'danhmucbaiviet'        => $danhmucbaiviet,
             'list_post_sidebar'     => $list_post_sidebar,
             'danhsachdichvu_footer' => $danhsachdichvu_footer,
+            'danhsachdichvu'        => $danhsachdichvu,
         ]);
     }
     public function contact_submit(Request $request){
@@ -189,15 +197,13 @@ class HomeController extends Controller
     }
 
     public function detail_service($slug){
-        $danhsachdichvu_footer = Post::where('status' , '=' , 1)
+        $danhsachdichvu    = $danhsachdichvu_footer = Post::where('status' , '=' , 1)
                                 ->where('service', '=' , 1)
-                                ->orderby('id','asc')->limit(5)->get();
-        $chitietdichvu  = Post::where('slug',$slug)->first();
-        $danhsachdichvu = Post::where('status' , '=' , 1)
-                                ->where('service', '=' , 1)
+                                ->where('show_menu', '=' , 1)
                                 ->orderby('id','asc')->get();
+        $chitietdichvu  = Post::where('slug',$slug)->first();
         $danhmucbaiviet = Category::where('status','=',1)->orderby('id','asc')->get();
-        $list_post_sidebar = Post::where('status', 1)->orderBy('id', 'DESC')->limit(3)->get();
+        $list_post_sidebar = Post::where('status', 1)->where('service', 2)->orderBy('id', 'DESC')->limit(3)->get();
         $banner = Slider::where('location', 1)->where('status', 1)->inRandomOrder()->limit(1)->get();
         return \view('frontend.detail-service',
              [

@@ -66,6 +66,7 @@
                                     <th class="text-center whitespace-nowrap ">SLUG</th>
                                     <th class="text-center whitespace-nowrap ">DANH MỤC CHA</th>
                                     {{-- <th class="text-center whitespace-nowrap w-30">NGƯỜI DÙNG</th> --}}
+                                    <th class="text-center whitespace-nowrap w-30">MENU</th>
                                     <th style="display:none;"></th>
                                     <th class="text-center whitespace-nowrap w-30">TRẠNG THÁI</th>
                                     <th class="text-center whitespace-nowrap ">CHỨC NĂNG</th>
@@ -83,6 +84,13 @@
                                         @endif
                                     </td>
                                     {{-- <td class="w-30 text-center">{{$list->user_id}}</td> --}}
+                                     <td>
+                                        @if($list->show_menu == '1')
+                                        <div class="flex items-center justify-center text-theme-9 mr-3" data-bs-toggle="tooltip" title="Kích hoạt"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i></div>
+                                        @else
+                                        <div class="flex items-center justify-center text-theme-6 mr-3"data-bs-toggle="tooltip" title="Vô hiệu hóa"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i></div>
+                                        @endif
+                                    </td>
                                     <td style="display:none;">{{$status = $list->status}}</td>
                                     <td>
                                         @if($status == '1')
@@ -114,7 +122,7 @@
                             </tbody>
                         </table>
                     </div>
-                    @include('admin.Categorypost.delete')
+                    @include('admin.categorypost.delete')
                     <!-- END: Data List -->
                     <!-- BEGIN: Pagination -->
                     <div class="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center"  >
