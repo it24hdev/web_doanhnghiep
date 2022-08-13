@@ -17,7 +17,7 @@
             <button class="angledown"  id='menuitem-693'><i class="fal fa-angle-down fa-xs"></i></button>
 
             <ul class="sub-menu2" id='sub-menuitem-693' >
-                @foreach($danhsachdichvu as $dsdv)
+                @foreach($danhsachdichvu_footer as $dsdv)
                 <li class="menu-item"><a href="{!! route('detail-service', ['slug' => $dsdv->slug]) !!}">{{$dsdv->title}}</a>
                 </li>
                 @endforeach

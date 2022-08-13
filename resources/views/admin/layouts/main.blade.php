@@ -52,8 +52,15 @@
                 @yield('subcontent')
                 @yield('category')
             </div>
+           
             <!-- END: Content -->
         </div>
+        <div style=" width: 100%;
+             margin-left: auto; margin-right:auto; position: absolute; ">
+           <div class="develop" style="    text-align: center;color: rgb(179 173 173);font-size: 13px;">
+        © Develop by <a href="https://it24h.vn/" target="_blank">IT24H</a>
+            </div>
+            </div>
         {{-- @yield('dark-mode-switcher') --}}
         <!-- BEGIN: JS Assets-->
         <script src="/lib/jquery360.min.js"></script>

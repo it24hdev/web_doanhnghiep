@@ -395,13 +395,13 @@ a:hover {
     -webkit-transition: color 0.4s linear;
 }
 .logo img {
-    top: 60%;
+    top: 50%;
     position: absolute;
     -webkit-transform: translate(0,-50%);
     -ms-transform: translate(0,-50%);
     transform: translate(0,-50%);
     ms-transform: translate(0,-50%);
-    min-height: 100px;
+    min-height: 80px;
     max-width: 300px;
     margin-top: 0px;
 }
@@ -942,10 +942,10 @@ svg:not(:root) {
 
 .mobile-logo img {
     margin: 0px auto;
-    max-height: 230px;
+    max-height: 70px;
     width: auto;
     /* max-width: 200px; */
-    top: 60%;
+    top: 50%;
     -webkit-transform: translate(0,-50%);
     -ms-transform: translate(0,-50%);
     transform: translate(0,-50%);
@@ -1659,6 +1659,11 @@ nav .angledown2 {
     }
     .cmt_floting_customsett i{
         color: #0d6efd !important;
+    }
+
+    #titlebar-inner-wrapper{
+    position: relative;
+    top: 0px!important;
     }
 }
 

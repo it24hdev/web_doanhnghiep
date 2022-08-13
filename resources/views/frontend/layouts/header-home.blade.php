@@ -148,7 +148,7 @@
                                     Dịch vụ
                                 </a>
                                 <ul class=" sub-menu " style="">
-                                    @foreach($danhsachdichvu as $dsdv)
+                                    @foreach($danhsachdichvu_footer as $dsdv)
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children submenu_ul2" >
                                         <a class="menu-item-link" href="{!! route('detail-service', ['slug' => $dsdv->slug]) !!}">
                                           {{$dsdv->title}}
