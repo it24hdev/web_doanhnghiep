@@ -15,7 +15,7 @@
                 </div><div class="-intro-x text-white font-medium text-lg leading-tight mt-10">
                     Phát triển bởi <a href="https://it24h.vn/" target="_blank">it24h.vn</a>
                 </div>
-                <div class="-intro-x mt-5 text-sm text-white text-opacity-70 dark:text-gray-500">Đem đến các giải pháp công nghệ tối ưu doanh nghiệp của bạn!</div>
+                <div class="-intro-x mt-5 text-sm text-white text-opacity-70 dark:text-gray-500" style="margin-bottom:100px;">Đem đến các giải pháp công nghệ tối ưu doanh nghiệp của bạn!</div>
             </div>
             <!-- END: Login Info -->
             <!-- BEGIN: Login Form -->

@@ -17,7 +17,7 @@
         <!-- END: CSS Assets-->
     </head>
     <!-- END: Head -->
-    <body class="login">
+    <body class="login" style="padding:0">
         @yield('content')
 
         <!-- BEGIN: JS Assets-->
